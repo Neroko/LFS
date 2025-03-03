@@ -29,6 +29,9 @@
 
 clear
 
+GREEN='\033[0;32m'  # Text Green
+RED='\033[0;31m'    # Text Red
+NC='\033[0m'        # Text No Color
 border='==================='
 
 press_pause() {
@@ -53,10 +56,10 @@ ver_check() {
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' $3 $v | sort --version-sort --check &>/dev/null; then
-        printf "OK:     %-9s %-6s >= $3\n" "$1" "$v";
+        printf "${GREEN}OK:${NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
-        printf "ERROR:  %-9s is TOO OLD ($3 or later required)\n" "$1";
+        printf "${RED}ERROR:${NC}  %-9s is TOO OLD ($3 or later required)\n" "$1";
         return 1;
     fi
 }
