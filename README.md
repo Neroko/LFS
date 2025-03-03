@@ -1,5 +1,4 @@
-## LFS
-### Linux from Scratch
+## LFS - Linux from Scratch
 #
 # Version: 12.2
 #
