@@ -67,14 +67,13 @@ ver_check() {
 ver_kernel() {
     kver=$(uname -r | grep -E -o '^[0-9\.]+')
     if printf '%s\n' $1 $kver | sort --version-sort --check &>/dev/null; then
-        printf "OK:     Linux Kernel $kver >= $1\n";
+        printf "${GREEN}OK:${NC}     Linux Kernel $kver >= $1\n";
         return 0;
     else
-        printf "ERROR:  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
+        printf "${RED}ERROR:${NC}  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
     fi
 }
 
-# Coreutils first because --version-sort needs Coreutils >= 7.0
 echo $border
 echo '-- Version Check --'
 echo $border
@@ -83,6 +82,8 @@ echo $border
 # This package contains a number of essential programs for viewing and manipulating files and directories. These
 # programs are needed for command line file management, and are necessary for the installation procedures of every
 # package in LFS.
+# -- NOTE --
+# Check for Coreutils first because --version-sort needs Coreutils >= 7.0
 ver_check Coreutils     sort        8.1 || bail "Coreutils too old, stop"
 
 # == Bash ==
@@ -115,7 +116,6 @@ ver_check Gawk          gawk        4.0.1
 # == GCC ==
 # This is the Gnu Compiler Collection. It contains the C and C++ compilers as well as several others not built by LFS.
 ver_check GCC           gcc         5.2
-
 ver_check "GCC (C++)"   g++         5.2
 
 # == Grep ==
@@ -189,8 +189,15 @@ echo $border
 echo "-- Aliases --"
 echo $border
 
+
 alias_check awk GNU
+
+# -- Bison
+# /usr/bin/yac should be a link to bison or a small script that executes bison
 alias_check yacc Bison
+
+# -- Bash
+# /bin/sh should be a symbolic or hard link to bash
 # To set sh to BASH: sudo ln -sf bash /bin/sh
 # To set sh to DASH: sudo ln -sf dash /bin/sh
 alias_check sh Bash
@@ -215,4 +222,4 @@ else
     echo "OK:       nproc reports $(nproc) logical cores are available"
 fi
 
-echo $border
+press_pause
