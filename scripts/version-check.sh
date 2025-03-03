@@ -51,8 +51,7 @@ sort /dev/null || bail "sort does not work"
 
 ver_check() {
     if ! type -p $2 &>/dev/null; then
-        printf "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
-        echo;
+        echo -e "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
         return 1;
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
