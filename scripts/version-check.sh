@@ -1,8 +1,20 @@
 #!/bin/bash
-# Linux From Scratch (LFS)
+# Linux From Scratch (LFS) Version Checks
 #
-# VERSION:
+# VERSION (LFS):
 #   12.2
+#
+# VERSION (SCRIPT):
+#   1.0.0.1
+#
+# DATE LAST EDITED:
+#   03/03/2025
+#
+# DATE CREATED:
+#   03/03/2025
+#
+# AUTHOR:
+#   TerryJohn Anscombe
 #
 # DESCRIPTION
 #   Script to list version numbers of critical development tools
@@ -160,8 +172,7 @@ else
     echo "ERROR:    Linux Kernel does NOT support UNIX 98 PTY";
 fi
 
-read -p "Press any key to continue..." -n1 -s
-echo
+press_pause
 
 alias_check() {
     if $1 --version 2>$1 | grep -qi $2; then
@@ -181,8 +192,7 @@ alias_check yacc Bison
 # To set sh to DASH: sudo ln -sf dash /bin/sh
 alias_check sh Bash
 
-read -p "Press any key to continue..." -n1 -s
-echo
+press_pause
 
 echo $border
 echo "-- Compiler Check --"
