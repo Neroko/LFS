@@ -170,9 +170,9 @@ ver_check Xz            xz          5.0.0
 ver_kernel      4.19
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]; then
-    echo "${TEXT_GREEN}OK:${TEXT_NC}      Linux Kernel supports UNIX 98 PTY";
+    echo -e "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel supports UNIX 98 PTY";
 else
-    echo "${TEXT_RED}ERROR:${TEXT_NC}    Linux Kernel does NOT support UNIX 98 PTY";
+    echo -e "${TEXT_RED}ERROR:${TEXT_NC}    Linux Kernel does NOT support UNIX 98 PTY";
 fi
 
 press_pause
