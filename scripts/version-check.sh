@@ -29,9 +29,10 @@
 
 clear
 
-TEXT_GREEN='\033[0;32m' # Text Green
-TEXT_RED='\033[0;31m'   # Text Red
-TEXT_NC='\033[0;37m'    # Text No Color
+TEXT_GREEN='\033[0;32m'     # Text Green
+TEXT_YELLOW='\033[0;33m'    # Text Yellow
+TEXT_RED='\033[0;31m'       # Text Red
+TEXT_NC='\033[0;37m'        # Text No Color
 border='==================='
 
 press_pause() {
@@ -217,9 +218,9 @@ fi
 rm -f a.out
 
 if [ "$(nproc)" = "" ]; then
-    echo "ERROR:    nproc is not available or it produes empty output"
+    echo -e "${TEXT_RED}ERROR:${TEXT_NC}    nproc is not available or it produes empty output"
 else
-    echo "OK:       nproc reports $(nproc) logical cores are available"
+    echo -e "${TEXT_GREEN}OK:${TEXT_NC}       nproc reports ${TEXT_YELLOW}$(nproc)${TEXT_NC} logical cores are available"
 fi
 
 press_pause
