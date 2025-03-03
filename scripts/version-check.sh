@@ -29,9 +29,9 @@
 
 clear
 
-GREEN='\033[0;32m'  # Text Green
-RED='\033[0;31m'    # Text Red
-NC='\033[0m'        # Text No Color
+TEXT_GREEN='\033[0;32m' # Text Green
+TEXT_RED='\033[0;31m'   # Text Red
+TEXT_NC='\033[0;37m'    # Text No Color
 border='==================='
 
 press_pause() {
@@ -51,15 +51,15 @@ sort /dev/null || bail "sort does not work"
 
 ver_check() {
     if ! type -p $2 &>/dev/null; then
-        printf "${RED}ERROR:${NC}  Cannot find $2 ($1)";
+        printf "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
         return 1;
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' $3 $v | sort --version-sort --check &>/dev/null; then
-        printf "${GREEN}OK:${NC}     %-9s %-6s >= $3\n" "$1" "$v";
+        printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
-        printf "${RED}ERROR:${NC}  %-9s is TOO OLD ($3 or later required)\n" "$1";
+        printf "${TEXT_RED}ERROR:${TEXT_NC}  %-9s is TOO OLD ($3 or later required)\n" "$1";
         return 1;
     fi
 }
@@ -67,10 +67,10 @@ ver_check() {
 ver_kernel() {
     kver=$(uname -r | grep -E -o '^[0-9\.]+')
     if printf '%s\n' $1 $kver | sort --version-sort --check &>/dev/null; then
-        printf "${GREEN}OK:${NC}     Linux Kernel $kver >= $1\n";
+        printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
         return 0;
     else
-        printf "${RED}ERROR:${NC}  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
+        printf "${TEXT_RED}ERROR:${TEXT_NC}  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
     fi
 }
 
