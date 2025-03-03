@@ -14,15 +14,18 @@
 #   -o [file], --output=[file]      Set log file
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
-#
-#
-# If you have tools installed in other directories, adjust PATH her AND
-# in ~lfs/.bashrc (section 4.4) as well.
 
 clear
 
 border='==================='
 
+press_pause() {
+    read -p "Press any key to continue..." -n1 -s
+    echo
+}
+
+# If you have tools installed in other directories, adjust PATH her AND
+# in ~lfs/.bashrc (section 4.4) as well.
 LC_ALL=C
 PATH=/usr/bin:bin
 
@@ -61,26 +64,94 @@ echo $border
 echo '-- Version Check --'
 echo $border
 
+# == Coreutils ==
+# This package contains a number of essential programs for viewing and manipulating files and directories. These
+# programs are needed for command line file management, and are necessary for the installation procedures of every
+# package in LFS.
 ver_check Coreutils     sort        8.1 || bail "Coreutils too old, stop"
+
+# == Bash ==
+# This package satisfies an LSB core requirement to provide a Bourne Shell interface to the system. It was chosen
+# over other shell packages because of its common usage and extensive capabilities.
 ver_check Bash          bash        3.2
+
+# == Binutils ==
+# This package supplies a linker, an assembler, and other tools for handling object files. The programs in this
+# package are needed to compile most of the packages in an LFS system.
 ver_check Binutils      ld          2.13.1
+
+# == Bison ==
+# This package contains the GNU version of yacc (Yet Another Compiler Compiler) needed to build several of the LFS programs.
 ver_check Bison         bison       2.7
+
+# == Diffutils ==
+# This package contains programs that show the differences between files or directories. These programs can be used
+# to create patches, and are also used in many packages' build procedures.
 ver_check Diffutils     diff        2.8.1
+
+# == Findutils ==
+# This package provides programs to find files in a file system. It is used in many packages' build scripts.
 ver_check Findutils     find        4.2.31
+
+# == Gawk ==
+# This package supplies programs for manipulating text files. It is the GNU version of awk (Aho-WeinbergKernighan). It is used in many other packages' build scripts.
 ver_check Gawk          gawk        4.0.1
+
+# == GCC ==
+# This is the Gnu Compiler Collection. It contains the C and C++ compilers as well as several others not built by LFS.
 ver_check GCC           gcc         5.2
+
 ver_check "GCC (C++)"   g++         5.2
+
+# == Grep ==
+# This package contains programs for searching through files. These programs are used by most packages' build scripts.
 ver_check Grep          grep        2.5.1a
+
+# == Gzip ==
+# This package contains programs for compressing and decompressing files. It is needed to decompress many packages in LFS.
 ver_check Gzip          gzip        1.3.12
+
+# == M4 ==
+# This package provides a general text macro processor useful as a build tool for other programs.
 ver_check M4            m4          1.4.10
+
+# == Make ==
+# This package contains a program for directing the building of packages. It is required by almost every package in LFS.
 ver_check Make          make        4.0
+
+# == Patch ==
+# This package contains a program for modifying or creating files by applying a patch file typically created by the
+# diff program. It is needed by the build procedure for several LFS packages.
 ver_check Patch         patch       2.5.4
+
+# == Perl ==
+# This package is an interpreter for the runtime language PERL. It is needed for the installation and test suites of several LFS packages.
 ver_check Perl          perl        5.8.8
+
+# == Python 3 ==
+# This package provides an interpreted language that has a design philosophy emphasizing code readability.
 ver_check Python        python3     3.4
+
+# == Sed ==
+# This package allows editing of text without opening it in a text editor. It is also needed by many LFS packages' configure scripts.
 ver_check Sed           sed         4.1.5
+
+# == Tar ==
+# This package provides archiving and extraction capabilities of virtually all the packages used in LFS.
 ver_check Tar           tar         1.22
+
+# == Texinfo ==
+# This package supplies programs for reading, writing, and converting info pages. It is used in the installation
+# procedures of many LFS packages.
 ver_check Texinfo       texi2any    5.0
+
+# == XZ Utils ==
+# This package contains programs for compressing and decompressing files. It provides the highest compression
+# generally available and is useful for decompressing packages in XZ or LZMA format.
 ver_check Xz            xz          5.0.0
+
+# == Linux Kernel
+# This package is the Operating System. It is the Linux in the GNU/Linux environment.
 ver_kernel      4.19
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]; then

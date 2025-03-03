@@ -8,3 +8,4 @@
 #   - downloads\LFS-'version'-SYSV-BOOK.pdf
 #   - downloads\md5sums
 #   - downloads\wget-list
+#   - scripts\version-check.sh
