@@ -179,16 +179,15 @@ press_pause
 
 alias_check() {
     if $1 --version 2>$1 | grep -qi $2; then
-        printf "OK:     %-4s is $2\n" "$1";
+        printf "${TEXT_GREEN}OK:${TEXT_NC}     %-4s is $2\n" "$1";
     else
-        printf "ERROR:  %-4s is NOT $2\n" "$1";
+        printf "${TEXT_RED}ERROR:${TEXT_NC}  %-4s is NOT $2\n" "$1";
     fi
 }
 
 echo $border
 echo "-- Aliases --"
 echo $border
-
 
 alias_check awk GNU
 
@@ -209,9 +208,9 @@ echo "-- Compiler Check --"
 echo $border
 
 if printf "int main(){}" | g++ -x c++ -; then
-    echo "OK:       g++ works";
+    echo -e "${TEXT_GREEN}OK:${TEXT_NC}       g++ works";
 else
-    echo "ERROR:    g++ does NOT work";
+    echo "${TEXT_RED}ERROR:${TEXT_NC}    g++ does NOT work";
 fi
 
 rm -f a.out
