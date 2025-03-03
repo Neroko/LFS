@@ -210,7 +210,7 @@ echo $border
 if printf "int main(){}" | g++ -x c++ -; then
     echo -e "${TEXT_GREEN}OK:${TEXT_NC}       g++ works";
 else
-    echo "${TEXT_RED}ERROR:${TEXT_NC}    g++ does NOT work";
+    echo -e "${TEXT_RED}ERROR:${TEXT_NC}    g++ does NOT work";
 fi
 
 rm -f a.out
