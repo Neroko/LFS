@@ -207,7 +207,8 @@ echo $border
 echo "-- Compiler Check --"
 echo $border
 
-if printf "int main(){}" | g++ -x c++ -; then
+if printf "int main(){}" | g++ -x c++ -
+then
     echo -e "${TEXT_GREEN}OK:${TEXT_NC}       g++ works";
 else
     echo -e "${TEXT_RED}ERROR:${TEXT_NC}    g++ does NOT work";
