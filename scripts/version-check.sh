@@ -218,7 +218,7 @@ fi
 rm -f a.out
 
 if [ "$(nproc)" = "" ]; then
-    echo -e "${TEXT_RED}ERROR:${TEXT_NC}    nproc is not available or it produes empty output"
+    echo -e "${TEXT_RED}ERROR:${TEXT_NC}  nproc is not available or it produes empty output"
 else
     echo -e "${TEXT_GREEN}OK:${TEXT_NC}       nproc reports ${TEXT_YELLOW}$(nproc)${TEXT_NC} logical cores are available"
 fi
