@@ -1,6 +1,5 @@
 # LFS - Linux from Scratch - Autobuilder
 
-Version (Builder): 1.12.0.1 <br />
 Version (LFS): 12.2 <br />
 
 LFS Autobuilder Downloader Script: https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/download-lfs-scripts.sh <br />
