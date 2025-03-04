@@ -1,9 +1,9 @@
-## LFS - Linux from Scratch
-#
-# Version: 12.2
-#
-# Website: https://www.linuxfromscratch.org/lfs/downloads/stable/
-#
+LFS - Linux from Scratch
+
+Version: 12.2
+
+Website: https://www.linuxfromscratch.org/lfs/downloads/stable/
+
 # Files:
 #   - downloads\LFS-BOOK.pdf            LFS Book
 #   - downloads\md5sums                 
