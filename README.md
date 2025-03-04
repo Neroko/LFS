@@ -5,8 +5,9 @@
 
 Website: https://www.linuxfromscratch.org/lfs/downloads/stable/
 
-Files:
-- downloads\LFS-BOOK.pdf            LFS Book
+| Files | Desp |
+| -----:|------|
+| downloads\LFS-BOOK.pdf| LFS Book|
 - downloads\md5sums                 
 - downloads\version                 Current Working Version
 - downloads\wget-list               
