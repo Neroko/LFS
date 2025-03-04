@@ -1,6 +1,6 @@
-LFS - Linux from Scratch
+# LFS - Linux from Scratch - Autobuilder
 
-Version: 12.2
+**Version: 12.2**
 
 Website: https://www.linuxfromscratch.org/lfs/downloads/stable/
 
