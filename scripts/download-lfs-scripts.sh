@@ -5,7 +5,7 @@
 #   12.2
 #
 # VERSION (SCRIPT):
-#   1.0.0.1
+#   1.12.0.1
 #
 # DATE LAST EDITED:
 #   03/03/2025
