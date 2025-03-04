@@ -5,7 +5,7 @@
 #   12.2
 #
 # VERSION (SCRIPT):
-#   1.12.0.1
+#   1.0.0.1
 #
 # DATE LAST EDITED:
 #   03/04/2025
@@ -17,7 +17,7 @@
 #   TerryJohn Anscombe
 #
 # DESCRIPTION
-#   Script to list version numbers of critical development tools
+#   Script to download needed scripts and files to build LFS builder
 #
 # USAGE:
 #   sources-setup.sh [options] ARG1
