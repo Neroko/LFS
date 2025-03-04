@@ -92,41 +92,56 @@ chown root:root ""$sources_directory"/*"
 # Create the required directory layout by issuing the following commands as root:
 mkdir -pv "$LFS"/{eetc,var} "$LFS"/usr/{bin,lib,sbin}
 
+for i in bin lib sib; do
+    ln -sv usr/$1 $LFS/$i
+done
 
+case $(uname -m) in
+    x86_64) mkdir -pv "$LFS"/lib64 ;;
+esac
 
+# Programs in Chapter 6 will compiled with a cross-compiler (more details can be found in
+# section Toolchain Technical Notes). This cross-compiler will be installed in a special
+# directory, to separate it from the other programs. Still acting as root, crate that
+# directory with the command:
+mkdir -pv $LFS/tools
 
+# == 4.3. Adding the LFS User ==
+# When logged in as user root, making a single mistake can damage or destroy a system.
+# Therefore. the packages in the next two chapters are built as an unprivileged user. You
+# could use your own user name, but to make it easier to set up a clean working
+# environment, we will create a new user called lfs as a member of a new group (also named
+# lfs) and run commands as lfs during the installation process. As root, issue the following
+# commands to add the new user:
+groupadd lfs
+useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 
+# This is what the command line options mean:
+# -s /bin/bash
+#   This makes bash the default shell for user lfs.
+# -g lfs
+#   This option adds user lfs to group lfs.
+# -m
+#   This creates a home directory for lfs.
+# -k /dev/null
+#   This parameter prevents possible copying of files from a skeleton directory (the default
+#   is /etc/skel) by changing the input location to the special null device.
+# lfs
+#   This is the name of the new user.
 
+# If you want vto log in as lfs or switch to lfs from a non-root user (as opposed to
+# switching to user lfs when logged in as root, which does not require the lfs user to have
+# a password), you need to set a password for lfs. Issue the following command as the root
+# user to set the password:
+passwd lfs
 
+# Grant lfs full access to all directories under $LFS by making lfs the owner:
+chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+case $(uname -m) in
+    x86_64) chown -v lfs $LFS/lib64 ;;
+esac
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# == Note ==
+# In some host systems, the following su command does not complete properly and suspends the
+# login for the lfs user to the background. If the prompt "lfs:~$" does not appear
+# imediately, entering the fg command will fix the issue.
