@@ -3,7 +3,7 @@
 Version (Builder): 1.12.0.1 <br />
 Version (LFS): 12.2 <br />
 
-LFS Autobuilder Downloader: https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/download-lfs-scripts.sh <br />
+LFS Autobuilder Downloader Script: https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/download-lfs-scripts.sh <br />
 LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 
 | Files | Desp |
