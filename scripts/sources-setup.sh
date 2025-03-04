@@ -83,6 +83,41 @@ chown root:root ""$sources_directory"/*"
 
 # == Chapter 4. Final Preparations ==
 # == 4.2. Creating a Limited Directory Layout in the LFS Filesystem
+# In this section, we begin populating the LFS filesystem with the pieces that will
+# constitute the final Linux system. The first step is to create a limited directory
+# hierarchy, so that the programs compiled in Chapter 6 (as well as glibc and libstdc++
+# in Chapter 5) can be installed in their final location. We do this so those temporary
+# programs will be overwritten when the final versions are built in Chapter 8.
+
+# Create the required directory layout by issuing the following commands as root:
+mkdir -pv "$LFS"/{eetc,var} "$LFS"/usr/{bin,lib,sbin}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
