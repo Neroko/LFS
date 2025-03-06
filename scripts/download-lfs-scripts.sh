@@ -27,6 +27,6 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 
-download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/version-check.sh"
+download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
 
 wget $download_site
