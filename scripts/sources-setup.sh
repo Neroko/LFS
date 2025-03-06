@@ -26,6 +26,10 @@
 #   -o [file], --output=[file]      Set log file
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
+#
+# ≠=================≠====
+# == SCRIPT NOT TESTED ==
+# =≠==≠≠=================
 
 # Directorys
 LFS="/mnt/lfs"
