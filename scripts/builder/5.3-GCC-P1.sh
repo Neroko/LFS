@@ -36,6 +36,14 @@
 #   source directory and rename the resulting directories so the GCC build procedures will
 #   automatically use them:
 
+
+# -------------------------------------------
+# -------------------------------------------
+# Add unzipping of package to directory
+# -------------------------------------------
+# -------------------------------------------
+
+
 # -- Note --
 #   There are frequent misunderstandings about this chapter. The procedures are the same as
 #   every other chapter, as explained earlier (Package build instructions). First, extract
@@ -48,14 +56,6 @@ tar -xf ../gmp-6.3.0.tar.xz
 mv -v gmp-6.3.0 gmp
 tar -xf ../mpc-1.3.1.tar.gz
 mv -v mpc-1.3.1 mpc
-
-
-# -------------------------------------------
-# -------------------------------------------
-# Add unzipping of package to directory
-# -------------------------------------------
-# -------------------------------------------
-
 
 # On x86_64 hosts, set the default directory name for 64-bit libraries to "lib":
 case $(uname -m) in
