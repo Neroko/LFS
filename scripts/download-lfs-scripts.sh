@@ -8,7 +8,7 @@
 #   1.0.0.1
 #
 # DATE LAST EDITED:
-#   03/03/2025
+#   03/07/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -31,7 +31,13 @@
 # == SCRIPT NOT TESTED ==
 # =======================
 
-
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
+download_directory=""
 
-wget $download_site
+# Check for directory and see if it exist:
+
+
+# Download files to directory
+wget \
+    --directory-prefix=$download_directory \
+    $download_site
