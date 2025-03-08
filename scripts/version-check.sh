@@ -50,6 +50,10 @@ grep --version > /dev/null 2> /dev/null || bail "grep does not work"
 sed '' /dev/null || bail "sed does not work"
 sort /dev/null || bail "sort does not work"
 
+os_check() {
+    cat /etc/*-release
+}
+
 ver_check() {
     if ! type -p $2 &>/dev/null; then
         echo -e "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
