@@ -29,6 +29,10 @@
 #   object files.
 #       Approximate build time:     1 SBU
 #       Required disk space:        677 MB
+#
+# =======================
+# == SCRIPT NOT TESTED ==
+# =======================
 
 # 5.2.1. Installation of Cross Binutils
 

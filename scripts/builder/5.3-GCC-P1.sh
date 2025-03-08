@@ -29,6 +29,10 @@
 #   compilers.
 #       Approximate build time:     3.2 SBU
 #       Required disk space:        4.9 GB
+#
+# =======================
+# == SCRIPT NOT TESTED ==
+# =======================
 
 # 5.3.1. Installation of Cross GCC
 #   GCC requires the GMP, MPFR and MPC packages. As these packages may not be includded in

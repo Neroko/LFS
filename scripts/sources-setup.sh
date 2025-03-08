@@ -16,9 +16,6 @@
 # AUTHOR:
 #   TerryJohn Anscombe
 #
-# DESCRIPTION
-#   Script to download needed scripts and files to build LFS builder
-#
 # USAGE:
 #   sources-setup.sh [options] ARG1
 #
@@ -27,9 +24,12 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 #
-# ≠=================≠====
+# DESCRIPTION
+#   Script to download needed scripts and files to build LFS builder
+#
+# =======================
 # == SCRIPT NOT TESTED ==
-# =≠==≠≠=================
+# =======================
 
 # Directorys
 LFS="/mnt/lfs"

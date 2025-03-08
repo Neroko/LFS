@@ -16,9 +16,6 @@
 # AUTHOR:
 #   TerryJohn Anscombe
 #
-# DESCRIPTION
-#   Script to download LFS scripts and files needed files from GitHub
-#
 # USAGE:
 #   download-lfs-scripts.sh [options] ARG1
 #
@@ -26,6 +23,14 @@
 #   -o [file], --output=[file]      Set log file
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
+#
+# DESCRIPTION
+#   Script to download LFS scripts and files needed files from GitHub
+#
+# =======================
+# == SCRIPT NOT TESTED ==
+# =======================
+
 
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
 

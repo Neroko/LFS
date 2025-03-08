@@ -18,3 +18,8 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | scripts\sources-setup.sh| Setup LFS Sources|
 | scripts\test-menu.sh| Test GUI Menu|
 | scripts\version-check.sh| System Builder Version Check|
+
+| Files | Desp |
+| -----:|------|
+| scripts\builder\5.2-Binutils-P1.sh| Section 5.2 - Binutils Builder - Pass 1|
+| scripts\builder\5.3-GCC-P1.sh| Section 5.3 - GCC Builder - Pass 1|
