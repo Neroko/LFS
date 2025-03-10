@@ -226,6 +226,6 @@ fi
 press_pause
 
 # Clean up
-rm awk
-rm sh
-rm yacc
+rm -f awk
+rm -f sh
+rm -f yacc
