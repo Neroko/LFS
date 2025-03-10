@@ -224,3 +224,8 @@ else
 fi
 
 press_pause
+
+# Clean up
+rm awk
+rm sh
+rm yacc
