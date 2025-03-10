@@ -8,7 +8,7 @@
 #   1.0.0.1
 #
 # DATE LAST EDITED:
-#   03/07/2025
+#   03/10/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -32,12 +32,18 @@
 # =======================
 
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
-download_directory=""
+download_directory="lfs_test"
 
 # Check for directory and see if it exist:
+if [ ! -d $download_directory ]; then
+    mkdir -p $download_directory;
+fi
 
+# Check for file in directory
+if [ -f $download_site ]
 
 # Download files to directory
-wget \
-    --directory-prefix=$download_directory \
+wget                                        \
+    --timestamping                          \
+    --directory-prefix=$download_directory  \
     $download_site
