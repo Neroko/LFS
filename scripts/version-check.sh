@@ -1,8 +1,8 @@
 #!/bin/bash
-# Linux From Scratch (LFS) Version Checks
+display_title="== Linux From Scratch (LFS) Versions Checks =="
 #
 # VERSION (LFS):
-#   12.3
+current_version="12.3"
 #
 # VERSION (SCRIPT):
 #   1.0.0.1
@@ -27,6 +27,85 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 
+verbose_mode=false
+output_file=""
+
+clear
+
+display_help() {
+    # Display Help
+    echo "$display_title"
+    echo
+    echo "Syntax: $0 [OPTIONS]"
+    echo "Options:"
+    echo "  -h, --help                          This Help Info"
+    echo "  -v, --verbose                       Enable Verbose Mode"
+    echo "  -V, --version                       Script Version"
+    echo "  -l [filename], --log=[filename]     Log to File"
+}
+
+has_argument() {
+    [[ ("$1" == *=* && -n ${1#*=}) || ( ! -z "$2" && "$2" != -*) ]];
+}
+
+extract_argument() {
+    echo "$2:-${1#*=}}"
+}
+
+display_version() {
+    # Display Version
+    echo "$display_title"
+    echo "Version: "$current_version""
+}
+
+# Fuction to handle options and arguments
+handle_options() {
+    while [ $# -gt 0 ]; do
+        case $1 in
+            -h | --help)
+                display_help
+                exit 0
+                ;;
+            -v | --verbose)
+                verbose_mode=true
+                ;;
+            -f | --file*)
+                if ! has_argument $@; then
+                    echo "File not specified." >&2
+                    display_help
+                    exit 1
+                fi
+
+                output_file=$(extract_argument $@)
+
+                shift
+                ;;
+            -V | --version)
+                display_version
+                exit 0
+                ;;
+            *)
+                echo "Invalid options: $1" >&2
+                display_help
+                exit 1
+                ;;
+        esac
+        shift
+    done
+}
+
+# Main script execution
+handle_options "$@"
+
+# Perform the desired actions based on the provided flags and arguments
+if [ "$verbose_mode" = true ]; then
+    echo "Verbose mode enabled."
+fi
+
+if [ -n "$output_file" ]; then
+    echo "Outout file specified: $output_file"
+fi
+
 # Remove old log file
 rm -f log.out
 
@@ -43,8 +122,6 @@ rm -f log.out
 #exec 1>log.out 2>&1
 
 # Everything below will go the file 'log.out':
-
-clear
 
 TEXT_GREEN='\033[0;32m'     # Text Green
 TEXT_YELLOW='\033[0;33m'    # Text Yellow
@@ -78,7 +155,7 @@ ver_check() {
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' "$3" "$v" | sort --version-sort --check &>/dev/null; then
- #       printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
+        printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-os9s is TOO OLD ($3 or later required)\n" "$1";
@@ -89,7 +166,7 @@ ver_check() {
 ver_kernel() {
     kver=$(uname -r | grep -E -o '^[0-9\.]+')
     if printf '%s\n' "$1" "$kver" | sort --version-sort --check &>/dev/null; then
-#        printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
+        printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
