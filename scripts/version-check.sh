@@ -2,13 +2,13 @@
 # Linux From Scratch (LFS) Version Checks
 #
 # VERSION (LFS):
-#   12.2
+#   12.3
 #
 # VERSION (SCRIPT):
 #   1.0.0.1
 #
 # DATE LAST EDITED:
-#   03/03/2025
+#   03/10/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -26,6 +26,27 @@
 #   -o [file], --output=[file]      Set log file
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
+
+#usage=$(basename "$0") [-h]
+
+#while getopts ':hs:' option; do
+#    case "$option" in
+#        h) echo "$usage"
+#            exit
+#            ;;
+#        \?) printf "Illegal Option: -%s\n" "$OPTARG" >&2
+#            echo "$usage" >&2
+#            exit 1
+#            ;;
+#    esac
+#done
+#shift $((OPTIND - 1))
+
+#Srm -f log.out
+#exec 3>&1 4>&2
+#trap 'exec 2>&4 1>&3' 0 1 2 3
+#exec 1>log.out 2>&1
+# Everything below will go the file 'log.out':
 
 clear
 
@@ -64,7 +85,7 @@ ver_check() {
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
-        printf "${TEXT_RED}ERROR:${TEXT_NC}  %-9s is TOO OLD ($3 or later required)\n" "$1";
+        printf "${TEXT_RED}ERROR:${TEXT_NC}  %-os9s is TOO OLD ($3 or later required)\n" "$1";
         return 1;
     fi
 }
@@ -172,7 +193,7 @@ ver_check Xz            xz          5.0.0
 
 # == Linux Kernel
 # This package is the Operating System. It is the Linux in the GNU/Linux environment.
-ver_kernel      4.19
+ver_kernel      5.4
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]; then
     echo -e "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel supports UNIX 98 PTY";
