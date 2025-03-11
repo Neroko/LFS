@@ -27,7 +27,7 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 
-#usage=$(basename "$0") [-h]
+#usage=$(basename "$0") [-h] [-s n]
 
 #while getopts ':hs:' option; do
 #    case "$option" in
