@@ -27,10 +27,10 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 
-#Srm -f log.out
-#exec 3>&1 4>&2
-#trap 'exec 2>&4 1>&3' 0 1 2 3
-#exec 1>log.out 2>&1
+rm -f log.out
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>log.out 2>&1
 # Everything below will go the file 'log.out':
 
 clear
@@ -42,7 +42,7 @@ TEXT_NC='\033[0;37m'        # Text No Color
 border='==================='
 
 press_pause() {
-    read -p -r "Press any key to continue..." -n1 -s
+    read -p "Press any key to continue..." -n1 -s
     echo
 }
 
