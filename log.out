@@ -1,0 +1,39 @@
+[H[2J[3J===================
+-- Version Check --
+===================
+[0;32mOK:[0;37m     Coreutils 8.30   >= 8.1
+[0;32mOK:[0;37m     Bash      5.0.17 >= 3.2
+[0;32mOK:[0;37m     Binutils  2.34   >= 2.13.1
+[0;32mOK:[0;37m     Bison     3.5.1  >= 2.7
+[0;32mOK:[0;37m     Diffutils 3.7    >= 2.8.1
+[0;32mOK:[0;37m     Findutils 4.7.0  >= 4.2.31
+[0;32mOK:[0;37m     Gawk      5.0.1  >= 4.0.1
+[0;32mOK:[0;37m     GCC       9.4.0  >= 5.2
+[0;32mOK:[0;37m     GCC (C++) 9.4.0  >= 5.2
+[0;32mOK:[0;37m     Grep      3.4    >= 2.5.1a
+[0;32mOK:[0;37m     Gzip      1.10   >= 1.3.12
+[0;32mOK:[0;37m     M4        1.4.18 >= 1.4.10
+[0;32mOK:[0;37m     Make      4.2.1  >= 4.0
+[0;32mOK:[0;37m     Patch     2.7.6  >= 2.5.4
+[0;32mOK:[0;37m     Perl      5.30.0 >= 5.8.8
+[0;32mOK:[0;37m     Python    3.8.10 >= 3.4
+[0;32mOK:[0;37m     Sed       4.7    >= 4.1.5
+[0;32mOK:[0;37m     Tar       1.30   >= 1.22
+[0;31mERROR:[0;37m  Cannot find texi2any (Texinfo)
+[0;32mOK:[0;37m     Xz        5.2.4  >= 5.0.0
+[0;32mOK:[0;37m     Linux Kernel 6.5.0 >= 5.4
+[0;32mOK:[0;37m     Linux Kernel supports UNIX 98 PTY
+Press any key to continue...
+===================
+-- Aliases --
+===================
+[0;32mOK:[0;37m     awk  is GNU
+[0;32mOK:[0;37m     yacc is Bison
+[0;31mERROR:[0;37m  sh   is NOT Bash
+Press any key to continue...
+===================
+-- Compiler Check --
+===================
+[0;32mOK:[0;37m       g++ works
+[0;32mOK:[0;37m       nproc reports [0;33m4[0;37m logical cores are available
+Press any key to continue...
