@@ -32,15 +32,15 @@ rm -f log.out
 
 # Saves file descriptors so they can be restored to whatever they were before redirection or used themselves to
 # output to whatever they were before the following redirect:
-exec 3>&1 4>&2
+#exec 3>&1 4>&2
 
 # Restore file discriptors for particular singals. Not generally necessary since they should be restored when
 # the sub-shell exits.
-trap 'exec 2>&4 1>&3' 0 1 2 3
+#trap 'exec 2>&4 1>&3' 0 1 2 3
 
 # Redirect 'stdout' to file 'log.out' then redirect 'stderr' to 'stdout'. Note that the order is important when
 # you want them going to the same file. 'stdout' must be redirected before 'stderr' is redirected to 'stdout'.
-exec 1>log.out 2>&1
+#exec 1>log.out 2>&1
 
 # Everything below will go the file 'log.out':
 
@@ -78,7 +78,7 @@ ver_check() {
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' "$3" "$v" | sort --version-sort --check &>/dev/null; then
-        printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
+ #       printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-os9s is TOO OLD ($3 or later required)\n" "$1";
@@ -89,7 +89,7 @@ ver_check() {
 ver_kernel() {
     kver=$(uname -r | grep -E -o '^[0-9\.]+')
     if printf '%s\n' "$1" "$kver" | sort --version-sort --check &>/dev/null; then
-        printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
+#        printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
