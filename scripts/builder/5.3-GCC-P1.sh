@@ -75,10 +75,10 @@ cd build
 
 # Prepare GCC for compilation:
 ../configure                    \
-    --target=$LFS_TGT           \
-    --prefix=$LFS/tools         \
+    --target="$LFS_TG"          \
+    --prefix="$LFS/tools"       \
     --with-glibc-version=2.40   \
-    --with-sysroot=$LFS         \
+    --with-sysroot="$LFS"       \
     --with-newlib               \
     --without-headers           \
     --enable-default-pie        \

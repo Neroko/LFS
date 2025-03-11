@@ -36,7 +36,7 @@ TEXT_NC='\033[0;37m'        # Text No Color
 border='==================='
 
 press_pause() {
-    read -p "Press any key to continue..." -n1 -s
+    read -p -r "Press any key to continue..." -n1 -s
     echo
 }
 
@@ -50,13 +50,17 @@ grep --version > /dev/null 2> /dev/null || bail "grep does not work"
 sed '' /dev/null || bail "sed does not work"
 sort /dev/null || bail "sort does not work"
 
+os_check() {
+    cat /etc/*-release
+}
+
 ver_check() {
-    if ! type -p $2 &>/dev/null; then
+    if ! type -p "$2" &>/dev/null; then
         echo -e "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
         return 1;
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
-    if printf '%s\n' $3 $v | sort --version-sort --check &>/dev/null; then
+    if printf '%s\n' "$3" "$v" | sort --version-sort --check &>/dev/null; then
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
         return 0;
     else
@@ -67,7 +71,7 @@ ver_check() {
 
 ver_kernel() {
     kver=$(uname -r | grep -E -o '^[0-9\.]+')
-    if printf '%s\n' $1 $kver | sort --version-sort --check &>/dev/null; then
+    if printf '%s\n' "$1" "$kver" | sort --version-sort --check &>/dev/null; then
         printf "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel $kver >= $1\n";
         return 0;
     else
@@ -179,7 +183,7 @@ fi
 press_pause
 
 alias_check() {
-    if $1 --version 2>$1 | grep -qi $2; then
+    if $1 --version 2>$1 | grep -qi "$2"; then
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-4s is $2\n" "$1";
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-4s is NOT $2\n" "$1";
