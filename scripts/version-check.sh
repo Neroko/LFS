@@ -5,10 +5,10 @@ display_title="== Linux From Scratch (LFS) Versions Checks =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-#   1.0.0.1
+script_version="1.0.0.1"
 #
 # DATE LAST EDITED:
-#   03/10/2025
+#   03/11/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -23,9 +23,22 @@ current_version="12.3"
 #   version-check.sh [options] ARG1
 #
 # OPTIONS:
-#   -l [file], --log=[file]      Set log file
-#   -h, --help                      Display this help
-#   -v, --version                   Display versions
+#   -h, --help                  Display this help
+#   -v, --verbose               Enable Verbose Mode    
+#   -V, --version               Display versions
+#   -l [file], --log=[file]     Set log file
+
+# === Chapter 2. Preparing the Host System ===
+# == 2.1. Introduction
+#   In this chapter, the host tolls needed for building LFS are checked and, if necessary, installed. Then a
+#   partition which will host the LFS system is prepared. We will create the partition itself, create a file
+#   system on it, and mount it.
+
+# == 2.2. Host System Requirements
+# = 2.2.1. Hardware
+#   The LFS editors recommend that the system CPU have at least four cores and that the system have at least
+#   8 GB of memory. Older systems that do not meet these requirements will still work, but the time to build
+#   packages will be significantly longer than documented.
 
 verbose_mode=false
 output_file=""
@@ -55,7 +68,8 @@ extract_argument() {
 display_version() {
     # Display Version
     echo "$display_title"
-    echo "Version: "$current_version""
+    echo "Version (LFS): "$current_version""
+    echo "Version (Script): "$script_version""
 }
 
 # Fuction to handle options and arguments
@@ -173,6 +187,14 @@ ver_kernel() {
     fi
 }
 
+# = 2.2.2. Software
+#   Your host system should have the following software with the minimum versions indicated. This should not be
+#   an issue for most modern Linux distributions. Also note that many distributions will place software headers
+#   into separate packages, often in the form of <package-name>-devel or <package-name>-dev. Be sure to install
+#   those if your distribution provides them.
+
+#   Earlier versions of the listed software packages may work, but have not been tested.
+
 echo $border
 echo '-- Version Check --'
 echo $border
@@ -188,6 +210,7 @@ ver_check Coreutils     sort        8.1 || bail "Coreutils too old, stop"
 # == Bash ==
 # This package satisfies an LSB core requirement to provide a Bourne Shell interface to the system. It was chosen
 # over other shell packages because of its common usage and extensive capabilities.
+#   (/bin/sh should be a symbolic or hard link to bash)
 ver_check Bash          bash        3.2
 
 # == Binutils ==
@@ -197,6 +220,7 @@ ver_check Binutils      ld          2.13.1
 
 # == Bison ==
 # This package contains the GNU version of yacc (Yet Another Compiler Compiler) needed to build several of the LFS programs.
+#   (/usr/bin/yacc should be a link to bison or a small script that executes bison)
 ver_check Bison         bison       2.7
 
 # == Diffutils ==
@@ -210,10 +234,14 @@ ver_check Findutils     find        4.2.31
 
 # == Gawk ==
 # This package supplies programs for manipulating text files. It is the GNU version of awk (Aho-WeinbergKernighan). It is used in many other packages' build scripts.
+#   (/usr/bin/awk should be a link to gawk)
 ver_check Gawk          gawk        4.0.1
 
 # == GCC ==
 # This is the Gnu Compiler Collection. It contains the C and C++ compilers as well as several others not built by LFS.
+# GCC-5.2 inlcuding the C++ compiler, g++ (Version greater than 14.2.0 are not recommended as they have not been
+# tested). C and C++ standard libraries (with headers) must also be present so the C++ compiler can build hosted
+# programs.
 ver_check GCC           gcc         5.2
 ver_check "GCC (C++)"   g++         5.2
 
@@ -264,8 +292,31 @@ ver_check Texinfo       texi2any    5.0
 # generally available and is useful for decompressing packages in XZ or LZMA format.
 ver_check Xz            xz          5.0.0
 
+
+# == Important ==
+#   Note that the symlinks mentioned above are required to build an LFS system using the instructions contained
+#   within this script. Symlinks that point to other software (such as dash, mawk, etc) maky work, but are not
+#   tested or supported by the LFS development team. and may require either deviation from the instructions or
+#   additional patches to some packages.
+
 # == Linux Kernel
 # This package is the Operating System. It is the Linux in the GNU/Linux environment.
+# The reason for the kernel version requirement is that we specify that version when building glibc in Chapter 5
+# and Chapter 8, so the workarounds for older kernels are not enabled and the compiled glibc is slightly faster
+# and smaller. As at Dec 2024, 5.4 is the oldest kernel release still supported by the kernel developers. Some
+# kernel releases older than 5.4 may be still supported by third-party teams, but they are not considered
+# official upstream kernel releases; read https://kernel.org/category/releases.html for the details.
+
+# If the host kernel is earlier than 5.4 you will need to replace the kernel with a more up-to-date version.
+# There are two ways you can go about this. First, see if your Linux vendor provides a 5.4 or later kernel
+#package. If so, you may wish to install it. If your vendor doesn't offer an acceptable kernel package, or you
+# would prefer not to install it, you can compile a kernel yourself. Instructions for compiling the kernel and
+# configuring the boot loader (assuming the host uses GRUB) are located in Chapter 10.
+
+# We require the host kernel to support UNIX 98 pseudo terminal (PTY). It should be enabled on all desktop or
+# server distros shipping Linux 5.4 or a newer kernel. If you are building a custom host kernel, ensure
+# CONFIG_UNIX98_PTYS is set to y in the kernel configuration.
+
 ver_kernel      5.4
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]; then
