@@ -27,21 +27,6 @@
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 
-#usage=$(basename "$0") [-h] [-s n]
-
-#while getopts ':hs:' option; do
-#    case "$option" in
-#        h) echo "$usage"
-#            exit
-#            ;;
-#        \?) printf "Illegal Option: -%s\n" "$OPTARG" >&2
-#            echo "$usage" >&2
-#            exit 1
-#            ;;
-#    esac
-#done
-#shift $((OPTIND - 1))
-
 #Srm -f log.out
 #exec 3>&1 4>&2
 #trap 'exec 2>&4 1>&3' 0 1 2 3
