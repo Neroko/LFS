@@ -26,6 +26,7 @@ script_version="1.0.0.1"
 #   -h, --help                  Display this help
 #   -v, --verbose               Enable Verbose Mode    
 #   -V, --version               Display versions
+#   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
 
 # === Chapter 2. Preparing the Host System ===
@@ -40,8 +41,9 @@ script_version="1.0.0.1"
 #   8 GB of memory. Older systems that do not meet these requirements will still work, but the time to build
 #   packages will be significantly longer than documented.
 
+log_to_file=false
 verbose_mode=false
-output_file=""
+output_file="lfs.log"
 
 clear
 
@@ -54,7 +56,8 @@ display_help() {
     echo "  -h, --help                          This Help Info"
     echo "  -v, --verbose                       Enable Verbose Mode"
     echo "  -V, --version                       Script Version"
-    echo "  -l [filename], --log=[filename]     Log to File"
+    echo "  -l, --log                           Log to File"
+#    echo "  -l [filename], --log=[filename]     Log to File"
 }
 
 has_argument() {
@@ -80,29 +83,32 @@ handle_options() {
                 display_help
                 exit 0
                 ;;
-            -v | --verbose)
-                verbose_mode=true
-                ;;
-            -f | --file*)
-                if ! has_argument $@; then
-                    echo "File not specified." >&2
-                    display_help
-                    exit 1
-                fi
-
-                output_file=$(extract_argument $@)
-
-                shift
+            -l | --log)
+                log_to_file=true
                 ;;
             -V | --version)
                 display_version
                 exit 0
+                ;;
+            -v | --verbose)
+                verbose_mode=true
                 ;;
             *)
                 echo "Invalid options: $1" >&2
                 display_help
                 exit 1
                 ;;
+#            -f | --file*)
+#                if ! has_argument $@; then
+#                    echo "File not specified." >&2
+#                    display_help
+#                    exit 1
+#                fi
+#
+#                output_file=$(extract_argument $@)
+#
+#                shift
+#                ;;
         esac
         shift
     done
@@ -116,9 +122,9 @@ if [ "$verbose_mode" = true ]; then
     echo "Verbose mode enabled."
 fi
 
-if [ -n "$output_file" ]; then
-    echo "Outout file specified: $output_file"
-fi
+#if [ -n "$output_file" ]; then
+#    echo "Outout file specified: $output_file"
+#fi
 
 # Remove old log file
 rm -f log.out
