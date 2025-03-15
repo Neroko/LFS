@@ -35,15 +35,15 @@ download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wg
 download_directory="lfs_test"
 
 # Check for directory and see if it exist:
-if [ ! -d $download_directory ]; then
-    mkdir -p $download_directory;
+if [ ! -d "$download_directory" ]; then
+    mkdir -p "$download_directory";
 fi
 
 # Check for file in directory
-#if [ -f $download_site ]
+#if [ -f "$download_site" ]
 
 # Download files to directory
 wget                                        \
     --timestamping                          \
-    --directory-prefix=$download_directory  \
-    $download_site
+    --directory-prefix="$download_directory"\
+    "$download_site"
