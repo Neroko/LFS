@@ -8,7 +8,7 @@
 #   1.0.0.1
 #
 # DATE LAST EDITED:
-#   03/10/2025
+#   03/14/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -40,7 +40,7 @@ if [ ! -d $download_directory ]; then
 fi
 
 # Check for file in directory
-if [ -f $download_site ]
+#if [ -f $download_site ]
 
 # Download files to directory
 wget                                        \
