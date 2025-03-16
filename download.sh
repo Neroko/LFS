@@ -10,11 +10,11 @@ output_file="lfs-downloader.sh"
 wget_tries="3"
 
 install_package() {
-    apt-get update                  # ROOT NEEDED
+    apt-get update      # ROOT NEEDED
     apt-get         \
         install     \
             --yes   \
-            "$1"      # ROOT NEEDED
+            "$1"        # ROOT NEEDED
 }
 
 # Download Debian ISO File
