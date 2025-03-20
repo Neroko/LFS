@@ -7,8 +7,8 @@
 # =================================================
 
 # =======================================================
-# == Debian-Installer: Building the installer yourself ==
-#       https://wiki.debian.org/DebianInstaller/Build
+# == DebianInstaller: Build =============================
+#   https://wiki.debian.org/DebianInstaller/Build
 # =======================================================
 
 # This script explains how to manually build specific images. Alternative approaches are available:
