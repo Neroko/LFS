@@ -21,9 +21,14 @@
 #           mr              =   https://packages.debian.org/sid/myrepos
 
 # With root privileges:
-apt install myrepos git curl wget
+apt install \
+    myrepos \
+    git     \
+    curl    \
+    wget
 # Optional:
-apt install fakeroot
+apt install \
+    fakeroot
 
 # == Anonymous checkout (over HTTPS)
 # The 'Anonymous' here means that no named account is required. It is for those who are curious about the source
