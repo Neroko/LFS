@@ -32,4 +32,3 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | scripts\lfsdownloader\sources-setup.sh| Setup LFS Sources|
 | scripts\lfsdownloader\test-menu.sh| Test GUI Menu|
 | scripts\lfsdownloader\version-check.sh| System Builder Version Check|
-
