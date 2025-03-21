@@ -12,22 +12,23 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | downloads\md5sums| LFS MD5SUMS File|
 | downloads\wget-list| LFS WGET-LIST File|
 
-### DebianInstaller
+### DebianInstaller Files
 | Files | Desp |
 | -----:|------|
-| scripts\debianinstaller\debianinstaller-build.sh| Setup Debian Builder|
-| scripts\debianinstaller\debianinstaller-checkout.sh|  Needed for setup of Debian Builder
+| scripts\debianinstaller\01-debianinstaller-build.sh| Setup Debian Builder|
+| scripts\debianinstaller\02-debianinstaller-checkout.sh| Needed for setup of Debian Builder|
 
-### Script Folder
-| Files | Desp |
-| -----:|------|
-| scripts\download-lfs-scripts.sh| Download from Github needed files|
-| scripts\sources-setup.sh| Setup LFS Sources|
-| scripts\test-menu.sh| Test GUI Menu|
-| scripts\version-check.sh| System Builder Version Check|
-
-### Builder Folder
+### Builder Scripts Files
 | Files | Desp |
 | -----:|------|
 | scripts\lfsbuilder\5.2-Binutils-P1.sh| Section 5.2 - Binutils Builder - Pass 1|
 | scripts\lfsbuilder\5.3-GCC-P1.sh| Section 5.3 - GCC Builder - Pass 1|
+
+### Script Folder
+| Files | Desp |
+| -----:|------|
+| scripts\lfsdownloader\download-lfs-scripts.sh| Download from Github needed files|
+| scripts\lfsdownloader\sources-setup.sh| Setup LFS Sources|
+| scripts\lfsdownloader\test-menu.sh| Test GUI Menu|
+| scripts\lfsdownloader\version-check.sh| System Builder Version Check|
+
