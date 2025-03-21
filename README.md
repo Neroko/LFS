@@ -18,13 +18,13 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | scripts\debianinstaller\01-debianinstaller-build.sh| Setup Debian Builder|
 | scripts\debianinstaller\02-debianinstaller-checkout.sh| Needed for setup of Debian Builder|
 
-### Builder Scripts Files
+### LFS Builder Scripts Files
 | Files | Desp |
 | -----:|------|
 | scripts\lfsbuilder\5.2-Binutils-P1.sh| Section 5.2 - Binutils Builder - Pass 1|
 | scripts\lfsbuilder\5.3-GCC-P1.sh| Section 5.3 - GCC Builder - Pass 1|
 
-### Script Folder
+### LFS Script Folder
 | Files | Desp |
 | -----:|------|
 | scripts\lfsdownloader\download-lfs-scripts.sh| Download from Github needed files|
