@@ -12,6 +12,12 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | downloads\md5sums| LFS MD5SUMS File|
 | downloads\wget-list| LFS WGET-LIST File|
 
+### DebianInstaller
+| Files | Desp |
+| -----:|------|
+| scripts\debianinstaller\debianinstaller-build.sh| Setup Debian Builder|
+| scripts\debianinstaller\debianinstaller-checkout.sh|  Needed for setup of Debian Builder
+
 ### Script Folder
 | Files | Desp |
 | -----:|------|
@@ -23,5 +29,5 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 ### Builder Folder
 | Files | Desp |
 | -----:|------|
-| scripts\builder\5.2-Binutils-P1.sh| Section 5.2 - Binutils Builder - Pass 1|
-| scripts\builder\5.3-GCC-P1.sh| Section 5.3 - GCC Builder - Pass 1|
+| scripts\lfsbuilder\5.2-Binutils-P1.sh| Section 5.2 - Binutils Builder - Pass 1|
+| scripts\lfsbuilder\5.3-GCC-P1.sh| Section 5.3 - GCC Builder - Pass 1|
