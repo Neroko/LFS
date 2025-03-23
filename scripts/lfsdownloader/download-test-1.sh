@@ -3,12 +3,12 @@
 
 # =================================================
 # =================================================
-# ========   NOT TESTED  ==========================
+# ========  NOT FULLY TESTED  =====================
 # =================================================
 # =================================================
 
 
-# Download LFS Script Downloader
+# Download LFS Script and Depress/Compress ISO Debian Image
 
 # Info used from
 #   How to Create Custom Debian Based ISO
@@ -86,7 +86,7 @@ xorriso                                         \
 # Output of which will crate iso folder into which all internals of files provided in the command.
 # Main folders to focus on would be boot, casper and isolinux
 
-#   root@vm-linux~/iso[]$ ls -la
+#   root@vm-linux~/iso[]$ ls -l
 #   total 68
 #   drwxrwxr-x. 3   root root   4096    boot
 #   drwxrwxr-x. 3   root root   4096    casper
@@ -106,10 +106,27 @@ xorriso                                         \
 #       loading filesystem and vmlinuz file which is essental Linux kernel.
 #   isolinux - which provides configuration files for boot system among other things.
 
+
+# =================================================
+# =================================================
+# ==  EXIT  =======================================
+# ==  NO CASPER FOLDER FOUND IN ISO FOLDER ========
+# =================================================
+# =================================================
+
+
 # Install disassembly tools for squashfs
 install_package "squashfs-tools"
 install_package "syslinux-efi"
 install_package "isolinux"
+
+
+# =================================================
+# =================================================
+# ========  TESTED TO HERE  =======================
+# =================================================
+# =================================================
+
 
 # Copy filesystem.squashfs file into different file and adjust its parameters there
 cp iso/casper/filesystem.squashfs .

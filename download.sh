@@ -69,6 +69,7 @@
 
 #   -   Install the build-dependencies on the host system (or in the chroot):
 apt install build-dep debian-installer
+# build-dep did not work, trying build-essential
 
 #   -   Verify that the build dependencies are all met using 'dpkg-checkbuilddeps'. You may still see
 #       something like:
