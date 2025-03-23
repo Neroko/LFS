@@ -6,10 +6,11 @@ LFS AutoBuilder Downloader Script: https://raw.githubusercontent.com/Neroko/LFS/
 LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 
 ### Root
+| Files | Desp |
 | -----:|------|
-| download.sh| Test Download|
-| version| Current Version|
-| wget-list| Needed Packages|
+| download.sh   | Test Download |
+| version       | Current Version |
+| wget-list     | Needed Packages |
 
 ### Downloads Folder
 | Files | Desp |
