@@ -5,6 +5,12 @@ Version (LFS): 12.3 <br />
 LFS AutoBuilder Downloader Script: https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/download-lfs-scripts.sh <br />
 LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 
+### Root
+| -----:|------|
+| download.sh| Test Download|
+| version| Current Version|
+| wget-list| Needed Packages|
+
 ### Downloads Folder
 | Files | Desp |
 | -----:|------|
