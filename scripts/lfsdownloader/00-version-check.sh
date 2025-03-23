@@ -1,4 +1,5 @@
 #!/bin/bash
+
 display_title="== Linux From Scratch (LFS) Versions Checks =="
 #
 # VERSION (LFS):

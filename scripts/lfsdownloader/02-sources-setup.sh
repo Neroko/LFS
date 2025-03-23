@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Linux From Scratch (LFS) Sources Directory Setup
 #
 # VERSION (LFS):
