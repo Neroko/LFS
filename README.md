@@ -10,7 +10,7 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 | Files | Desp |
 | -----:|------|
 | download.sh   | Test Download |
-| version       | Current Version |
+| version       | Current Build Version |
 | wget-list     | Needed Packages |
 
 ### Downloads Folder
