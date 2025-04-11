@@ -68,7 +68,12 @@
 #   -   Read 'build/README'
 
 #   -   Install the build-dependencies on the host system (or in the chroot):
+apt install build-essential
 apt install build-dep debian-installer
+
+# == NEW ==
+# Working with Debian 12.10.0, testing:
+#apt install build-essential debian-installer
 
 #   -   Verify that the build dependencies are all met using 'dpkg-checkbuilddeps'. You may still see
 #       something like:
@@ -76,6 +81,8 @@ dpkg-checkbuilddeps
 #           dpkg-checkbuilddeps: Unmet build dependencies:
 #               grep-dctrl
 #                   debiandoc-sgml
+apt install debiandoc-sgml
+
 #                   glibc-pic
 #                   libparted1.6-13
 #                   libslang2-pic
