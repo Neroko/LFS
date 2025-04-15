@@ -12,8 +12,8 @@
 # =======================================================
 
 # - Get Debian ISO
-download_link="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/"
-download_link_version="debian-12.10.0-amd64-DVD-1.iso"
+download_link="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/"
+download_link_version="debian-live-12.10.0-amd64-standard.iso"
 # - Decompress the ISO file
 # - Decompress builtin filesystem and connect to it
 # - Make required changes
@@ -28,7 +28,9 @@ apt update
 apt full-upgrade
 apt install \
     curl \
-    wget
+    wget \
+    htop \
+    mc
 curl -X GET -OL ""$download_link""$download_link_version""
 
 # Once its done, it is good practice to have initial tool named 'xorriso' which is the tool that creates, loads,
@@ -48,7 +50,10 @@ apt install \
 #   Alternative option is use 7zip, but for some reson, the version used, was failing to open ISO file.
 
 # Decompress File:
-xorriso -osirrox on -indev "$download_link_version" -extract / iso && chmod -R +w iso
+xorriso \
+    -osirrox on \
+    -indev "$download_link_version" \
+    -extract / iso && chmod -R +w iso
 
 # Output will crate 'iso' folder into which all internals of files provided in the command.
 
@@ -99,7 +104,8 @@ apt install \
 # no iso/casper director found!
 
 # Copy the 'filesystem.squashfs' file into different file and adjust its parameters there
-cp iso/casper/filesystem.squashfs .
+#cp iso/casper/filesystem.squashfs .
+cp iso/debian/live/filesystem.squashfs .
 cd ~
 unsquashfs filesystem.squashfs
 
@@ -147,7 +153,6 @@ echo 'nameserver 8.8.8.8' > /etc/resolv.conf
 # From here on, it is classical UNIX/Linux administration, install, configure, adjust, append, delete and clean
 # up the system. For sake of example, I'll install few tool:
 apt install \
-    htop \
     vim \
     atop \
     cloud-init
@@ -192,9 +197,7 @@ xorris \
     -no-emul-boot \
     -isohybrid-gpt-basdat \
     -isohybrid-apm-hfsplus \
-    -isohybrid-mbr /usr/lib/syslinux/bios/isohdpfx.bin \
-    iso/boot \
-    iso
+    -isohybrid-mbr /usr/lib/syslinux/bios/isohdpfx.bin iso/boot iso
 
 # Once the process ends, we'll have new ISO file name debian-custom-amd64.iso which we can burn to usb and test
 # it out.
