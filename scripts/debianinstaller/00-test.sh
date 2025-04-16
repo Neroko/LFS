@@ -21,6 +21,13 @@ download_link_version="debian-live-12.10.0-amd64-standard.iso"
 # - Compress filesystem back as it was
 # - Compress ISO file with all changes
 
+install_package() {
+    PACKAGE=$1
+    apt update
+    apt full-upgrade
+    apt install "$PACKAGE"
+}
+
 # Download ISO and installing initial tools for decompressing the file, which by the way is another of
 # compression format for archiving our data. Standard used for CD/DVD's is usually ISO 9660 which you
 # can read about in the link provided. Download ISO file:
@@ -91,12 +98,6 @@ apt install \
     syslinux \
     syslinux-efi \
     isolinux
-
-# =================================================
-# =================================================
-# ========   TESTED TO HERE   =====================
-# =================================================
-# =================================================
 
 # ===============
 # == NOTE =======
@@ -169,6 +170,12 @@ exit
 # After exiting from chroot environment, we need to squash back the file system, which can be attained as
 # follows:
 mksquashfs squashfs-root/ filesystem.squashfs -comp xz -b 1M -noappend
+
+# =================================================
+# =================================================
+# ========   TESTED TO HERE   =====================
+# =================================================
+# =================================================
 
 # ===============
 # == NOTE =======
