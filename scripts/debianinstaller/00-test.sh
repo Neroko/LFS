@@ -22,23 +22,33 @@ download_link_version="debian-live-12.10.0-amd64-standard.iso"
 # - Compress ISO file with all changes
 
 install_package() {
-    PACKAGE=$1
+    PACKAGE="$1"
     apt update
     apt full-upgrade
     apt install "$PACKAGE"
 }
 
+# Install needed packages:
+install_package "curl"
+install_package "wget"
+install_package "htop"
+install_package "mc"
+install_package "xorriso"
+install_package "squashfs-tools"
+install_package "syslinux"
+install_package "syslinux-efi"
+install_package "isolinux"
+install_package "fakeroot"
+install_package "vim"
+install_package "atop"
+install_package "cloud-init"
+
 # Download ISO and installing initial tools for decompressing the file, which by the way is another of
 # compression format for archiving our data. Standard used for CD/DVD's is usually ISO 9660 which you
 # can read about in the link provided. Download ISO file:
-apt update
-apt full-upgrade
-apt install \
-    curl \
-    wget \
-    htop \
-    mc
-curl -X GET -OL ""$download_link""$download_link_version""
+curl \
+    --request GET \
+    -OL ""$download_link""$download_link_version""
 
 # Once its done, it is good practice to have initial tool named 'xorriso' which is the tool that creates, loads,
 # manipulates and writes ISO 9660 filesystem images.
@@ -47,16 +57,7 @@ curl -X GET -OL ""$download_link""$download_link_version""
 # == NOTE =======
 # ===============
 #   Can also use '7z' or '7zip', a tool for compressing and decompressing files and images for this task.
-# Execute Install:
-apt install \
-    xorriso
-
-# ===============
-# == NOTE =======
-# ===============
-#   Alternative option is use 7zip, but for some reson, the version used, was failing to open ISO file.
-
-# Decompress File:
+# Execute Install, Decompress File:
 xorriso \
     -osirrox on \
     -indev "$download_link_version" \
@@ -93,11 +94,11 @@ xorriso \
 #   implementations.
 
 # Disassembly tool for squashfs:
-apt install \
-    squashfs-tools \
-    syslinux \
-    syslinux-efi \
-    isolinux
+#apt install \
+#    squashfs-tools \
+#    syslinux \
+#    syslinux-efi \
+#    isolinux
 
 # ===============
 # == NOTE =======
@@ -133,8 +134,8 @@ unsquashfs filesystem.squashfs
 # automatically chooses how to install system, what partitions to use, how to configure network and so on.
 
 # We ill do the same, but without installing the system, first, make 'fakeroot':
-apt install \
-    fakeroot
+#apt install \
+#    fakeroot
 
 # 'fakeroot' Enables us to user chroot commands, which changes our root by posing us as a fake root user of
 # GNU/Linux system.
@@ -153,10 +154,10 @@ echo 'nameserver 8.8.8.8' > /etc/resolv.conf
 
 # From here on, it is classical UNIX/Linux administration, install, configure, adjust, append, delete and clean
 # up the system. For sake of example, I'll install few tool:
-apt install \
-    vim \
-    atop \
-    cloud-init
+#apt install \
+#    vim \
+#    atop \
+#    cloud-init
 
 # Essentially you can ch what ever you within the chrooted filesystem. including copy-pasting external files,
 # saving git repositories and so on.
@@ -169,7 +170,12 @@ exit
 
 # After exiting from chroot environment, we need to squash back the file system, which can be attained as
 # follows:
-mksquashfs squashfs-root/ filesystem.squashfs -comp xz -b 1M -noappend
+mksquashfs \
+    squashfs-root/ \
+    filesystem.squashfs \
+    -comp xz \
+    -b 1M \
+    -noappend
 
 # =================================================
 # =================================================
