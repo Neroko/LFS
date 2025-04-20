@@ -21,10 +21,11 @@ download_link_version="debian-live-12.10.0-amd64-standard.iso"
 # - Compress filesystem back as it was
 # - Compress ISO file with all changes
 
+sudo apt-get update
+sudo apt-get --yes upgrade
+
 install_package() {
     PACKAGE="$1"
-    sudo apt-get update
-    sudo apt-get --yes upgrade
     sudo apt-get --yes install "$PACKAGE"
 }
 
@@ -48,6 +49,11 @@ install_package "squashfs-tools"
 # Download ISO and installing initial tools for decompressing the file, which by the way is another of
 # compression format for archiving our data. Standard used for CD/DVD's is usually ISO 9660 which you
 # can read about in the link provided. Download ISO file:
+wget \
+    --verbose \
+    --output-file="$download_link_version"
+    ""$download_link""$download_link_version""
+
 #curl \
 #    --verbose \
 #    --request GET \
