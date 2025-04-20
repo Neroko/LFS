@@ -2,7 +2,7 @@
 
 # =================================================
 # =================================================
-# ========   NOT TESTED   =========================
+# ========   NOT FULLY TESTED   ===================
 # =================================================
 # =================================================
 
@@ -53,9 +53,16 @@ curl \
     -OL ""$download_link""$download_link_version""
 
 # Create working directory, put iso there and cd into:
-mkdir ~/liveusb
-cp "$download_link_version" ~/liveusb/
-cd ~/liveusb
+mkdir \
+    --verbose \
+    liveusb/
+
+cp \
+    --verbose \
+    "$download_link_version" liveusb/
+
+cd \
+    liveusb/
 
 # ===============
 # == NOTE =======
@@ -63,7 +70,11 @@ cd ~/liveusb
 #   Idea from: https://wiki.debian.org/DebianInstaller/Modify/CD)
 
 # Extract isohdpfx.bin:
-dd if="$download_link_version" bs=1 count=432 of=isohdpfx.bin
+dd \
+    if="$download_link_version" \
+    bs=1 \
+    count=432 \
+    of=isohdpfx.bin
 
 # ===============
 # == NOTE =======
@@ -73,15 +84,19 @@ dd if="$download_link_version" bs=1 count=432 of=isohdpfx.bin
 # Create mnt directory for mounting iso as a loop device and isoextract to hold the extracted contents
 # of the iso:
 
-mkdir isoextract mnt
+mkdir \
+    isoextract \
+    mnt
 
 sudo mount \
-    -o loop "$download_link_version" \
+    --verbose \
+    --options loop "$download_link_version" \
     mnt
 
 sudo rsync \
+    --verbose \
     --exclude=/live/filesystem.squashfs \
-    -a mnt/ \
+    --archive mnt/ \
     isoextract
 
 # Create a new directory named squashfs-root that is the "/" directory and sub-directories from the iso:
@@ -90,6 +105,7 @@ sudo unsquashfs \
 
 # Add or delete files in squashfs-root if needed:
 sudo cp \
+    --verbose \
     /etc/resolv.conf \
     squashfs-root/etc/
 
@@ -115,6 +131,7 @@ sudo cp \
 
 # =================================================
 # =================================================
+# =================================================
 
 # Mount everything and chroot over to make changes using apt and dpkg:
 sudo mount \
@@ -124,9 +141,15 @@ sudo mount \
 sudo chroot \
     squashfs-root
 
-mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+mount \
+    --types proc none /proc
+mount \
+    --types sysfs none /sys
+mount \
+    --types devpts none /dev/pts
 
-export HOME=/root && export LC_ALL=C
+export HOME=/root
+export LC_ALL=C
 
 # Using apt and dpkg to add or remove whatever packages you want from the iso.
 apt-get update
@@ -141,7 +164,13 @@ apt-get install curl
 # After finishing up chroot environment:
 apt-get clean
 apt-get autoremove
-rm -rf /tmp/* ~/.bash_history
+
+rm \
+    --recursive \
+    --force \
+    /tmp/* \
+    ~/.bash_history
+
 umount /proc
 umount /sys
 umount /dev/pts
@@ -159,6 +188,7 @@ sudo umount mnt
 # To edit grub menu:
 #nano ~/liveusb/isoextract/isolinux/menu.cfg
 
+# =================================================
 # =================================================
 # =================================================
 
@@ -181,25 +211,3 @@ xorriso \
     -boot_image any next \
     -boot_image any efi_path=boot/grub/efi.img \
     -boot_image isolinux partition_entry=gpt_basdat
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
