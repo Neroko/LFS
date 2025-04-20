@@ -23,9 +23,9 @@ download_link_version="debian-live-12.10.0-amd64-standard.iso"
 
 install_package() {
     PACKAGE="$1"
-    apt update
-    apt full-upgrade
-    apt install "$PACKAGE"
+    apt-get update
+    apt-get --yes upgrade
+    apt-get --yes install "$PACKAGE"
 }
 
 # Install needed packages:
@@ -48,21 +48,22 @@ install_package "squashfs-tools"
 # Download ISO and installing initial tools for decompressing the file, which by the way is another of
 # compression format for archiving our data. Standard used for CD/DVD's is usually ISO 9660 which you
 # can read about in the link provided. Download ISO file:
-curl \
-    --request GET \
-    -OL ""$download_link""$download_link_version""
+#curl \
+#    --verbose \
+#    --request GET \
+#    -OL ""$download_link""$download_link_version""
 
 # Create working directory, put iso there and cd into:
-mkdir \
-    --verbose \
-    liveusb/
+#mkdir \
+#    --verbose \
+#    liveusb/
 
-cp \
-    --verbose \
-    "$download_link_version" liveusb/
+#cp \
+#    --verbose \
+#    "$download_link_version" liveusb/
 
-cd \
-    liveusb/
+#cd \
+#    liveusb/
 
 # ===============
 # == NOTE =======
@@ -70,11 +71,11 @@ cd \
 #   Idea from: https://wiki.debian.org/DebianInstaller/Modify/CD)
 
 # Extract isohdpfx.bin:
-dd \
-    if="$download_link_version" \
-    bs=1 \
-    count=432 \
-    of=isohdpfx.bin
+#dd \
+#    if="$download_link_version" \
+#    bs=1 \
+#    count=432 \
+#    of=isohdpfx.bin
 
 # ===============
 # == NOTE =======
@@ -84,30 +85,31 @@ dd \
 # Create mnt directory for mounting iso as a loop device and isoextract to hold the extracted contents
 # of the iso:
 
-mkdir \
-    isoextract \
-    mnt
+#mkdir \
+#    --verbose \
+#    isoextract \
+#    mnt
 
-sudo mount \
-    --verbose \
-    --options loop "$download_link_version" \
-    mnt
+#sudo mount \
+#    --verbose \
+#    --options loop "$download_link_version" \
+#    mnt
 
-sudo rsync \
-    --verbose \
-    --exclude=/live/filesystem.squashfs \
-    --archive mnt/ \
-    isoextract
+#sudo rsync \
+#    --verbose \
+#    --exclude=/live/filesystem.squashfs \
+#    --archive mnt/ \
+#    isoextract
 
 # Create a new directory named squashfs-root that is the "/" directory and sub-directories from the iso:
-sudo unsquashfs \
-    mnt/live/filesystem.squashfs
+#sudo unsquashfs \
+#    mnt/live/filesystem.squashfs
 
 # Add or delete files in squashfs-root if needed:
-sudo cp \
-    --verbose \
-    /etc/resolv.conf \
-    squashfs-root/etc/
+#sudo cp \
+#    --verbose \
+#    /etc/resolv.conf \
+#    squashfs-root/etc/
 
 # =================================================
 # ========   NOT TESTED   =========================
@@ -134,49 +136,49 @@ sudo cp \
 # =================================================
 
 # Mount everything and chroot over to make changes using apt and dpkg:
-sudo mount \
-    --bind /dev/ \
-    squashfs-root/dev
+#sudo mount \
+#    --bind /dev/ \
+#    squashfs-root/dev
 
-sudo chroot \
-    squashfs-root
+#sudo chroot \
+#    squashfs-root
 
-mount \
-    --types proc none /proc
-mount \
-    --types sysfs none /sys
-mount \
-    --types devpts none /dev/pts
+#mount \
+#    --types proc none /proc
+#mount \
+#    --types sysfs none /sys
+#mount \
+#    --types devpts none /dev/pts
 
-export HOME=/root
-export LC_ALL=C
+#export HOME=/root
+#export LC_ALL=C
 
 # Using apt and dpkg to add or remove whatever packages you want from the iso.
-apt-get update
-apt-get full-upgrade
-apt-get install ssh
-apt-get install tmux
-apt-get install htop
-apt-get install atop
-apt-get install wget
-apt-get install curl
+#apt-get update
+#apt-get full-upgrade
+#apt-get install ssh
+#apt-get install tmux
+#apt-get install htop
+#apt-get install atop
+#apt-get install wget
+#apt-get install curl
 
 # After finishing up chroot environment:
-apt-get clean
-apt-get autoremove
+#apt-get clean
+#apt-get autoremove
 
-rm \
-    --recursive \
-    --force \
-    /tmp/* \
-    ~/.bash_history
+#rm \
+#    --recursive \
+#    --force \
+#    /tmp/* \
+#    ~/.bash_history
 
-umount /proc
-umount /sys
-umount /dev/pts
-exit
-sudo umount squashfs-root/dev
-sudo umount mnt
+#umount /proc
+#umount /sys
+#umount /dev/pts
+#exit
+#sudo umount squashfs-root/dev
+#sudo umount mnt
 
 # =================================================
 # ========   NOT TESTED   =========================
@@ -193,21 +195,21 @@ sudo umount mnt
 # =================================================
 
 # Re-squash:
-mksquashfs \
-    squashfs-root \
-    isoextract/live/filesystem.squashfs
+#mksquashfs \
+#    squashfs-root \
+#    isoextract/live/filesystem.squashfs
 
 # Make new ISO
-xorriso \
-    -outdev test.iso \
-    -volid PYLIVE \
-    -padding 0 \
-    -compliance no_emul_toc \
-    -map isoextract/ / \
-    -chmod 0755 / \
-    -- \
-    -boot_image isolinux dir=/isolinux \
-    -boot_image isolinux system_area=isohdpfx.bin \
-    -boot_image any next \
-    -boot_image any efi_path=boot/grub/efi.img \
-    -boot_image isolinux partition_entry=gpt_basdat
+#xorriso \
+#    -outdev test.iso \
+#    -volid PYLIVE \
+#    -padding 0 \
+#    -compliance no_emul_toc \
+#    -map isoextract/ / \
+#    -chmod 0755 / \
+#    -- \
+#    -boot_image isolinux dir=/isolinux \
+#    -boot_image isolinux system_area=isohdpfx.bin \
+#    -boot_image any next \
+#    -boot_image any efi_path=boot/grub/efi.img \
+#    -boot_image isolinux partition_entry=gpt_basdat
