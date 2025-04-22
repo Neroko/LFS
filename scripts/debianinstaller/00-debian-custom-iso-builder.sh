@@ -51,6 +51,7 @@ install_package "squashfs-tools"
 # can read about in the link provided. Download ISO file:
 wget \
     --verbose \
+    --continue \
     --output-file="$download_link_version" \
     ""$download_link""$download_link_version""
 
