@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# =================================================
+# ========================1=========================
 # =================================================
 # ========   NOT FULLY TESTED   ===================
 # =================================================
@@ -52,7 +52,7 @@ install_package "squashfs-tools"
 wget \
     --verbose \
     --continue \
-    --output-file="$download_link_version" \
+    --output-document="$download_link_version" \
     ""$download_link""$download_link_version""
 
 #curl \
