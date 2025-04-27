@@ -31,7 +31,6 @@
 # == SCRIPT NOT TESTED ==
 # =======================
 
-
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
 
 wget $download_site
