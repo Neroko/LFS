@@ -63,14 +63,14 @@ cd build
 #       time { ../configure ... && make && make install; }.
 
 # Now prepare Binutils for compilation:
-../configure            \
-    --prefix=$LFS/tools \
-    --with-sysroot=$LFS \
-    --target=$LFS_TGT   \
-    --disable-nls       \
-    --enable-gprofng=no \
-    --disable-werror    \
-    --enable-new-dtags  \
+../configure                \
+    --prefix="$LFS/tools"   \
+    --with-sysroot="$LFS"   \
+    --target="$LFS_TGT"     \
+    --disable-nls           \
+    --enable-gprofng=no     \
+    --disable-werror        \
+    --enable-new-dtags      \
     --enable-default-hash-style=gnu
 
 # The meaning of the configure options:

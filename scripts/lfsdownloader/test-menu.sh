@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Linux From Scratch (LFS) Test Menu
 #
 # VERSION (LFS):
