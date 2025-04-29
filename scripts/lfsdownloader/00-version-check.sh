@@ -202,7 +202,7 @@ install_necessary() {
 
     if [ $install_answer == "yes" ]; then
         sudo apt update
-#        sudo apt upgrade
+        sudo apt upgrade
 #        sudo apt \
 #            --yes       \
 #            coreutils   \
