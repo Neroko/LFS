@@ -203,24 +203,7 @@ install_necessary() {
     if [ $install_answer == "yes" ]; then
         sudo apt-get update
         sudo apt-get upgrade
-        sudo apt-get install coreutils bash binutils    
-#            bison       \
-#            diffutils   \
-#            findutils   \
-#            gawk        \
-#            gcc         \
-#            g++         \
-#            grep        \
-#            gzip        \
-#            m4          \
-#            make        \
-#            patch       \
-#            perl        \
-#            python3     \
-#            sed         \
-#            tar         \
-#            texinfo     \
-#            xz-utils
+        sudo apt-get install coreutils bash binutils bison diffutils findutils gawk gcc g++ grep gzip m4 make patch perl python3 sed tar texinfo xz-utils
         exit
     elif [ $install_answer == "no" ]; then
         exit
