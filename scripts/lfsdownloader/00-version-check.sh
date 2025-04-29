@@ -204,7 +204,6 @@ install_necessary() {
         sudo apt update
         sudo apt upgrade
         sudo apt \
-#            --yes       \
             coreutils   \
             bash        \
             binutils    \
