@@ -225,6 +225,7 @@ install_necessary() {
 #            tar         \
 #            texinfo     \
 #            xz-utils
+        exit
     elif [ $install_answer == "no" ]; then
         exit
     fi
