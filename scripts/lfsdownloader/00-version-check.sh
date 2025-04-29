@@ -206,8 +206,10 @@ install_necessary() {
     if [ $install_answer == "yes" ]; then
         sudo apt-get update
         sudo apt-get upgrade
-        # Normally on a Debian VM, 100+- packages will need to be installed.
-        sudo apt-get --yes install coreutils bash binutils bison diffutils findutils gawk gcc g++ grep gzip m4 make patch perl python3 sed tar texinfo xz-utils
+        # Normally on a Debian VM, 100+- packages will need to be installed, work on making this a varable list
+        sudo apt-get --yes install \
+            "coreutils bash binutils bison diffutils findutils gawk gcc g++ grep gzip m4 make patch perl python3 sed tar texinfo xz-utils"
+            printf "Reboot or Rerun Script"
         exit
     elif [ $install_answer == "no" ]; then
         exit
