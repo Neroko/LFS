@@ -203,10 +203,7 @@ install_necessary() {
     if [ $install_answer == "yes" ]; then
         sudo apt-get update
         sudo apt-get upgrade
-        sudo apt-get install \
-            coreutils   \
-            bash        \
-            binutils    
+        sudo apt-get install coreutils bash binutils    
 #            bison       \
 #            diffutils   \
 #            findutils   \
