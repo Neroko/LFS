@@ -190,38 +190,44 @@ ver_check() {
 
 install_necessary() {
     while true; do
-        read -p "Update\Upgrade\Install Needed Packages? [Y/N]" yn
-        case    $yn in
-            [Yy]* ) break ;;
-            [Nn]* ) exit ;;
+        read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
+        case $yn in
+            [Yy]* ) install_answer="yes";
+                break;;
+            [Nn]* ) install_answer="no";
+                break;;
             * ) echo "Y or N" ;;
         esac
     done
 
-    sudo apt update
-    sudo apt upgrade
-    sudo apt \
-        --yes       \
-        coreutils   \
-        bash        \
-        binutils    \
-        bison       \
-        diffutils   \
-        findutils   \
-        gawk        \
-        gcc         \
-        g++         \
-        grep        \
-        gzip        \
-        m4          \
-        make        \
-        patch       \
-        perl        \
-        python3     \
-        sed         \
-        tar         \
-        texinfo     \
-        xz-utils
+    if [ $install_answer == "yes" ]; then
+        sudo apt update
+#        sudo apt upgrade
+#        sudo apt \
+#            --yes       \
+#            coreutils   \
+#            bash        \
+#            binutils    \
+#            bison       \
+#            diffutils   \
+#            findutils   \
+#            gawk        \
+#            gcc         \
+#            g++         \
+#            grep        \
+#            gzip        \
+#            m4          \
+#            make        \
+#            patch       \
+#            perl        \
+#            python3     \
+#            sed         \
+#            tar         \
+#            texinfo     \
+#            xz-utils
+    elif [ $install_answer == "no" ]; then
+        exit
+    fi
 }
 
 ver_kernel() {
