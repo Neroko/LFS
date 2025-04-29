@@ -203,28 +203,28 @@ install_necessary() {
     if [ $install_answer == "yes" ]; then
         sudo apt update
         sudo apt upgrade
-#        sudo apt \
+        sudo apt \
 #            --yes       \
-#            coreutils   \
-#            bash        \
-#            binutils    \
-#            bison       \
-#            diffutils   \
-#            findutils   \
-#            gawk        \
-#            gcc         \
-#            g++         \
-#            grep        \
-#            gzip        \
-#            m4          \
-#            make        \
-#            patch       \
-#            perl        \
-#            python3     \
-#            sed         \
-#            tar         \
-#            texinfo     \
-#            xz-utils
+            coreutils   \
+            bash        \
+            binutils    \
+            bison       \
+            diffutils   \
+            findutils   \
+            gawk        \
+            gcc         \
+            g++         \
+            grep        \
+            gzip        \
+            m4          \
+            make        \
+            patch       \
+            perl        \
+            python3     \
+            sed         \
+            tar         \
+            texinfo     \
+            xz-utils
         exit
     elif [ $install_answer == "no" ]; then
         exit
