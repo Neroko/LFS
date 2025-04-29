@@ -200,6 +200,8 @@ install_necessary() {
         esac
     done
 
+# test
+
     if [ $install_answer == "yes" ]; then
         sudo apt update
 #        sudo apt upgrade
