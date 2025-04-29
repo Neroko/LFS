@@ -201,9 +201,9 @@ install_necessary() {
     done
 
     if [ $install_answer == "yes" ]; then
-        sudo apt update
-        sudo apt upgrade
-        sudo apt \
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install \
             coreutils   \
             bash        \
             binutils    \
