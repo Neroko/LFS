@@ -170,18 +170,58 @@ os_check() {
 }
 
 ver_check() {
+    ask_install="0"
     if ! type -p "$2" &>/dev/null; then
         echo -e "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
+        ask_install="1"
         return 1;
     fi
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' "$3" "$v" | sort --version-sort --check &>/dev/null; then
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
+        ask_install="0"
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-os9s is TOO OLD ($3 or later required)\n" "$1";
+        ask_install="2"
         return 1;
     fi
+}
+
+install_necessary() {
+    while true; do
+        read -p "Update\Upgrade\Install Needed Packages? [Y/N]" yn
+        case    $yn in
+            [Yy]* ) break ;;
+            [Nn]* ) exit ;;
+            * ) echo "Y or N" ;;
+        esac
+    done
+
+    sudo apt update
+    sudo apt upgrade
+    sudo apt \
+        --yes       \
+        coreutils   \
+        bash        \
+        binutils    \
+        bison       \
+        diffutils   \
+        findutils   \
+        gawk        \
+        gcc         \
+        g++         \
+        grep        \
+        gzip        \
+        m4          \
+        make        \
+        patch       \
+        perl        \
+        python3     \
+        sed         \
+        tar         \
+        texinfo     \
+        xz-utils
 }
 
 ver_kernel() {
@@ -299,6 +339,7 @@ ver_check Texinfo       texi2any    5.0
 # generally available and is useful for decompressing packages in XZ or LZMA format.
 ver_check Xz            xz          5.0.0
 
+install_necessary
 
 # == Important ==
 #   Note that the symlinks mentioned above are required to build an LFS system using the instructions contained
