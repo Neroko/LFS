@@ -204,9 +204,9 @@ install_necessary() {
         sudo apt-get update
         sudo apt-get upgrade
         sudo apt-get install \
-            coreutils
-#            bash        \
-#            binutils    \
+            coreutils   \
+            bash        \
+            binutils    
 #            bison       \
 #            diffutils   \
 #            findutils   \
