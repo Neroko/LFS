@@ -25,7 +25,7 @@ script_version="1.0.0.1"
 #
 # OPTIONS:
 #   -h, --help                  Display this help
-#   -v, --verbose               Enable Verbose Mode    
+#   -v, --verbose               Enable Verbose Mode
 #   -V, --version               Display versions
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
