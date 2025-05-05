@@ -192,6 +192,7 @@ ver_check() {
 }
 
 install_necessary() {
+    install_answer="0"
     if [ $ask_install == "1" ] | [ $ask_install = "2" ]; then
         while true; do
             read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
