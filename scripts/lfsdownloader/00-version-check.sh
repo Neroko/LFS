@@ -398,7 +398,7 @@ if [[ $alias_error == "1" ]]; then
         read -p "Set SH to BASH (y/n)?" yn
             case $yn in
                 [Yy}* ) set_sh="yes";
-                    sudo ln -sf bash /bin/sh
+                    sudo ln -sf bash /bin/sh;
                     break;;
                 [Nn]* ) set_sh="no";
                     break;;
