@@ -393,7 +393,6 @@ alias_check yacc Bison
 # To set sh to BASH: sudo ln -sf bash /bin/sh
 # To set sh to DASH: sudo ln -sf dash /bin/sh
 alias_check sh Bash
-
 if [[ $alias_error == "1" ]]; then
     while true; do
         read -p "Set SH to BASH (y/n)?" yn
