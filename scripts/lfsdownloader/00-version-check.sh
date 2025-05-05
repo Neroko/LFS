@@ -383,11 +383,11 @@ echo $border
 echo "-- Aliases --"
 echo $border
 
-alias_check awk GNU
+alias_check "awk" "GNU"
 
 # -- Bison
 # /usr/bin/yac should be a link to bison or a small script that executes bison
-alias_check yacc Bison
+alias_check "yacc" "Bison"
 
 # -- Bash
 # /bin/sh should be a symbolic or hard link to bash
@@ -432,6 +432,6 @@ fi
 press_pause
 
 # Clean up
-rm --verbose --force awk
-rm --verbose --force sh
-rm --verbose --force yacc
+rm --verbose --force "awk"
+rm --verbose --force "sh"
+rm --verbose --force "yacc"
