@@ -432,6 +432,6 @@ fi
 press_pause
 
 # Clean up
-rm -f awk
-rm -f sh
-rm -f yacc
+rm --verbose --force awk
+rm --verbose --force sh
+rm --verbose --force yacc
