@@ -172,8 +172,9 @@ os_check() {
     cat /etc/*-release
 }
 
+ask_install="0"
+
 ver_check() {
-    ask_install="0"
     if ! type -p "$2" &>/dev/null; then
         echo -e "${TEXT_RED}ERROR:${TEXT_NC}  Cannot find $2 ($1)";
         ask_install="1"
@@ -192,7 +193,7 @@ ver_check() {
 }
 
 install_necessary() {
-    install_answer="no"
+#    install_answer="no"
     if [ $ask_install == "1" ] | [ $ask_install = "2" ]; then
         while true; do
             read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
