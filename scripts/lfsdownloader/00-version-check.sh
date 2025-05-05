@@ -6,7 +6,7 @@ display_title="== Linux From Scratch (LFS) Versions Checks =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.1"
+script_version="1.0.0.2"
 #
 # DATE LAST EDITED:
 #   05/05/2025
@@ -183,18 +183,17 @@ ver_check() {
     v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
     if printf '%s\n' "$3" "$v" | sort --version-sort --check &>/dev/null; then
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-9s %-6s >= $3\n" "$1" "$v";
-        ask_install="0"
         return 0;
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-os9s is TOO OLD ($3 or later required)\n" "$1";
-        ask_install="2"
+        ask_install="1"
         return 1;
     fi
 }
 
 install_necessary() {
 #    install_answer="no"
-    if [ $ask_install == "1" ] | [ $ask_install = "2" ]; then
+    if [ $ask_install == "1" ]; then
         while true; do
             read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
             case $yn in
@@ -375,6 +374,7 @@ alias_check() {
         printf "${TEXT_GREEN}OK:${TEXT_NC}     %-4s is $2\n" "$1";
     else
         printf "${TEXT_RED}ERROR:${TEXT_NC}  %-4s is NOT $2\n" "$1";
+        alias_error="1"
     fi
 }
 
