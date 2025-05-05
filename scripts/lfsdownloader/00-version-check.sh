@@ -332,6 +332,8 @@ software_check() {
     ver_check Xz            xz          5.0.0
 }
 
+software_check
+
 install_necessary
 
 # == Important ==
