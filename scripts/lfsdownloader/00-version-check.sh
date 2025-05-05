@@ -192,16 +192,18 @@ ver_check() {
 }
 
 install_necessary() {
-    while true; do
-        read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
-        case $yn in
-            [Yy]* ) install_answer="yes";
-                break;;
-            [Nn]* ) install_answer="no";
-                break;;
-            * ) echo "Y or N" ;;
-        esac
-    done
+    if [ $ask_install == "1" ] | [ $ask_install = "2" ]; then
+        while true; do
+            read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
+            case $yn in
+                [Yy]* ) install_answer="yes";
+                    break;;
+                [Nn]* ) install_answer="no";
+                    break;;
+                * ) echo "Y or N" ;;
+            esac
+        done
+    fi
 
     if [ $install_answer == "yes" ]; then
         sudo apt-get update
