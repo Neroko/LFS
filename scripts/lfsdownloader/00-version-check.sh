@@ -42,9 +42,6 @@ script_version="1.0.0.2"
 #   8 GB of memory. Older systems that do not meet these requirements will still work, but the time to build
 #   packages will be significantly longer than documented.
 
-# TODO
-#   Add Version Check and ask to install new.
-
 log_to_file=false
 verbose_mode=false
 output_file="lfs.log"
