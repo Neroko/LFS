@@ -244,18 +244,18 @@ software_check() {
     # package in LFS.
     # -- NOTE --
     # Check for Coreutils first because --version-sort needs Coreutils >= 7.0
-    ver_check Coreutils     sort        8.1 || bail "Coreutils too old, stop"
+    ver_check    "Coreutils"    "sort"        "8.1 || bail "Coreutils too old, stop""
 
     # == Bash ==
     # This package satisfies an LSB core requirement to provide a Bourne Shell interface to the system. It was chosen
     # over other shell packages because of its common usage and extensive capabilities.
     #   (/bin/sh should be a symbolic or hard link to bash)
-    ver_check Bash          bash        3.2
+    ver_check    "Bash"        "bash"        "3.2"
 
     # == Binutils ==
     # This package supplies a linker, an assembler, and other tools for handling object files. The programs in this
     # package are needed to compile most of the packages in an LFS system.
-    ver_check Binutils      ld          2.13.1
+    ver_check    "Binutils"    "ld"            "2.13.1"
 
     # == Bison ==
     # This package contains the GNU version of yacc (Yet Another Compiler Compiler) needed to build several of the LFS programs.
