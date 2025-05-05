@@ -9,7 +9,7 @@ current_version="12.3"
 script_version="1.0.0.1"
 #
 # DATE LAST EDITED:
-#   03/11/2025
+#   05/05/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -192,7 +192,7 @@ ver_check() {
 }
 
 install_necessary() {
-    install_answer="0"
+    install_answer="no"
     if [ $ask_install == "1" ] | [ $ask_install = "2" ]; then
         while true; do
             read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
@@ -206,14 +206,14 @@ install_necessary() {
         done
     fi
 
-    if [[ $install_answer = "yes" ]]; then
+    if [[ $install_answer == "yes" ]]; then
         sudo apt-get update
         sudo apt-get upgrade
         # Normally on a Debian VM, 100+- packages will need to be installed, work on making this a varable list
         sudo apt-get --yes install coreutils bash binutils bison diffutils findutils gawk gcc g++ grep gzip m4 make patch perl python3 sed tar texinfo xz-utils
 #        sudo reboot
         exit
-    elif [[ $install_answer = "no" ]]; then
+    elif [[ $install_answer == "no" ]]; then
         exit
     fi
 }
