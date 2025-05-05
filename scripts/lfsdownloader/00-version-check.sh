@@ -363,8 +363,7 @@ install_necessary
 ver_kernel      5.4
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]; then
-#    echo -e "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel supports UNIX 98 PTY";
-    echo
+    echo -e "${TEXT_GREEN}OK:${TEXT_NC}     Linux Kernel supports UNIX 98 PTY";
 else
     echo -e "${TEXT_RED}ERROR:${TEXT_NC}    Linux Kernel does NOT support UNIX 98 PTY";
 fi
