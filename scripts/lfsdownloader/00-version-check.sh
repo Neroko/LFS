@@ -394,6 +394,20 @@ alias_check yacc Bison
 # To set sh to DASH: sudo ln -sf dash /bin/sh
 alias_check sh Bash
 
+if [[ $alias_error == "1" ]]; then
+    while true; do
+        read -p "Set SH to BASH (y/n)?" yn
+            case $yn in
+                [Yy}* ) set_sh="yes";
+                    sudo ln -sf bash /bin/sh
+                    break;;
+                [Nn]* ) set_sh="no";
+                    break;;
+                * ) echo "Y or N";;
+            esac
+    done
+fi
+
 press_pause
 
 echo $border
