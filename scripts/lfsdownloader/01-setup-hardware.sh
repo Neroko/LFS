@@ -169,25 +169,34 @@ script_version="1.0.0.0"
 #       ext2
 #         is suitable for small partitions that are updated infrequently such as /boot.
 #       ext3
-#         is an upgrade to ext2 that includes a journal to help recover the partition's status in the case of an unclean shutdown.
+#         is an upgrade to ext2 that includes a journal to help recover the partition's status in the case of an unclean
+#         shutdown.
 #         It is commonly used as a general purpose file system.
 #       ext4
-#         is the latest version of the ext family of file systems. It provides several new capabilities including nano-second
-#         timestamps, creation and use of very large files (up to 16 TB), and speed improvements.
+#         is the latest version of the ext family of file systems. It provides several new capabilities including
+#         nano-second timestamps, creation and use of very large files (up to 16 TB), and speed improvements.
+
 #     Other file systems, including FAT32, NTFS, JFS, and XFS are useful for specialized purposes. More information about
 #     these file systems, and many others, can be found at https://en.wikipedia.org/wiki/Comparison_of_file_systems.
 
-#     LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, issue the
-#     following command:
+#     LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition,
+#     issue the following command:
 #mkfs -v -t ext4 /dev/<xxx>
+mkfs -v -t ext4 /dev/<xxx>
 
 #     Replace <xxx> with the name of the LFS partition.
-#     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will
-#     need to be initialized with this command:
+#     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
+#     it will need to be initialized with this command:
 #mkswap /dev/<yyy>
+mkswap /dev/<yyy>
 #   Replace <yyy> with the name of the swap partition.
 
-
+# == 2.6. Setting the $LFS Variable and the Umask
+#     Throughout this book, the environment variable LFS will be used several times. You should ensure that this
+#     variable is always defined throughout the LFS build process. It should be set to the name of the directory where
+#     you will be building your LFS system - we will use /mnt/lfs as an example, but you may choose any directory name
+#     you want. If you are building LFS on a separate partition, this directory will be the mount point for the partition.
+#     Choose a directory location and set the variable with the following command:
 
 
 
