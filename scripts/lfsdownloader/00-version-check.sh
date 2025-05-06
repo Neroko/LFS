@@ -6,7 +6,7 @@ display_title="== Linux From Scratch (LFS) Versions Checks =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.2"
+script_version="1.0.0.3"
 #
 # DATE LAST EDITED:
 #   05/05/2025
