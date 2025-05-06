@@ -193,6 +193,7 @@ install_necessary() {
     if [ $ask_install == "1" ]; then
         while true; do
             read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
+            yn=${yn:-N}
             case $yn in
                 [Yy]* ) install_answer="yes";
                     break;;
@@ -397,6 +398,7 @@ alias_check "sh" "Bash"
 if [[ $alias_error == "1" ]]; then
     while true; do
         read -p "Set SH to BASH (y/n)?" yn
+            yn=${yn:-N}
             case $yn in
                 [Yy]* ) set_sh="yes";
                     sudo ln -sf bash /bin/sh;
