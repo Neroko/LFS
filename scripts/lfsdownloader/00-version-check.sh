@@ -207,7 +207,7 @@ install_necessary() {
         sudo apt-get update
         sudo apt-get upgrade
         # Normally on a Debian VM, 100+- packages will need to be installed, work on making this a varable list
-        sudo apt-get --yes install coreutils bash binutils bison diffutils findutils gawk gcc g++ grep gzip m4 make patch perl python3 sed tar texinfo xz-utils
+        sudo apt-get --yes install acl attr autoconf automake bash bc binutils bison check coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libcelf libelf1 libffi8 libpipeline1 m4 make patch perl python3 sed tar texinfo xz-utils
 #        sudo reboot
 #        exit
         install_necessary
