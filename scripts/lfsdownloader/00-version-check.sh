@@ -434,6 +434,10 @@ fi
 press_pause
 
 # Clean up
+echo $border
+echo "-- Cleaning Up --"
+echo $border
+
 rm --verbose --force "awk"
 rm --verbose --force "sh"
 rm --verbose --force "yacc"
