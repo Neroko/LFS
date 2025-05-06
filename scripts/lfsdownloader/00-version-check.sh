@@ -49,9 +49,10 @@ output_file="lfs.log"
 clear
 
 root_check() {
-    if (whoami != root)
-        then echo "Please run as root"
-        exit
+    if [[ "$EUID" -eq 0 ]]; then
+        echo "Script is running as root"
+    else
+        echo "Script is not running as root"
     fi
 }
 
