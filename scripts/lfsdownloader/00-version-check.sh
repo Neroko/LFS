@@ -213,10 +213,12 @@ install_necessary() {
                     break;;
                 [Nn]* )
                     install_answer="no";
+                    break;;
                 [Xx]* )
-                    exit;;
+                    exit;
+                    break;;
                 * )
-                    echo "Y/N or X for exit" ;;
+                    echo "Y/N or X for exit";;
             esac
         done
     fi
