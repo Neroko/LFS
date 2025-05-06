@@ -211,8 +211,8 @@ install_necessary() {
 #        sudo reboot
 #        exit
         install_necessary
-    elif [[ $install_answer == "no" ]]; then
-        exit
+#    elif [[ $install_answer == "no" ]]; then
+#        exit
     fi
 }
 
