@@ -207,12 +207,18 @@ install_necessary() {
             read -p "Update\Upgrade\Install Needed Packages (y/N/x)?" yn
             yn=${yn:-N}
             case $yn in
-                [Yy]* ) install_answer="yes";
+                [Yy]* )
+                    install_answer="yes";
                     break;;
-                [Nn]* ) install_answer="no";
+                [Nn]* )
+                    install_answer="no";
+                [Rr}* )
+                    software_check;
                     break;;
-                [Xx]* ) exit;;
-                * ) echo "Y/N or X for exit" ;;
+                [Xx]* )
+                    exit;;
+                * )
+                    echo "Y/N or X for exit" ;;
             esac
         done
     fi
@@ -413,12 +419,15 @@ if [[ $alias_error == "1" ]]; then
         read -p "Set SH to BASH (y/N/x)?" yn
             yn=${yn:-N}
             case $yn in
-                [Yy]* ) set_sh="yes";
+                [Yy]* )
+                    set_sh="yes";
                     sudo ln -sf bash /bin/sh;
                     break;;
-                [Nn]* ) set_sh="no";
+                [Nn]* )
+                    set_sh="no";
                     break;;
-                [Xx]* ) exit;;
+                [Xx]* )
+                    exit;;
                 * ) echo "Y/N or X for exit";;
             esac
     done
