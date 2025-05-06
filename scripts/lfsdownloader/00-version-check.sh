@@ -6,7 +6,7 @@ display_title="== Linux From Scratch (LFS) Versions Checks =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.2"
+script_version="1.0.0.3"
 #
 # DATE LAST EDITED:
 #   05/05/2025
@@ -55,6 +55,7 @@ display_help() {
     echo "Syntax: $0 [OPTIONS]"
     echo "Options:"
     echo "  -h, --help                          This Help Info"
+    echo "  -a, --auto                          Auto Install and Setup"
     echo "  -v, --verbose                       Enable Verbose Mode"
     echo "  -V, --version                       Script Version"
     echo "  -l, --log                           Log to File"
@@ -192,7 +193,8 @@ install_necessary() {
 #    install_answer="no"
     if [ $ask_install == "1" ]; then
         while true; do
-            read -p "Update\Upgrade\Install Needed Packages (y/n)?" yn
+            read -p "Update\Upgrade\Install Needed Packages (y/N)?" yn
+            yn=${yn:-N}
             case $yn in
                 [Yy]* ) install_answer="yes";
                     break;;
@@ -396,7 +398,8 @@ alias_check "yacc" "Bison"
 alias_check "sh" "Bash"
 if [[ $alias_error == "1" ]]; then
     while true; do
-        read -p "Set SH to BASH (y/n)?" yn
+        read -p "Set SH to BASH (y/N)?" yn
+            yn=${yn:-N}
             case $yn in
                 [Yy]* ) set_sh="yes";
                     sudo ln -sf bash /bin/sh;
@@ -432,6 +435,10 @@ fi
 press_pause
 
 # Clean up
+echo $border
+echo "-- Cleaning Up --"
+echo $border
+
 rm --verbose --force "awk"
 rm --verbose --force "sh"
 rm --verbose --force "yacc"
