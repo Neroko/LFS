@@ -221,7 +221,6 @@ umask 022
 
 
 # -- Caution --
-
 # Do not forget to check that LFS is set and the umask is set to 022 whenever you leave and reenter the current
 # working environment (such as when doing a su to root or another user). Check that the LFS variable is set
 # up properly with:
@@ -231,6 +230,7 @@ echo $LFS
 # example was followed.
 
 # Check that the umask is set up properly with:
+#umask
 umask
 # The output may be 0022 or 022 (the number of leading zeros depends on the host distro).
 
@@ -300,15 +300,3 @@ chmod 755 $LFS
 # Replace <zzz> with the name of the swap partition.
 
 # Now that the new LFS partition is open for business, it's time to download the packages.
-
-
-
-
-
-
-
-
-
-
-
-
