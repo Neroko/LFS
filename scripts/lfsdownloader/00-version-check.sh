@@ -209,7 +209,7 @@ install_necessary() {
         sudo apt-get update
         sudo apt-get upgrade
         # Normally on a Debian VM, 100+- packages will need to be installed, work on making this a varable list
-        sudo apt-get --yes install acl attr autoconf automake bash bc binutils bison check coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libcelf libelf1 libffi8 libpipeline1 libtool libxcrypt-source m4 make man-db manpages meson mpc ninja-build ncurses-base openssl patch perl pkgconf procps psmisc python3 readline-com sed sysvinit-utils udev tar tcl texinfo util-linux vim xz-utils zstd
+        sudo apt-get --yes install acl attr autoconf automake bash bc binutils bison check coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libffi8 libffi8 libpipeline1 libtool libxcrypt-source m4 make man-db manpages meson mpc ninja-build ncurses-base openssl patch perl pkgconf procps psmisc python3 readline-common sed sysvinit-utils udev tar tcl texinfo util-linux vim xz-utils zstd
 #        sudo reboot
 #        exit
         install_necessary
