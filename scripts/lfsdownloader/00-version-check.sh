@@ -48,6 +48,15 @@ output_file="lfs.log"
 
 clear
 
+root_check() {
+    if (whoami != root)
+        then echo "Please run as root"
+        exit
+    fi
+}
+
+root_check
+
 display_help() {
     # Display Help
     echo "$display_title"
