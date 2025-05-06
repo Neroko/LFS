@@ -204,14 +204,15 @@ install_necessary() {
 #    install_answer="no"
     if [ $ask_install == "1" ]; then
         while true; do
-            read -p "Update\Upgrade\Install Needed Packages (y/N)?" yn
+            read -p "Update\Upgrade\Install Needed Packages (y/N/x)?" yn
             yn=${yn:-N}
             case $yn in
                 [Yy]* ) install_answer="yes";
                     break;;
                 [Nn]* ) install_answer="no";
                     break;;
-                * ) echo "Y or N" ;;
+                [Xx]* ) exit;;
+                * ) echo "Y/N or X for exit" ;;
             esac
         done
     fi
@@ -409,7 +410,7 @@ alias_check "yacc" "Bison"
 alias_check "sh" "Bash"
 if [[ $alias_error == "1" ]]; then
     while true; do
-        read -p "Set SH to BASH (y/N)?" yn
+        read -p "Set SH to BASH (y/N/x)?" yn
             yn=${yn:-N}
             case $yn in
                 [Yy]* ) set_sh="yes";
@@ -417,7 +418,8 @@ if [[ $alias_error == "1" ]]; then
                     break;;
                 [Nn]* ) set_sh="no";
                     break;;
-                * ) echo "Y or N";;
+                [Xx]* ) exit;;
+                * ) echo "Y/N or X for exit";;
             esac
     done
 fi
