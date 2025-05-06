@@ -127,35 +127,62 @@ script_version="1.0.0.0"
 # necessity of the Grub Bios partition depends only on the partition table type of the boot disk.
 
 # = 2.4.1.4. Convenience Partitions
-#   There are several other partitions that are not required, but should be considered when designing a disk layout. The
-#   following list is not comprehensive, but is meant as a guide.
+#   There are several other partitions that are not required, but should be considered when designing a disk layout.
+#   The following list is not comprehensive, but is meant as a guide.
 #   • /boot – Highly recommended. Use this partition to store kernels and other booting information. To minimize
-#   potential boot problems with larger disks, make this the first physical partition on your first disk drive. A partition
-#   size of 200 megabytes is adequate.
+#     potential boot problems with larger disks, make this the first physical partition on your first disk drive. A
+#     partition size of 200 megabytes is adequate.
 #   • /boot/efi – The EFI System Partition, which is needed for booting the system with UEFI. Read the BLFS page for
-#   details.
+#     details.
 #   • /home – Highly recommended. Share your home directory and user customization across multiple distributions or
-#   LFS builds. The size is generally fairly large and depends on available disk space.
-#   • /usr – In LFS, /bin, /lib, and /sbin are symlinks to their counterparts in /usr. So /usr contains all the binaries
-#   needed for the system to run. For LFS a separate partition for /usr is normally not needed. If you create it anyway,
-#   you should make a partition large enough to fit all the programs and libraries in the system. The root partition
-#   can be very small (maybe just one gigabyte) in this configuration, so it's suitable for a thin client or diskless
-#   workstation (where /usr is mounted from a remote server). However, you should be aware that an initramfs (not
-#   covered by LFS) will be needed to boot a system with a separate /usr partition.
+#     LFS builds. The size is generally fairly large and depends on available disk space.
+#   • /usr – In LFS, /bin, /lib, and /sbin are symlinks to their counterparts in /usr. So /usr contains all the
+#     binaries needed for the system to run. For LFS a separate partition for /usr is normally not needed. If you
+#     create it anyway, you should make a partition large enough to fit all the programs and libraries in the system.
+#     The root partition can be very small (maybe just one gigabyte) in this configuration, so it's suitable for a
+#     thin client or diskless workstation (where /usr is mounted from a remote server). However, you should be aware
+#     that an initramfs (not covered by LFS) will be needed to boot a system with a separate /usr partition.
 #   • /opt – This directory is most useful for BLFS, where multiple large packages like KDE or Texlive can be installed
-#   without embedding the files in the /usr hierarchy. If used, 5 to 10 gigabytes is generally adequate.
-#   • /tmp – A separate /tmp partition is rare, but useful if configuring a thin client. This partition, if used, will usually
-#   not need to exceed a couple of gigabytes. If you have enough RAM, you can mount a tmpfs on /tmp to make
-#   access to temporary files faster.
+#     without embedding the files in the /usr hierarchy. If used, 5 to 10 gigabytes is generally adequate.
+#   • /tmp – A separate /tmp partition is rare, but useful if configuring a thin client. This partition, if used, will
+#     usually not need to exceed a couple of gigabytes. If you have enough RAM, you can mount a tmpfs on /tmp to make
+#     access to temporary files faster.
 #   • /usr/src – This partition is very useful for providing a location to store BLFS source files and share them across
-#   LFS builds. It can also be used as a location for building BLFS packages. A reasonably large partition of 30-50
-#   gigabytes provides plenty of room.
+#     LFS builds. It can also be used as a location for building BLFS packages. A reasonably large partition of 30-50
+#     gigabytes provides plenty of room.
+
 #   Any separate partition that you want automatically mounted when the system starts must be specified in the /etc/fstab
 #   file. Details about how to specify partitions will be discussed in Section 10.2, “Creating the /etc/fstab File”.
 
+# == 2.5. Creating a File System on the Partition
+# A partition is just a range of sectors on a disk drive, delimited by boundaries set in a partition table. Before the operating
+# system can use a partition to store any files, the partition must be formatted to contain a file system, typically consisting
+# of a label, directory blocks, data blocks, and an indexing scheme to locate a particular file on demand. The file system
+# also helps the OS keep track of free space on the partition, reserve the needed sectors when a new file is created or an
+# existing file is extended, and recycle the free data segments created when files are deleted. It may also provide support
+# for data redundancy, and for error recovery.
+# LFS can use any file system recognized by the Linux kernel, but the most common types are ext3 and ext4. The choice
+# of the right file system can be complex; it depends on the characteristics of the files and the size of the partition. For
+# example:
 
-
-
+# ext2
+# is suitable for small partitions that are updated infrequently such as /boot.
+# ext3
+# is an upgrade to ext2 that includes a journal to help recover the partition's status in the case of an unclean shutdown.
+# It is commonly used as a general purpose file system.
+# ext4
+# is the latest version of the ext family of file systems. It provides several new capabilities including nano-second
+# timestamps, creation and use of very large files (up to 16 TB), and speed improvements.
+# Other file systems, including FAT32, NTFS, JFS, and XFS are useful for specialized purposes. More information about
+# these file systems, and many others, can be found at https://en.wikipedia.org/wiki/Comparison_of_file_systems.
+# LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, issue the
+# following command:
+# mkfs -v -t ext4 /dev/<xxx>
+# Replace <xxx> with the name of the LFS partition.
+# If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will
+# need to be initialized with this command:
+# mkswap /dev/<yyy>
+# Replace <yyy> with the name of the swap partition.
 
 
 
