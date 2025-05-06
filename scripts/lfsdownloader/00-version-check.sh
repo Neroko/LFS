@@ -9,7 +9,7 @@ current_version="12.3"
 script_version="1.0.0.4"
 #
 # DATE LAST EDITED:
-#   05/05/2025
+#   05/06/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -52,7 +52,8 @@ root_check() {
     if [[ "$EUID" -eq 0 ]]; then
         echo "Script is running as root"
     else
-        echo "Script is not running as root"
+        echo "Script is not running as root";
+        exit
     fi
 }
 
