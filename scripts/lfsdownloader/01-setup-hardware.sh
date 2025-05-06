@@ -181,33 +181,125 @@ script_version="1.0.0.0"
 
 #     LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition,
 #     issue the following command:
+
 #mkfs -v -t ext4 /dev/<xxx>
 mkfs -v -t ext4 /dev/<xxx>
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
 #     it will need to be initialized with this command:
+
 #mkswap /dev/<yyy>
 mkswap /dev/<yyy>
+
 #   Replace <yyy> with the name of the swap partition.
 
 # == 2.6. Setting the $LFS Variable and the Umask
-#     Throughout this book, the environment variable LFS will be used several times. You should ensure that this
+#     Throughout this script, the environment variable LFS will be used several times. You should ensure that this
 #     variable is always defined throughout the LFS build process. It should be set to the name of the directory where
-#     you will be building your LFS system - we will use /mnt/lfs as an example, but you may choose any directory name
+#     you will be building your LFS system - we will use '/mnt/lfs' as an example, but you may choose any directory name
 #     you want. If you are building LFS on a separate partition, this directory will be the mount point for the partition.
 #     Choose a directory location and set the variable with the following command:
 
+#export LFS=/mnt/lfs
+export LFS=/mnt/lfs
+
+#     Having this variable set is beneficial in that commands such as mkdir -v $LFS/tools can be typed literally. The
+#     shell will automatically replace “$LFS” with “/mnt/lfs” (or whatever value the variable was set to) when it
+#     processes the command line.
+
+#     Now set the file mode creation mask (umask) to 022 in case the host distro uses a different default:
+#umask 022
+umask 022
+
+#     Setting the umask to 022 ensures that newly created files and directories are only writable by their owner, but
+#     are readable and searchable (only for directories) by anyone (assuming default modes are used by the open(2)
+#     system call, new files will end up with permission mode 644 and directories with mode 755). An overly-permissive
+#     default can leave security holes in the LFS system, and an overly-restrictive default can cause strange issues
+#     building or using the LFS system.
 
 
 
+# -- Caution --
 
+# Do not forget to check that LFS is set and the umask is set to 022 whenever you leave and reenter the current
+# working environment (such as when doing a su to root or another user). Check that the LFS variable is set
+# up properly with:
+#echo $LFS
+echo $LFS
+# Make sure the output shows the path to your LFS system's build location, which is /mnt/lfs if the provided
+# example was followed.
 
+# Check that the umask is set up properly with:
+umask
+# The output may be 0022 or 022 (the number of leading zeros depends on the host distro).
 
+# If any output of these two commands is incorrect, use the command given earlier on this page to set $LFS to
+# the correct directory name and set umask to 022.
 
+# -- Note --
+# One way to ensure that the LFS variable and the umask are always set properly is to edit the .bash_profile file
+# in both your personal home directory and in /root/.bash_profile and enter the export and umask commands
+# above. In addition, the shell specified in the /etc/passwd file for all users that need the LFS variable must be
+# bash to ensure that the .bash_profile file is incorporated as a part of the login process.
+# Another consideration is the method that is used to log into the host system. If logging in through a graphical
+# display manager, the user's .bash_profile is not normally used when a virtual terminal is started. In this case,
+# add the commands to the .bashrc file for the user and root. In addition, some distributions use an "if" test,
+# and do not run the remaining .bashrc instructions for a non-interactive bash invocation. Be sure to place the
+# commands ahead of the test for non-interactive use
 
+# == 2.7. Mounting the New Partition
+#   Now that a file system has been created, the partition must be mounted so the host system can access it. This
+#   book assumes that the file system is mounted at the directory specified by the LFS environment variable
+#   described in the previous section.
+#   Strictly speaking, one cannot “mount a partition.” One mounts the file system embedded in that partition. But
+#   since single partition can't contain more than one file system, people often speak of the partition and the
+#   associated file system as if they were one and the same.
 
+# Create the mount point and mount the LFS file system with these commands:
+#mkdir -pv $LFS
+mkdir -pv $LFS
+#mount -v -t ext4 /dev/<xxx> $LFS
+mount -v -t ext4 /dev/<xxx> $LFS
+# Replace <xxx> with the name of the LFS partition.
 
+# If you are using multiple partitions for LFS (e.g., one for / and another for /home), mount them like this:
+#mkdir -pv $LFS
+mkdir -pv $LFS
+#mount -v -t ext4 /dev/<xxx> $LFS
+mount -v -t ext4 /dev/<xxx> $LFS
+#mkdir -v $LFS/home
+mkdir -v $LFS/home
+#mount -v -t ext4 /dev/<yyy> $LFS/home
+mount -v -t ext4 /dev/<yyy> $LFS/home
+# Replace <xxx> and <yyy> with the appropriate partition names.
+
+#   Set the owner and permission mode of the $LFS directory (i.e. the root directory in the newly created file
+#   system for the LFS system) to root and 755 in case the host distro has been configured to use a different default
+#   for mkfs:
+#chown root:root $LFS
+chown root:root $LFS
+#chmod 755 $LFS
+chmod 755 $LFS
+
+# Ensure that this new partition is not mounted with permissions that are too restrictive (such as the nosuid or nodev
+# options). Run the mount command without any parameters to see what options are set for the mounted LFS partition.
+# If nosuid and/or nodev are set, the partition must be remounted.
+
+# -- Warning --
+# The above instructions assume that you will not restart your computer throughout the LFS process. If you shut
+# down your system, you will either need to remount the LFS partition each time you restart the build process,
+# or modify the host system's /etc/fstab file to automatically remount it when you reboot. For example, you
+# might add this line to your /etc/fstab file:
+#    /dev/<xxx> /mnt/lfs ext4 defaults 1 1
+# If you use additional optional partitions, be sure to add them also.
+
+# If you are using a 'swap' partition, ensure that it is enabled using the swapon command:
+#/sbin/swapon -v /dev/<zzz>
+/sbin/swapon -v /dev/<zzz>
+# Replace <zzz> with the name of the swap partition.
+
+# Now that the new LFS partition is open for business, it's time to download the packages.
 
 
 
