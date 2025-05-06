@@ -55,6 +55,7 @@ display_help() {
     echo "Syntax: $0 [OPTIONS]"
     echo "Options:"
     echo "  -h, --help                          This Help Info"
+    echo "  -a, --auto                          Auto Install and Setup"
     echo "  -v, --verbose                       Enable Verbose Mode"
     echo "  -V, --version                       Script Version"
     echo "  -l, --log                           Log to File"
