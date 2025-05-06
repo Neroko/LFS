@@ -213,9 +213,6 @@ install_necessary() {
                     break;;
                 [Nn]* )
                     install_answer="no";
-                [Rr}* )
-                    software_check;
-                    break;;
                 [Xx]* )
                     exit;;
                 * )
