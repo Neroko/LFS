@@ -218,8 +218,6 @@ umask 022
 #     default can leave security holes in the LFS system, and an overly-restrictive default can cause strange issues
 #     building or using the LFS system.
 
-
-
 # -- Caution --
 # Do not forget to check that LFS is set and the umask is set to 022 whenever you leave and reenter the current
 # working environment (such as when doing a su to root or another user). Check that the LFS variable is set
