@@ -51,11 +51,11 @@ if [ ! -d "$download_directory" ]; then
 fi
 
 # Download files to directory
-wget                                        \
-    -N                                      \
-    -O "version-check.sh"                   \
-    --timestamping                          \
-    --directory-prefix="$download_directory"\
+wget                                         \
+    --verbose                                \
+    --output-document="version-check.sh"     \
+    --timestamping                           \
+    --directory-prefix="$download_directory" \
     "$download_site"
 
 # Set file permission:
