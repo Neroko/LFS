@@ -86,16 +86,38 @@ script_version="1.0.0.0"
 #   native partition and a 'swap' partition, if needed. Please refer to 'cfdisk(8)' or 'fdisk(8)' if you do not yet
 #   know how to use the programs.
 
+TGTDEV='/dev/sdb'
+
 #sudo fdisk /dev/sdb      # Menu Options for Partation
 #sudo fdisk -l            # List all Partations
 #sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
-sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
+
+#sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
 
 #sudo sfdisk /dev/sdb     # Menu Options for Partation
 #sudo sfdisk -l           # List all Partations
 #sudo sfdisk -l /dev/sdb  # List just '/dev/sdb' Partations
 
 #sudo cfdisk /dev/sdb     # Menu Options for Partation
+
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | sudo fdisk ${TGTDEV}
+  o      # clear the in memory partition table
+  n      # new partition
+  p      # parimay partition
+  1      # partition number 1
+         # default - start at beginning of disk
+  +100M  # 100 MB boot partition
+  n      # new partition
+  p      # primary partition
+  2      # partition number 2
+         # default, start immediately after preceding partition
+         # default, extend partition to end of disk
+  a      # make a partition bootable
+  1      # bootable partition is partition 1 -- /dev/sdb1
+  p      # print the in-memory partition table
+  w      # write the partition table
+  q      # quit when done
+EOF
 
 # -- NOTE --
 # For experienced users, other partitioning schemes are possible. The new LFS system can be on a software RAID array
