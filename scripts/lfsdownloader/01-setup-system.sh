@@ -89,6 +89,7 @@ script_version="1.0.0.0"
 #sudo fdisk /dev/sdb      # Menu Options for Partation
 #sudo fdisk -l            # List all Partations
 #sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
+sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
 
 #sudo sfdisk /dev/sdb     # Menu Options for Partation
 #sudo sfdisk -l           # List all Partations
@@ -197,14 +198,14 @@ script_version="1.0.0.0"
 #     issue the following command:
 
 #mkfs -v -t ext4 /dev/<xxx>
-mkfs -v -t ext4 /dev/<xxx>
+#mkfs -v -t ext4 /dev/<xxx>
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
 #     it will need to be initialized with this command:
 
 #mkswap /dev/<yyy>
-mkswap /dev/<yyy>
+#mkswap /dev/<yyy>
 
 #   Replace <yyy> with the name of the swap partition.
 
@@ -224,7 +225,7 @@ export LFS=/mnt/lfs
 
 #     Now set the file mode creation mask (umask) to 022 in case the host distro uses a different default:
 #umask 022
-umask 022
+#umask 022
 
 #     Setting the umask to 022 ensures that newly created files and directories are only writable by their owner, but
 #     are readable and searchable (only for directories) by anyone (assuming default modes are used by the open(2)
@@ -243,7 +244,7 @@ echo $LFS
 
 # Check that the umask is set up properly with:
 #umask
-umask
+#umask
 # The output may be 0022 or 022 (the number of leading zeros depends on the host distro).
 
 # If any output of these two commands is incorrect, use the command given earlier on this page to set $LFS to
@@ -270,29 +271,29 @@ umask
 
 # Create the mount point and mount the LFS file system with these commands:
 #mkdir -pv $LFS
-mkdir -pv $LFS
+#mkdir -pv $LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
-mount -v -t ext4 /dev/<xxx> $LFS
+#mount -v -t ext4 /dev/<xxx> $LFS
 # Replace <xxx> with the name of the LFS partition.
 
 # If you are using multiple partitions for LFS (e.g., one for / and another for /home), mount them like this:
 #mkdir -pv $LFS
-mkdir -pv $LFS
+#mkdir -pv $LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
-mount -v -t ext4 /dev/<xxx> $LFS
+#mount -v -t ext4 /dev/<xxx> $LFS
 #mkdir -v $LFS/home
-mkdir -v $LFS/home
+#mkdir -v $LFS/home
 #mount -v -t ext4 /dev/<yyy> $LFS/home
-mount -v -t ext4 /dev/<yyy> $LFS/home
+#mount -v -t ext4 /dev/<yyy> $LFS/home
 # Replace <xxx> and <yyy> with the appropriate partition names.
 
 #   Set the owner and permission mode of the $LFS directory (i.e. the root directory in the newly created file
 #   system for the LFS system) to root and 755 in case the host distro has been configured to use a different default
 #   for mkfs:
 #chown root:root $LFS
-chown root:root $LFS
+#chown root:root $LFS
 #chmod 755 $LFS
-chmod 755 $LFS
+#chmod 755 $LFS
 
 # Ensure that this new partition is not mounted with permissions that are too restrictive (such as the nosuid or nodev
 # options). Run the mount command without any parameters to see what options are set for the mounted LFS partition.
@@ -308,7 +309,7 @@ chmod 755 $LFS
 
 # If you are using a 'swap' partition, ensure that it is enabled using the swapon command:
 #/sbin/swapon -v /dev/<zzz>
-/sbin/swapon -v /dev/<zzz>
+#/sbin/swapon -v /dev/<zzz>
 # Replace <zzz> with the name of the swap partition.
 
 # Now that the new LFS partition is open for business, it's time to download the packages.
