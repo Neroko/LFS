@@ -576,7 +576,10 @@ for i in bin lib sib; do
 done
 
 case $(uname -m) in
-    x86_64) mkdir --verbose --parents "$LFS"/lib64 ;;
+    x86_64) mkdir     \
+        --verbose     \
+        --parents     \
+        "$LFS"/lib64 ;;
 esac
 
 # Programs in Chapter 6 will compiled with a cross-compiler (more details can be found in
@@ -602,22 +605,22 @@ mkdir            \
 # environment, we will create a new user called lfs as a member of a new group (also named
 # lfs) and run commands as lfs during the installation process. As root, issue the following
 # commands to add the new user:
-groupadd lfs
+groupadd "lfs"
 useradd                 \
-    -s /bin/bash        \
-    --gid lfs           \
+    --shell "/bin/bash" \
+    --gid "lfs"         \
     --create-home       \
     --skel "/dev/null"  \
-    lfs
+    "lfs"
 
 # This is what the command line options mean:
-# -s /bin/bash
+# -s /bin/bash, --shell /bin/bash
 #   This makes bash the default shell for user 'lfs'.
-# -g lfs
+# -g lfs, --gid lfs
 #   This option adds user lfs to group 'lfs'.
-# -m
+# -m, --create-home
 #   This creates a home directory for 'lfs'.
-# -k /dev/null
+# -k /dev/null, -skel /dev/null
 #   This parameter prevents possible copying of files from a skeleton directory (the default
 #   'is /etc/skel') by changing the input location to the special null device.
 # lfs
