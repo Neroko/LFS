@@ -219,7 +219,7 @@ partition_disk() {
 #     issue the following command:
 
 #mkfs -v -t ext4 /dev/<xxx>
-mkfs -v -t ext4 /dev/<xxx>
+mkfs -v -t ext4 $TGTDEV
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
