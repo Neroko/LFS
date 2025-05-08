@@ -86,6 +86,16 @@ script_version="1.0.0.0"
 #   native partition and a 'swap' partition, if needed. Please refer to 'cfdisk(8)' or 'fdisk(8)' if you do not yet
 #   know how to use the programs.
 
+#sudo fdisk /dev/sdb      # Menu Options for Partation
+#sudo fdisk -l            # List all Partations
+#sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
+
+#sudo sfdisk /dev/sdb     # Menu Options for Partation
+#sudo sfdisk -l           # List all Partations
+#sudo sfdisk -l /dev/sdb  # List just '/dev/sdb' Partations
+
+#sudo cfdisk /dev/sdb     # Menu Options for Partation
+
 # -- NOTE --
 # For experienced users, other partitioning schemes are possible. The new LFS system can be on a software RAID array
 # or an LVM logical volume. However, some of these options require an 'initramfs'. which is an advanced topic. These
