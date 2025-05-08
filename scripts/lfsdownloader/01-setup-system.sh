@@ -246,7 +246,7 @@ export LFS=/mnt/lfs
 
 #     Now set the file mode creation mask (umask) to 022 in case the host distro uses a different default:
 #umask 022
-#umask 022
+umask 022
 
 #     Setting the umask to 022 ensures that newly created files and directories are only writable by their owner, but
 #     are readable and searchable (only for directories) by anyone (assuming default modes are used by the open(2)
@@ -265,7 +265,7 @@ echo $LFS
 
 # Check that the umask is set up properly with:
 #umask
-#umask
+umask
 # The output may be 0022 or 022 (the number of leading zeros depends on the host distro).
 
 # If any output of these two commands is incorrect, use the command given earlier on this page to set $LFS to
@@ -292,9 +292,9 @@ echo $LFS
 
 # Create the mount point and mount the LFS file system with these commands:
 #mkdir -pv $LFS
-#mkdir -pv $LFS
+mkdir -pv $LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
-#mount -v -t ext4 /dev/<xxx> $LFS
+mount -v -t ext4 $TGTDEV $LFS
 # Replace <xxx> with the name of the LFS partition.
 
 # If you are using multiple partitions for LFS (e.g., one for / and another for /home), mount them like this:
@@ -312,9 +312,9 @@ echo $LFS
 #   system for the LFS system) to root and 755 in case the host distro has been configured to use a different default
 #   for mkfs:
 #chown root:root $LFS
-#chown root:root $LFS
+chown root:root $LFS
 #chmod 755 $LFS
-#chmod 755 $LFS
+chmod 755 $LFS
 
 # Ensure that this new partition is not mounted with permissions that are too restrictive (such as the nosuid or nodev
 # options). Run the mount command without any parameters to see what options are set for the mounted LFS partition.
