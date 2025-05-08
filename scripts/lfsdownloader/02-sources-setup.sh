@@ -241,8 +241,310 @@ chown root:root ""$sources_directory"/*"
 # will be taken for other newly added patches. You may review the patches yourself and
 # incorporate some patches if you consider them important.
 
+# - GMP (6.3.0) - 2,046 KB:
+#    Home page: https://www.gnu.org/software/gmp/
+#    Download: https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
+#    MD5 sum: 956dc04e864001a9c22429f761f2c283
+# - Gperf (3.1) - 1,188 KB:
+#    Home page: https://www.gnu.org/software/gperf/
+#    Download: https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz
+#    MD5 sum: 9e251c0a618ad0824b51117d5d9db87e
+# - Grep (3.11) - 1,664 KB:
+#    Home page: https://www.gnu.org/software/grep/
+#    Download: https://ftp.gnu.org/gnu/grep/grep-3.11.tar.xz
+#    MD5 sum: 7c9bbd74492131245f7cdb291fa142c0
+# - Groff (1.23.0) - 7,259 KB:
+#    Home page: https://www.gnu.org/software/groff/
+#    Download: https://ftp.gnu.org/gnu/groff/groff-1.23.0.tar.gz
+#    MD5 sum: 5e4f40315a22bb8a158748e7d5094c7d
+# - GRUB (2.12) - 6,524 KB:
+#    Home page: https://www.gnu.org/software/grub/
+#    Download: https://ftp.gnu.org/gnu/grub/grub-2.12.tar.xz
+#    MD5 sum: 60c564b1bdc39d8e43b3aab4bc0fb140
+# - Gzip (1.13) - 819 KB:
+#    Home page: https://www.gnu.org/software/gzip/
+#    Download: https://ftp.gnu.org/gnu/gzip/gzip-1.13.tar.xz
+#    MD5 sum: d5c9fc9441288817a4a0be2da0249e29
+# - Iana-Etc (20250123) - 591 KB:
+#    Home page: https://www.iana.org/protocols
+#    Download: https://github.com/Mic92/iana-etc/releases/download/20250123/iana-etc-20250123.tar.gz
+#    MD5 sum: f8a0ebdc19a5004cf42d8bdcf614fa5d
+# - Inetutils (2.6) - 1,724 KB:
+#    Home page: https://www.gnu.org/software/inetutils/
+#    Download: https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz
+#    MD5 sum: 401d7d07682a193960bcdecafd03de94
+# - Intltool (0.51.0) - 159 KB:
+#    Home page: https://freedesktop.org/wiki/Software/intltool
+#    Download: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+#    MD5 sum: 12e517cac2b57a0121cda351570f1e63
+# - IPRoute2 (6.13.0) - 906 KB:
+#    Home page: https://www.kernel.org/pub/linux/utils/net/iproute2/
+#    Download: https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.13.0.tar.xz
+#    MD5 sum: 1603d25120d03feeaba9b360d03ffaec
+# - Jinja2 (3.1.5) - 239 KB:
+#    Home page: https://jinja.palletsprojects.com/en/3.1.x/
+#    Download: https://pypi.org/packages/source/J/Jinja2/jinja2-3.1.5.tar.gz
+#    MD5 sum: 083d64f070f6f1b5f75971ae60240785
+# - Kbd (2.7.1) - 1,438 KB:
+#    Home page: https://kbd-project.org/
+#    Download: https://www.kernel.org/pub/linux/utils/kbd/kbd-2.7.1.tar.xz
+#    MD5 sum: f15673d9f748e58f82fa50cff0d0fd20
+# - Kmod (34) - 331 KB:
+#    Home page: https://github.com/kmod-project/kmod
+#    Download: https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.tar.xz
+#    MD5 sum: 3e6c5c9ad9c7367ab9c3cc4f08dfde62
+# - Less (668) - 635 KB:
+#    Home page: https://www.greenwoodsoftware.com/less/
+#    Download: https://www.greenwoodsoftware.com/less/less-668.tar.gz
+#    MD5 sum: d72760386c5f80702890340d2f66c302
+# - LFS-Bootscripts (20240825) - 33 KB:
+#    Download: https://www.linuxfromscratch.org/lfs/downloads/12.3/lfs-bootscripts-20240825.tar.xz
+#    MD5 sum: 7b078c594a77e0f9cd53a0027471c3bc
+# - Libcap (2.73) - 191 KB:
+#    Home page: https://sites.google.com/site/fullycapable/
+#    Download: https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.73.tar.xz
+#    MD5 sum: 0e186df9de9b1e925593a96684fe2e32
+# - Libffi (3.4.7) - 1,362 KB:
+#    Home page: https://sourceware.org/libffi/
+#    Download: https://github.com/libffi/libffi/releases/download/v3.4.7/libffi-3.4.7.tar.gz
+#    MD5 sum: 696a1d483a1174ce8a477575546a5284
+# - Libpipeline (1.5.8) - 1046 KB:
+#    Home page: https://libpipeline.nongnu.org/
+#    Download: https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz
+#    MD5 sum: 17ac6969b2015386bcb5d278a08a40b5
+# - Libtool (2.5.4) - 1,033 KB:
+#    Home page: https://www.gnu.org/software/libtool/
+#    Download: https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz
+#    MD5 sum: 22e0a29df8af5fdde276ea3a7d351d30
+# - Libxcrypt (4.4.38) - 612 KB:
+#    Home page: https://github.com/besser82/libxcrypt/
+#    Download: https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz
+#    MD5 sum: 1796a5d20098e9dd9e3f576803c83000
+# - Linux (6.13.4) - 145,015 KB:
+#    Home page: https://www.kernel.org/
+#    Download: https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.13.4.tar.xz
+#    MD5 sum: 13b9e6c29105a34db4647190a43d1810
+
+# == Note ==
+# The Linux kernel is updated quite frequently, many times due to discoveries of
+# security vulnerabilities. The latest available stable kernel version may be used,
+# unless the errata page says otherwise.
+# For users with limited speed or expensive bandwidth who wish to update the Linux
+# kernel, a baseline version of the package and patches can be downloaded separately.
+# This may save some time or cost for a subsequent patch level upgrade within a minor
+# release.
+
+# - Lz4 (1.10.0) - 379 KB:
+#    Home page: https://lz4.org/
+#    Download: https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz
+#    MD5 sum: dead9f5f1966d9ae56e1e32761e4e675
+# - M4 (1.4.19) - 1,617 KB:
+#    Home page: https://www.gnu.org/software/m4/
+#    Download: https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz
+#    MD5 sum: 0d90823e1426f1da2fd872df0311298d
+# - Make (4.4.1) - 2,300 KB:
+#    Home page: https://www.gnu.org/software/make/
+#    Download: https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz
+#    MD5 sum: c8469a3713cbbe04d955d4ae4be23eeb
+# - Man-DB (2.13.0) - 2,023 KB:
+#    Home page: https://www.nongnu.org/man-db/
+#    Download: https://download.savannah.gnu.org/releases/man-db/man-db-2.13.0.tar.xz
+#    MD5 sum: 97ab5f9f32914eef2062d867381d8cee
+# - Man-pages (6.12) - 1,838 KB:
+#    Home page: https://www.kernel.org/doc/man-pages/
+#    Download: https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.12.tar.xz
+#    MD5 sum: 44de430a598605eaba3e36dd43f24298
+# - MarkupSafe (3.0.2) - 21 KB:
+#    Home page: https://palletsprojects.com/p/markupsafe/
+#    Download: https://pypi.org/packages/source/M/MarkupSafe/markupsafe-3.0.2.tar.gz
+#    MD5 sum: cb0071711b573b155cc8f86e1de72167
+# - Meson (1.7.0) - 2,241 KB:
+#    Home page: https://mesonbuild.com
+#    Download: https://github.com/mesonbuild/meson/releases/download/1.7.0/meson-1.7.0.tar.gz
+#    MD5 sum: c20f3e5ebbb007352d22f4fd6ceb925c
+# - MPC (1.3.1) - 756 KB:
+#    Home page: https://www.multiprecision.org/
+#    Download: https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz
+#    MD5 sum: 5c9bc658c9fd0f940e8e3e0f09530c62
+# - MPFR (4.2.1) - 1,459 KB:
+#    Home page: https://www.mpfr.org/
+#    Download: https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
+#    MD5 sum: 523c50c6318dde6f9dc523bc0244690a
+# - Ncurses (6.5) - 2,156 KB:
+#    Home page: https://www.gnu.org/software/ncurses/
+#    Download: https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz
+#    MD5 sum: ac2d2629296f04c8537ca706b6977687
+# - Ninja (1.12.1) - 235 KB:
+#    Home page: https://ninja-build.org/
+#    Download: https://github.com/ninja-build/ninja/archive/v1.12.1/ninja-1.12.1.tar.gz
+#    MD5 sum: 6288992b05e593a391599692e2f7e490
+# - OpenSSL (3.4.1) - 17,917 KB:
+#    Home page: https://www.openssl-library.org/
+#    Download: https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz
+#    MD5 sum: fb7a747ac6793a7ad7118eaba45db379
+# - Patch (2.7.6) - 766 KB:
+#    Home page: https://savannah.gnu.org/projects/patch/
+#    Download: https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz
+#    MD5 sum: 78ad9937e4caadcba1526ef1853730d5
+# - Perl (5.40.1) - 13,605 KB:
+#    Home page: https://www.perl.org/
+#    Download: https://www.cpan.org/src/5.0/perl-5.40.1.tar.xz
+#    MD5 sum: bab3547a5cdf2302ee0396419d74a42e
+# - Pkgconf (2.3.0) - 309 KB:
+#    Home page: https://github.com/pkgconf/pkgconf
+#    Download: https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz
+#    MD5 sum: 833363e77b5bed0131c7bc4cc6f7747b
+# - Procps (4.0.5) - 1,483 KB:
+#    Home page: https://gitlab.com/procps-ng/procps/
+#    Download: https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz
+#    MD5 sum: 90803e64f51f192f3325d25c3335d057
+# - Psmisc (23.7) - 423 KB:
+#    Home page: https://gitlab.com/psmisc/psmisc
+#    Download: https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz
+#    MD5 sum: 53eae841735189a896d614cba440eb10
+# - Python (3.13.2) - 22,091 KB:
+#    Home page: https://www.python.org/
+#    Download: https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz
+#    MD5 sum: 4c2d9202ab4db02c9d0999b14655dfe5
+# - Python Documentation (3.13.2) - 10,102 KB:
+#    Download: https://www.python.org/ftp/python/doc/3.13.2/python-3.13.2-docs-html.tar.bz2
+#    MD5 sum: d6aede88f480a018d26b3206f21654ae
+# - Readline (8.2.13) - 2,974 KB:
+#    Home page: https://tiswww.case.edu/php/chet/readline/rltop.html
+#    Download: https://ftp.gnu.org/gnu/readline/readline-8.2.13.tar.gz
+#    MD5 sum: 05080bf3801e6874bb115cd6700b708f
+# - Sed (4.9) - 1,365 KB:
+#    Home page: https://www.gnu.org/software/sed/
+#    Download: https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz
+#    MD5 sum: 6aac9b2dbafcd5b7a67a8a9bcb8036c3
+# - Setuptools (75.8.1) - 1,313 KB:
+#    Home page: https://pypi.org/project/setuptools/
+#    Download: https://pypi.org/packages/source/s/setuptools/setuptools-75.8.1.tar.gz
+#    MD5 sum: 7dc3d3f529b76b10e35326e25c676b30
+# - Shadow (4.17.3) - 2,274 KB:
+#    Home page: https://github.com/shadow-maint/shadow/
+#    Download: https://github.com/shadow-maint/shadow/releases/download/4.17.3/shadow-4.17.3.tar.xz
+#    MD5 sum: 0da190e53ecee76237e4c8f3f39531ed
+# - Sysklogd (2.7.0) - 465 KB:
+#    Home page: https://www.infodrom.org/projects/sysklogd/
+#    Download: https://github.com/troglobit/sysklogd/releases/download/v2.7.0/sysklogd-2.7.0.tar.gz
+#    MD5 sum: 611c0fa5c138eb7a532f3c13bdf11ebc
+# - Systemd (257.3) - 15,847 KB:
+#    Home page: https://www.freedesktop.org/wiki/Software/systemd/
+#    Download: https://github.com/systemd/systemd/archive/v257.3/systemd-257.3.tar.gz
+#    MD5 sum: 8e4fc90c7aead651fa5c50bd1b34abc2
+# - Systemd Man Pages (257.3) - 733 KB:
+#    Home page: https://www.freedesktop.org/wiki/Software/systemd/
+#    Download: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.3.tar.xz
+#    MD5 sum: 9b77c3b066723d490cb10aed4fb05696
+
+# == Note ==
+# The Linux From Scratch team generates its own tarball of the man pages using the
+# systemd source. This is done in order to avoid unnecessary dependencies.
+
+# - SysVinit (3.14) - 236 KB:
+#    Home page: https://savannah.nongnu.org/projects/sysvinit
+#    Download: https://github.com/slicer69/sysvinit/releases/download/3.14/sysvinit-3.14.tar.xz
+#    MD5 sum: bc6890b975d19dc9db42d0c7364dd092
+# - Tar (1.35) - 2,263 KB:
+#    Home page: https://www.gnu.org/software/tar/
+#    Download: https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz
+#    MD5 sum: a2d8042658cfd8ea939e6d911eaf4152
+# - Tcl (8.6.16) - 11,406 KB:
+#    Home page: https://tcl.sourceforge.net/
+#    Download: https://downloads.sourceforge.net/tcl/tcl8.6.16-src.tar.gz
+#    MD5 sum: eaef5d0a27239fb840f04af8ec608242
+# - Tcl Documentation (8.6.16) - 1,169 KB:
+#    Download: https://downloads.sourceforge.net/tcl/tcl8.6.16-html.tar.gz
+#    MD5 sum: 750c221bcb6f8737a6791c1fbe98b684
+# - Texinfo (7.2) - 6,259 KB:
+#    Home page: https://www.gnu.org/software/texinfo/
+#    Download: https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz
+#    MD5 sum: 11939a7624572814912a18e76c8d8972
+# - Time Zone Data (2025a) - 453 KB:
+#    Home page: https://www.iana.org/time-zones
+#    Download: https://www.iana.org/time-zones/repository/releases/tzdata2025a.tar.gz
+#    MD5 sum: 404229390c06b7440f5e48d12c1a3251
+# - Udev-lfs Tarball (udev-lfs-20230818) - 10 KB:
+#    Download: https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz
+#    MD5 sum: acd4360d8a5c3ef320b9db88d275dae6
+# - Util-linux (2.40.4) - 8,641 KB:
+#    Home page: https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/
+#    Download: https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz
+#    MD5 sum: f9cbb1c8315d8ccbeb0ec36d10350304
+# - Vim (9.1.1166) - 18,077 KB:
+#    Home page: https://www.vim.org
+#    Download: https://github.com/vim/vim/archive/v9.1.1166/vim-9.1.1166.tar.gz
+#    MD5 sum: 718d43ce957ab7c81071793de176c2eb
+
+# == Note ==
+# The version of vim changes daily. To get the latest version, go to:
+#    'https://github.com/vim/vim/tags'
+
+# - Wheel (0.45.1) - 106 KB:
+#    Home page: https://pypi.org/project/wheel/
+#    Download: https://pypi.org/packages/source/w/wheel/wheel-0.45.1.tar.gz
+#    MD5 sum: dddc505d0573d03576c7c6c5a4fe0641
+# - XML::Parser (2.47) - 276 KB:
+#    Home page: https://github.com/chorny/XML-Parser
+#    Download: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz
+#    MD5 sum: 89a8e82cfd2ad948b349c0a69c494463
+# - Xz Utils (5.6.4) - 1,310 KB:
+#    Home page: https://tukaani.org/xz
+#    Download: https://github.com//tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.xz
+#    MD5 sum: 4b1cf07d45ec7eb90a01dd3c00311a3e
+# - Zlib (1.3.1) - 1,478 KB:
+#    Home page: https://zlib.net/
+#    Download: https://zlib.net/fossils/zlib-1.3.1.tar.gz
+#    MD5 sum: 9855b6d802d7fe5b7bd5b196a2271655
+# - Zstd (1.5.7) - 2,378 KB:
+#    Home page: https://facebook.github.io/zstd/
+#    Download: https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz
+#    MD5 sum: 780fc1896922b1bc52a4e90980cdda48
+
+# Total size of these packages: about 527 MB
+
+# == 3.3. Needed Patches
+# In addition to the packages, several patches are also required. These patches correct
+# any mistakes in the packages that should be fixed by the maintainer. The patches also
+# make small modifications to make the packages easier to work with. The following
+# patches will be needed to build an LFS system:
+# - Bzip2 Documentation Patch - 1.6 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/bzip2-1.0.8-install_docs-1.patch
+#    MD5 sum: 6a5ac7e89b791aae556de0f745916f7f
+# - Coreutils Internationalization Fixes Patch - 164 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/coreutils-9.6-i18n-1.patch
+#    MD5 sum: 6aee45dd3e05b7658971c321d92f44b7
+# - Expect GCC14 Patch - 7.8 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/expect-5.45.4-gcc14-1.patch
+#    MD5 sum: 0b8b5ac411d011263ad40b0664c669f0
+# - Glibc FHS Patch - 2.8 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/glibc-2.41-fhs-1.patch
+#    MD5 sum: 9a5997c3452909b1769918c759eff8a2
+# - Kbd Backspace/Delete Fix Patch - 12 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/kbd-2.7.1-backspace-1.patch
+#    MD5 sum: f75cca16a38da6caa7d52151f7136895
+# - SysVinit Consolidated Patch - 2.5 KB:
+#    Download: https://www.linuxfromscratch.org/patches/lfs/12.3/sysvinit-3.14-consolidated-1.patch
+#    MD5 sum: 3af8fd8e13cad481eeeaa48be4247445
+
+# Total size of these patches: about 190.7 KB
+
+# In addition to the above required patches, there exist a number of optional patches
+# created by the LFS community. These optional patches solve minor problems or enable
+# functionality that is not enabled by default. Feel free to peruse the patches
+# database located at https://www.linuxfromscratch.org/patches/downloads/ and acquire
+# any additional patches to suit your system needs.
 
 # == Chapter 4. Final Preparations ==
+# == 4.1. Introduction ==
+# In this chapter, we will perform a few additional tasks to prepare for building
+# temporary system. We will create a set of directories in '$LFS' (in which we will
+# install the temporary tools), add an unprivileged user, and create an appropriate
+# build environment for that user. We will also explain the units of time ("SBUs") we
+# use to measure how long it takes to build LFS packages, and provide some
+# information about package test suites.
+
 # == 4.2. Creating a Limited Directory Layout in the LFS Filesystem
 # In this section, we begin populating the LFS filesystem with the pieces that will
 # constitute the final Linux system. The first step is to create a limited directory
@@ -267,6 +569,13 @@ esac
 # directory with the command:
 mkdir -pv $LFS/tools
 
+# == NOTE ==
+# The LFS editors have deliberately decided not to use a /usr/lib64 directory. Several
+# steps are taken to be sure the toolchain will not use it. If for any reason this directory
+# appears (either because you made an error in following the instructions, or because you
+# installed a binary package that created it after finishing LFS), it may break your system.
+# You should always be sure this directory does not exist.
+
 # == 4.3. Adding the LFS User ==
 # When logged in as user root, making a single mistake can damage or destroy a system.
 # Therefore. the packages in the next two chapters are built as an unprivileged user. You
@@ -279,24 +588,24 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 
 # This is what the command line options mean:
 # -s /bin/bash
-#   This makes bash the default shell for user lfs.
+#   This makes bash the default shell for user 'lfs'.
 # -g lfs
-#   This option adds user lfs to group lfs.
+#   This option adds user lfs to group 'lfs'.
 # -m
-#   This creates a home directory for lfs.
+#   This creates a home directory for 'lfs'.
 # -k /dev/null
 #   This parameter prevents possible copying of files from a skeleton directory (the default
-#   is /etc/skel) by changing the input location to the special null device.
+#   'is /etc/skel') by changing the input location to the special null device.
 # lfs
 #   This is the name of the new user.
 
-# If you want vto log in as lfs or switch to lfs from a non-root user (as opposed to
-# switching to user lfs when logged in as root, which does not require the lfs user to have
-# a password), you need to set a password for lfs. Issue the following command as the root
+# If you want vto log in as 'lfs' or switch to 'lfs' from a non-root user (as opposed to
+# switching to user 'lfs' when logged in as root, which does not require the lfs user to have
+# a password), you need to set a password for 'lfs'. Issue the following command as the 'root'
 # user to set the password:
 passwd lfs
 
-# Grant lfs full access to all directories under $LFS by making lfs the owner:
+# Grant 'lfs' full access to all directories under '$LFS' by making 'lfs' the owner:
 chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
     x86_64) chown -v lfs $LFS/lib64 ;;
