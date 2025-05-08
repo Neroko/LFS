@@ -77,12 +77,17 @@ groups "#(id -un)" | grep -q ' sudo ' && echo "In sudo group" || echo "Not in su
 
 # Create the directory, execute the following command, as user 'root', before starting the
 # download session:
-mkdir -v "$sources_directory"
+mkdir            \
+    --verbose    \
+    "$sources_directory"
 
 # Make this directory writable and sticky. "Sticky" means that even if multiple users have
 # write permission on a directory, only the owner of a file can delete the file within a
 # sticky directory. The following command will enable the write and sticky modes:
-chmod -v a+wt "$sources_directory"
+chmod           \
+    --verbose   \
+    a+wt        \
+    "$sources_directory"
 
 # There are seveeral ways to obtain all the necessary packages and patches to build LFS:
 # - The files can be downloaded individually as described in the next two sections.
@@ -105,7 +110,9 @@ wget                            \
 # verify that all the correct packages are available before proceeding. Pkace that file in
 # $LFS/sources and run:
 pushd "$sources_directory"
-    md5sums -c md5sums
+    md5sums        \
+        --check    \
+        md5sums
 popd
 # This check can be used after retrieving the needed files with any of the methods above.
 
@@ -114,7 +121,10 @@ popd
 # in the host distro is not assigned in LFS. So the files will be left owned by an unnamed
 # UID in the final LFS system. If you won't assign the same UID for your user in the LFS
 # system, change the owners of these files to 'root' now to avoid this issue:
-chown root:root ""$sources_directory"/*"
+chown            \
+    --verbose    \
+    root:root    \
+    ""$sources_directory"/*"
 
 # == 3.2. All Packages
 # = NOTES =
@@ -553,21 +563,30 @@ chown root:root ""$sources_directory"/*"
 # programs will be overwritten when the final versions are built in Chapter 8.
 
 # Create the required directory layout by issuing the following commands as root:
-mkdir -pv "$LFS"/{eetc,var} "$LFS"/usr/{bin,lib,sbin}
+mkdir            \
+    --verbose    \
+    --parents    \
+    "$LFS"/{eetc,var} "$LFS"/usr/{bin,lib,sbin}
 
 for i in bin lib sib; do
-    ln -sv usr/$1 $LFS/$i
+    ln               \
+        --verbose    \
+        --symbolic   \
+        usr/$1 $LFS/$i
 done
 
 case $(uname -m) in
-    x86_64) mkdir -pv "$LFS"/lib64 ;;
+    x86_64) mkdir --verbose --parents "$LFS"/lib64 ;;
 esac
 
 # Programs in Chapter 6 will compiled with a cross-compiler (more details can be found in
 # section Toolchain Technical Notes). This cross-compiler will be installed in a special
 # directory, to separate it from the other programs. Still acting as root, crate that
 # directory with the command:
-mkdir -pv $LFS/tools
+mkdir            \
+    --verbose    \
+    --parents    \
+    $LFS/tools
 
 # == NOTE ==
 # The LFS editors have deliberately decided not to use a /usr/lib64 directory. Several
@@ -584,7 +603,12 @@ mkdir -pv $LFS/tools
 # lfs) and run commands as lfs during the installation process. As root, issue the following
 # commands to add the new user:
 groupadd lfs
-useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+useradd                 \
+    -s /bin/bash        \
+    --gid lfs           \
+    --create-home       \
+    --skel "/dev/null"  \
+    lfs
 
 # This is what the command line options mean:
 # -s /bin/bash
@@ -615,3 +639,10 @@ esac
 # In some host systems, the following su command does not complete properly and suspends the
 # login for the lfs user to the background. If the prompt "lfs:~$" does not appear
 # imediately, entering the fg command will fix the issue.
+
+# Next, start a shell running as user lfs. This can be done by logging in as lfs on a virtual
+# console, or with the following substitute/switch user command:
+#    su - lfs
+echo 'Run 'su - lfs' to login to lfs user.'
+# The “-” instructs su to start a login shell as opposed to a non-login shell. The difference
+# between these two types of shells is described in detail in bash(1) and info bash.
