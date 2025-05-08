@@ -30,6 +30,10 @@ script_version="1.0.0.0"
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
 
+# =======================
+# == SCRIPT NOT TESTED ==
+# =======================
+
 # == 2.3. Building LFS in Stages
 #   LFS is designed to be build in one session. That is, the instructions assume that the system will not be shut down
 #   during the process. This does not mean that the system has to build in one sitting. The issue is that certain
