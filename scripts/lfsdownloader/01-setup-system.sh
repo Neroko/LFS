@@ -99,14 +99,14 @@ root_check
 
 TGTDEV='/dev/sdb'
 
-#sudo fdisk /dev/sdb      # Menu Options for Partation
-#sudo fdisk -l            # List all Partations
-#sudo fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
-#sudo sfdisk /dev/sdb     # Menu Options for Partation
-#sudo sfdisk -l           # List all Partations
-#sudo sfdisk -l /dev/sdb  # List just '/dev/sdb' Partations
-#sudo cfdisk /dev/sdb     # Menu Options for Partation
-#sudo partx -s /dev/sdb   # List just '/dev/sdb' Partitions
+#fdisk /dev/sdb      # Menu Options for Partation
+#fdisk -l            # List all Partations
+#fdisk -l /dev/sdb   # List just '/dev/sdb' Partations
+#sfdisk /dev/sdb     # Menu Options for Partation
+#sfdisk -l           # List all Partations
+#sfdisk -l /dev/sdb  # List just '/dev/sdb' Partations
+#cfdisk /dev/sdb     # Menu Options for Partation
+#partx -s /dev/sdb   # List just '/dev/sdb' Partitions
 
 #  o      - clear the in memory partition table
 #  n      - new partition
