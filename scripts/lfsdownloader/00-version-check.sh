@@ -224,11 +224,11 @@ install_necessary() {
     fi
 
     if [[ $install_answer == "yes" ]]; then
-        sudo apt-get update
-        sudo apt-get upgrade
+        apt-get update
+        apt-get upgrade
         # Normally on a Debian VM, 200+- packages will need to be installed, work on making this a varable list
-        sudo apt-get --yes install acl attr autoconf automake bash bc binutils bison check coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libffi8 libffi8 libpipeline1 libtool libxcrypt-source m4 make man-db manpages meson mpc ninja-build ncurses-base openssl patch perl pkgconf procps psmisc python3 readline-common sed sysvinit-utils udev tar tcl texinfo util-linux vim xz-utils zstd
-#        sudo reboot
+        apt-get --yes install acl attr autoconf automake bash bc binutils bison check coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libffi8 libffi8 libpipeline1 libtool libxcrypt-source m4 make man-db manpages meson mpc ninja-build ncurses-base openssl patch perl pkgconf procps psmisc python3 readline-common sed sysvinit-utils udev tar tcl texinfo util-linux vim xz-utils zstd
+#        reboot
 #        exit
         install_necessary
 #    elif [[ $install_answer == "no" ]]; then
@@ -411,8 +411,8 @@ alias_check "yacc" "Bison"
 
 # -- Bash
 # /bin/sh should be a symbolic or hard link to bash
-# To set sh to BASH: sudo ln -sf bash /bin/sh
-# To set sh to DASH: sudo ln -sf dash /bin/sh
+# To set sh to BASH: ln -sf bash /bin/sh
+# To set sh to DASH: ln -sf dash /bin/sh
 alias_check "sh" "Bash"
 if [[ $alias_error == "1" ]]; then
     while true; do
@@ -421,7 +421,7 @@ if [[ $alias_error == "1" ]]; then
             case $yn in
                 [Yy]* )
                     set_sh="yes";
-                    sudo ln -sf bash /bin/sh;
+                    ln -sf bash /bin/sh;
                     break;;
                 [Nn]* )
                     set_sh="no";
