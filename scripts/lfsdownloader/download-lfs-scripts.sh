@@ -37,7 +37,10 @@
 
 export lfs="/mnt/lfs"
 
-download_directory="~/lfs"
+user_directory=$(getent passwd "$USER" | cut -d: -f6)
+echo "$user_directory"
+download_directory=""$user_directory"/lfs"
+echo "$download_directory"
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/"
 
 # Check for directory and see if it exist:
