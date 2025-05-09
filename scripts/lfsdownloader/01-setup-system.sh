@@ -34,6 +34,17 @@ script_version="1.0.0.0"
 # == SCRIPT NOT TESTED ==
 # =======================
 
+root_check() {
+  if [[ "EUID" -eq 0 ]]; then
+    echo "Script is running as root";
+  else
+    echo "Script is not running as root";
+    exit
+  fi
+}
+
+root_check
+
 # == 2.3. Building LFS in Stages
 #   LFS is designed to be build in one session. That is, the instructions assume that the system will not be shut down
 #   during the process. This does not mean that the system has to build in one sitting. The issue is that certain
@@ -97,24 +108,22 @@ TGTDEV='/dev/sdb'
 #sudo cfdisk /dev/sdb     # Menu Options for Partation
 #sudo partx -s /dev/sdb   # List just '/dev/sdb' Partitions
 
-#sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | sudo fdisk ${TGTDEV}
-#  o      # clear the in memory partition table
-#  n      # new partition
-#  p      # parimay partition
-#  1      # partition number 1
-#         # default - start at beginning of disk
-#  +100M  # 100 MB boot partition
-#  n      # new partition
-#  p      # primary partition
-#  2      # partition number 2
-#         # default, start immediately after preceding partition
-#         # default, extend partition to end of disk
-#  a      # make a partition bootable
-#  1      # bootable partition is partition 1 -- /dev/sdb1
-#  p      # print the in-memory partition table
-#  w      # write the partition table
-#  q      # quit when done
-#EOF
+#  o      - clear the in memory partition table
+#  n      - new partition
+#  p      - parimay partition
+#  1      - partition number 1
+#         - default - start at beginning of disk
+#  +100M  - 100 MB boot partition
+#  n      - new partition
+#  p      - primary partition
+#  2      - partition number 2
+#         - default, start immediately after preceding partition
+#         - default, extend partition to end of disk
+#  a      - make a partition bootable
+#  1      - bootable partition is partition 1 -- /dev/sdb1
+#  p      - print the in-memory partition table
+#  w      - write the partition table
+#  q      - quit when done
 
 (
   echo o;
@@ -243,7 +252,6 @@ mkfs -v -t ext4 $TGTDEV
 #     it will need to be initialized with this command:
 
 #mkswap /dev/<yyy>
-#mkswap /dev/<yyy>
 
 #   Replace <yyy> with the name of the swap partition.
 
@@ -316,12 +324,8 @@ mount -v -t ext4 $TGTDEV $LFS
 
 # If you are using multiple partitions for LFS (e.g., one for / and another for /home), mount them like this:
 #mkdir -pv $LFS
-#mkdir -pv $LFS
-#mount -v -t ext4 /dev/<xxx> $LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
 #mkdir -v $LFS/home
-#mkdir -v $LFS/home
-#mount -v -t ext4 /dev/<yyy> $LFS/home
 #mount -v -t ext4 /dev/<yyy> $LFS/home
 # Replace <xxx> and <yyy> with the appropriate partition names.
 
@@ -346,7 +350,6 @@ chmod 755 $LFS
 # If you use additional optional partitions, be sure to add them also.
 
 # If you are using a 'swap' partition, ensure that it is enabled using the swapon command:
-#/sbin/swapon -v /dev/<zzz>
 #/sbin/swapon -v /dev/<zzz>
 # Replace <zzz> with the name of the swap partition.
 
