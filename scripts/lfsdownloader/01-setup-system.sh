@@ -126,22 +126,22 @@ TGTDEV='/dev/sdb'
 #  q      - quit when done
 
 (
-  echo o;
-  echo n;
-  echo p;
-  echo 1;
-  echo ;
-  echo +100M;
-  echo n;
-  echo p;
-  echo 2;
-  echo ;
-  echo ;
-  echo a;
-  echo 1;
-  echo p;
-  echo w;
-  echo q;
+  echo  o;
+  echo  n;
+  echo  p;
+  echo  1;
+  echo   ;
+  echo  +100M;
+  echo  n;
+  echo  p;
+  echo  2;
+  echo   ;
+  echo   ;
+  echo  a;
+  echo  1;
+  echo  p;
+  echo  w;
+  echo  q;
 ) | fdisk $TGTDEV
 
 # -- NOTE --
