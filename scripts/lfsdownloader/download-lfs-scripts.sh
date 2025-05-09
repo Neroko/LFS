@@ -6,10 +6,10 @@
 #   12.2
 #
 # VERSION (SCRIPT):
-#   1.0.0.1
+#   1.0.0.0
 #
 # DATE LAST EDITED:
-#   03/14/2025
+#   05/08/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -32,34 +32,59 @@
 # == SCRIPT NOT TESTED ==
 # =======================
 
-download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
-download_directory="lfs_test"
+#download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
+#download_directory="lfs_test"
+
+export lfs="/mnt/lfs"
+
+download_directory="lfs"
+download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/"
+
+download_file(){
+    rm               \
+        --verbose    \
+        --force      \
+        --recursive  \
+        "$1"
+    wget                         \
+        --verbose                \
+        --output-document="$1"   \
+        --directory-prefox="$3"  \
+        ""$download_site"$2"
+    chmod            \
+        --verbose    \
+        755          \
+        "$1"
+}
+
+download_file "version-check.sh" "00-version-check.sh" "$download_directory"
+download_file "setup-system.sh" "01-setup-system.sh" "$download_dorectpry"
 
 # Check if files exist:
-rm                               \
-    --verbose                    \
-    .sudo_as_admin_successful    \
-    .wget-hsts                   \
-    version-check.sh
+#rm                               \
+#    --verbose                    \
+#    .sudo_as_admin_successful    \
+#    .wget-hsts                   \
+#    version-check.sh
 
 # Check for file in directory
 #if [ -f "$download_site" ]
 
 # Check for directory and see if it exist:
-if [ ! -d "$download_directory" ]; then
-    mkdir -p "$download_directory";
-fi
+#if [ ! -d "$download_directory" ]; then
+#    mkdir -p "$download_directory";
+#fi
 
 # Download files to directory
-wget                                         \
-    --verbose                                \
-    --output-document="version-check.sh"     \
-    --timestamping                           \
-    --directory-prefix="$download_directory" \
-    "$download_site"
+#wget                                         \
+#    --verbose                                \
+#    --output-document="version-check.sh"     \
+#    --timestamping                           \
+#    --directory-prefix="$download_directory" \
+#    "$download_site"
 
 # Set file permission:
-chmod                               \
-    --verbose                       \
-    755                             \
-    "version-check.sh"
+#chmod                               \
+#    --verbose                       \
+#    755                             \
+#    "version-check.sh"
