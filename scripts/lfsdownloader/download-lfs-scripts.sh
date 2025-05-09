@@ -37,8 +37,16 @@
 
 export lfs="/mnt/lfs"
 
-download_directory="lfs"
+download_directory="~/lfs"
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/"
+
+# Check for directory and see if it exist:
+if [ ! -d "$download_directory" ]; then
+    mkdir                        \
+        --verbose                \
+        --parents                \
+        "$download_directory";
+fi
 
 download_file(){
     rm               \
@@ -61,13 +69,6 @@ download_file(){
 download_file "version-check.sh" "00-version-check.sh" "$download_directory"
 download_file "setup-system.sh" "01-setup-system.sh" "$download_dorectpry"
 
-# Check if files exist:
-#rm                               \
-#    --verbose                    \
-#    .sudo_as_admin_successful    \
-#    .wget-hsts                   \
-#    version-check.sh
-
 # Check for file in directory
 #if [ -f "$download_site" ]
 
@@ -75,17 +76,3 @@ download_file "setup-system.sh" "01-setup-system.sh" "$download_dorectpry"
 #if [ ! -d "$download_directory" ]; then
 #    mkdir -p "$download_directory";
 #fi
-
-# Download files to directory
-#wget                                         \
-#    --verbose                                \
-#    --output-document="version-check.sh"     \
-#    --timestamping                           \
-#    --directory-prefix="$download_directory" \
-#    "$download_site"
-
-# Set file permission:
-#chmod                               \
-#    --verbose                       \
-#    755                             \
-#    "version-check.sh"
