@@ -38,10 +38,16 @@ sources_directory=""$LFS"/sources"
 wget_list_link="https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list"
 md5sums_link="https://www.linuxfromscratch.org/lfs/downloads/stable/md5sums"
 
-# Check for sudo
-#current_user="whoami"
-#groups "$current_user" | grep -o 'sudo'
-groups "#(id -un)" | grep -q ' sudo ' && echo "In sudo group" || echo "Not in sudo group"
+root_check() {
+    if [[ "$EUID" -eq 0 ]]; then
+        echo "Script is running as root"
+    else
+        echo "Script is not running as root";
+        exit
+    fi
+}
+
+root_check
 
 # == Chapter 3. Packages and Patches ==
 # == 3.1. Introduction
