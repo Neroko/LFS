@@ -97,24 +97,45 @@ TGTDEV='/dev/sdb'
 #sudo cfdisk /dev/sdb     # Menu Options for Partation
 #sudo partx -s /dev/sdb   # List just '/dev/sdb' Partitions
 
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | sudo fdisk ${TGTDEV}
-  o      # clear the in memory partition table
-  n      # new partition
-  p      # parimay partition
-  1      # partition number 1
-         # default - start at beginning of disk
-  +100M  # 100 MB boot partition
-  n      # new partition
-  p      # primary partition
-  2      # partition number 2
-         # default, start immediately after preceding partition
-         # default, extend partition to end of disk
-  a      # make a partition bootable
-  1      # bootable partition is partition 1 -- /dev/sdb1
-  p      # print the in-memory partition table
-  w      # write the partition table
-  q      # quit when done
-EOF
+#sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | sudo fdisk ${TGTDEV}
+#  o      # clear the in memory partition table
+#  n      # new partition
+#  p      # parimay partition
+#  1      # partition number 1
+#         # default - start at beginning of disk
+#  +100M  # 100 MB boot partition
+#  n      # new partition
+#  p      # primary partition
+#  2      # partition number 2
+#         # default, start immediately after preceding partition
+#         # default, extend partition to end of disk
+#  a      # make a partition bootable
+#  1      # bootable partition is partition 1 -- /dev/sdb1
+#  p      # print the in-memory partition table
+#  w      # write the partition table
+#  q      # quit when done
+#EOF
+
+(
+  echo o;
+  echo n;
+  echo p;
+  echo 1;
+  echo ;
+  echo +100M;
+  echo n;
+  echo p;
+  echo 2;
+  echo ;
+  echo ;
+  echo a;
+  echo 1;
+  echo p;
+  echo w;
+  echo q;
+) | fdisk $TGTDEV
+
+#mkfs.vfat -n 'BOOT' /dev/sdb1
 
 # -- NOTE --
 # For experienced users, other partitioning schemes are possible. The new LFS system can be on a software RAID array
