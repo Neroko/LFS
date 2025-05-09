@@ -57,7 +57,7 @@ download_file(){
     wget                         \
         --verbose                \
         --output-document="$1"   \
-        --directory-prefox="$3"  \
+        --directory-prefix="$3"  \
         ""$download_site"$2"
     
     chmod            \
