@@ -135,8 +135,6 @@ TGTDEV='/dev/sdb'
   echo q;
 ) | fdisk $TGTDEV
 
-#mkfs.vfat -n 'BOOT' /dev/sdb1
-
 # -- NOTE --
 # For experienced users, other partitioning schemes are possible. The new LFS system can be on a software RAID array
 # or an LVM logical volume. However, some of these options require an 'initramfs'. which is an advanced topic. These
