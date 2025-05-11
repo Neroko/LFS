@@ -49,7 +49,6 @@ sources_directory=""$LFS"/sources"
 wget_list_link="https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list"
 md5sums_link="https://www.linuxfromscratch.org/lfs/downloads/stable/md5sums"
 
-
 # == Chapter 3. Packages and Patches ==
 # == 3.1. Introduction
 # This chapter includes a list of packages that need to be downloaded in order to build a
