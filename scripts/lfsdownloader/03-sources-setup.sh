@@ -18,7 +18,7 @@ script_version="1.0.0.0"
 #   TerryJohn Anscombe
 #
 # USAGE:
-#   sources-setup.sh [options] ARG1
+#   03-sources-setup.sh [options] ARG1
 #
 # OPTIONS:
 #   -o [file], --output=[file]      Set log file
@@ -27,7 +27,12 @@ script_version="1.0.0.0"
 #
 # DESCRIPTION
 #   Script to download needed scripts and files to build LFS builder
-#
+
+# =============================================
+# TODO:
+# - Setup Logging System
+# =============================================
+
 # =======================
 # == SCRIPT NOT TESTED ==
 # =======================
@@ -42,6 +47,8 @@ root_check() {
 }
 
 root_check
+
+border='==================='
 
 # Directorys
 LFS="/mnt/lfs"

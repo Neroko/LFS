@@ -17,11 +17,8 @@ script_version="1.0.0.5"
 # AUTHOR:
 #   TerryJohn Anscombe
 #
-# DESCRIPTION
-#   Script to list version numbers of critical development tools
-#
 # USAGE:
-#   version-check.sh [options] ARG1
+#   01-version-check.sh [options] ARG1
 #
 # OPTIONS:
 #   -h, --help                  Display this help
@@ -29,6 +26,9 @@ script_version="1.0.0.5"
 #   -V, --version               Display versions
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
+#
+# DESCRIPTION
+#   Script to list version numbers of critical development tools
 
 # =============================================
 # TODO:
@@ -45,6 +45,8 @@ root_check() {
 }
 
 root_check
+
+border='==================='
 
 log_to_file=false
 verbose_mode=false
@@ -165,7 +167,6 @@ TEXT_GREEN='\033[0;32m'     # Text Green
 TEXT_YELLOW='\033[0;33m'    # Text Yellow
 TEXT_RED='\033[0;31m'       # Text Red
 TEXT_NC='\033[0;37m'        # Text No Color
-border='==================='
 
 press_pause() {
     read -p "Press any key to continue..." -n1 -s

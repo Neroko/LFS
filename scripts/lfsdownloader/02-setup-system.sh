@@ -17,11 +17,8 @@ script_version="1.0.0.1"
 # AUTHOR:
 #   TerryJohn Anscombe
 #
-# DESCRIPTION
-#   Script to list version numbers of critical development tools
-#
 # USAGE:
-#   version-check.sh [options] ARG1
+#   02-setup-system.sh [options] ARG1
 #
 # OPTIONS:
 #   -h, --help                  Display this help
@@ -29,17 +26,27 @@ script_version="1.0.0.1"
 #   -V, --version               Display versions
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
+#
+# DESCRIPTION
+#   Script to list version numbers of critical development tools
+
+# =============================================
+# TODO:
+# - Setup Logging System
+# =============================================
 
 root_check() {
-  if [[ "EUID" -eq 0 ]]; then
-    echo "Script is running as root";
-  else
-    echo "Script is not running as root";
-    exit
-  fi
+    if [[ "$EUID" -eq 0 ]]; then
+        echo "Script is running as root"
+    else
+        echo "Script is not running as root";
+        exit
+    fi
 }
 
 root_check
+
+border='==================='
 
 # == 2.3. Building LFS in Stages
 #   LFS is designed to be build in one session. That is, the instructions assume that the system will not be shut down
