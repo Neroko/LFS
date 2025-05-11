@@ -30,6 +30,11 @@ script_version="1.0.0.4"
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
 
+# =============================================
+# TODO:
+# - Setup Logging System
+# =============================================
+
 # === Chapter 2. Preparing the Host System ===
 # == 2.1. Introduction
 #   In this chapter, the host tolls needed for building LFS are checked and, if necessary, installed. Then a
