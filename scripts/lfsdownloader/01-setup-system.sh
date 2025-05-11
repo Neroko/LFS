@@ -30,10 +30,6 @@ script_version="1.0.0.1"
 #   -l, --log                   Set log file
 #   -l [file], --log=[file]     Set log file
 
-# =======================
-# == SCRIPT NOT TESTED ==
-# =======================
-
 root_check() {
   if [[ "EUID" -eq 0 ]]; then
     echo "Script is running as root";

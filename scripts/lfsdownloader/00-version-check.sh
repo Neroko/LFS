@@ -35,6 +35,23 @@ script_version="1.0.0.5"
 # - Setup Logging System
 # =============================================
 
+root_check() {
+    if [[ "$EUID" -eq 0 ]]; then
+        echo "Script is running as root"
+    else
+        echo "Script is not running as root";
+        exit
+    fi
+}
+
+root_check
+
+log_to_file=false
+verbose_mode=false
+output_file="lfs.log"
+
+clear
+
 # === Chapter 2. Preparing the Host System ===
 # == 2.1. Introduction
 #   In this chapter, the host tolls needed for building LFS are checked and, if necessary, installed. Then a
@@ -46,23 +63,6 @@ script_version="1.0.0.5"
 #   The LFS editors recommend that the system CPU have at least four cores and that the system have at least
 #   8 GB of memory. Older systems that do not meet these requirements will still work, but the time to build
 #   packages will be significantly longer than documented.
-
-log_to_file=false
-verbose_mode=false
-output_file="lfs.log"
-
-clear
-
-root_check() {
-    if [[ "$EUID" -eq 0 ]]; then
-        echo "Script is running as root"
-    else
-        echo "Script is not running as root";
-        exit
-    fi
-}
-
-root_check
 
 display_help() {
     # Display Help

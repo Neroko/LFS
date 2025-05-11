@@ -32,12 +32,6 @@ script_version="1.0.0.0"
 # == SCRIPT NOT TESTED ==
 # =======================
 
-# Directorys
-LFS="/mnt/lfs"
-sources_directory=""$LFS"/sources"
-wget_list_link="https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list"
-md5sums_link="https://www.linuxfromscratch.org/lfs/downloads/stable/md5sums"
-
 root_check() {
     if [[ "$EUID" -eq 0 ]]; then
         echo "Script is running as root"
@@ -48,6 +42,13 @@ root_check() {
 }
 
 root_check
+
+# Directorys
+LFS="/mnt/lfs"
+sources_directory=""$LFS"/sources"
+wget_list_link="https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list"
+md5sums_link="https://www.linuxfromscratch.org/lfs/downloads/stable/md5sums"
+
 
 # == Chapter 3. Packages and Patches ==
 # == 3.1. Introduction
