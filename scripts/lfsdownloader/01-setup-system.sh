@@ -317,7 +317,7 @@ umask
 
 # Create the mount point and mount the LFS file system with these commands:
 #mkdir -pv $LFS
-mkdir -pv $LFS
+mkdir -v $LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
 mount -v -t ext4 $TGTDEV $LFS
 # Replace <xxx> with the name of the LFS partition.
