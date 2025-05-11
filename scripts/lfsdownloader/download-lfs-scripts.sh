@@ -3,13 +3,13 @@
 # Linux From Scratch (LFS) Download Needed Files
 #
 # VERSION (LFS):
-#   12.2
+#   12.3
 #
 # VERSION (SCRIPT):
 #   1.0.0.0
 #
 # DATE LAST EDITED:
-#   05/08/2025
+#   05/11/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -27,55 +27,39 @@
 #
 # DESCRIPTION
 #   Script to download LFS scripts and files needed files from GitHub
-#
-# =======================
-# == SCRIPT NOT TESTED ==
-# =======================
 
 #download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/wget-list"
-#download_directory="lfs_test"
 
 export lfs="/mnt/lfs"
 
 user_directory=$(getent passwd "$USER" | cut -d: -f6)
-echo "$user_directory"
 download_directory=""$user_directory"/lfs"
-echo "$download_directory"
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/"
 
 # Check for directory and see if it exist:
 if [ ! -d "$download_directory" ]; then
-    mkdir                        \
-        --verbose                \
-        --parents                \
-        "$download_directory";
+	mkdir						\
+ 		--verbose				\
+		--parents				\
+		"$download_directory";
 fi
 
 download_file(){
-    rm               \
-        --verbose    \
-        --force      \
-        --recursive  \
-        "$1"
-    wget                         \
-        --verbose                \
-        --output-document="$1"   \
-        --directory-prefix="$3"  \
-        ""$download_site"$2"
-    
-    chmod            \
-        --verbose    \
-        755          \
-        "$1"
+	rm							\
+ 		--verbose				\
+		--force					\
+		--recursive				\
+		"$1"
+	wget						\
+		--verbose				\
+		--output-document="$1"	\
+		--directory-prefix="$3"	\
+		""$download_site"$2"
+	chmod						\
+		--verbose				\
+		755						\
+		"$1"
 }
 
 download_file "version-check.sh" "00-version-check.sh" "$download_directory"
 download_file "setup-system.sh" "01-setup-system.sh" "$download_dorectpry"
-
-# Check for file in directory
-#if [ -f "$download_site" ]
-
-# Check for directory and see if it exist:
-#if [ ! -d "$download_directory" ]; then
-#    mkdir -p "$download_directory";
-#fi
