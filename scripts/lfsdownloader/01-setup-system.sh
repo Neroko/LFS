@@ -244,7 +244,7 @@ TGTDEV='/dev/sdb'
 mkfs			\
 	--verbose	\
  	--type "ext4"	\
-  	$TGTDEV
+  	"$TGTDEV"
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
@@ -283,7 +283,7 @@ umask 022
 # working environment (such as when doing a su to root or another user). Check that the LFS variable is set
 # up properly with:
 #echo $LFS
-echo $LFS
+echo "$LFS"
 # Make sure the output shows the path to your LFS system's build location, which is /mnt/lfs if the provided
 # example was followed.
 
@@ -338,9 +338,15 @@ mount			\
 #   system for the LFS system) to root and 755 in case the host distro has been configured to use a different default
 #   for mkfs:
 #chown root:root $LFS
-chown root:root $LFS
+chowm			\
+	--verbose	\
+	root:root	\
+ 	$LFS
 #chmod 755 $LFS
-chmod 755 $LFS
+chmod			\
+	--verbose	\
+	755		\
+ 	$LFS
 
 # Ensure that this new partition is not mounted with permissions that are too restrictive (such as the nosuid or nodev
 # options). Run the mount command without any parameters to see what options are set for the mounted LFS partition.
