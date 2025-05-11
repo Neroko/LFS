@@ -33,7 +33,7 @@
 export lfs="/mnt/lfs"
 
 user_directory=$(getent passwd "$USER" | cut -d: -f6)
-download_directory=""$user_directory"/lfs"
+download_directory=""$user_directory"/lfs/"
 download_site="https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/"
 
 # Check for directory and see if it exist:
@@ -53,7 +53,7 @@ download_file(){
 	wget						\
 		--verbose				\
 		--output-document="$1"			\
-		--directory-prefix="$3"			\
+#		--directory-prefix="$3"			\
 		""$download_site"$2"
 	chmod						\
 		--verbose				\
@@ -63,3 +63,6 @@ download_file(){
 
 download_file "version-check.sh" "00-version-check.sh" "$download_directory"
 download_file "setup-system.sh" "01-setup-system.sh" "$download_dorectpry"
+
+download_file ""$download_directory"version-check.sh" "00-version-check.sh"
+download_file ""$download_directory"setup-system.sh" "01-setup-system.sh"
