@@ -241,7 +241,10 @@ TGTDEV='/dev/sdb'
 #     issue the following command:
 
 #mkfs -v -t ext4 /dev/<xxx>
-mkfs -v -t ext4 $TGTDEV
+mkfs			\
+	--verbose	\
+ 	--type "ext4"	\
+  	$TGTDEV
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
@@ -313,9 +316,15 @@ umask
 
 # Create the mount point and mount the LFS file system with these commands:
 #mkdir -pv $LFS
-mkdir -v $LFS
+mkdir			\
+	--verbose	\
+ 	$LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
-mount -v -t ext4 $TGTDEV $LFS
+mount			\
+	--verbose	\
+	--types ext4	\
+ 	$TGTDEV		\
+  	$LFS
 # Replace <xxx> with the name of the LFS partition.
 
 # If you are using multiple partitions for LFS (e.g., one for / and another for /home), mount them like this:
