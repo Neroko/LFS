@@ -36,8 +36,8 @@ LFS Download Site: https://www.linuxfromscratch.org/lfs/downloads/stable/ <br />
 ### LFS Script Folder
 | Files | Desp |
 | -----:|------|
-| scripts\lfsdownloader\00-version-check.sh         | System Builder Version Check |
-| scripts\lfsdownloader\01-download-lfs-scripts.sh  | Download from Github needed files |
-| scripts\lfsdownloader\02-sources-setup.sh         | Setup LFS Sources |
-| scripts\lfsdownloader\download-test-1.sh          | Test Download |
+| scripts\lfsdownloader\01-version-check.sh         | System Builder Version Check |
+| scripts\lfsdownloader\02-setup-system.sh          | Setup System to Build LFS |
+| scripts\lfsdownloader\03-sources-setup.sh         | Setup LFS Sources |
+| scripts\lfsdownloader\download-lfs-scripts.sh     | Download from Github needed files |
 | scripts\lfsdownloader\test-menu.sh                | Test GUI Menu |
