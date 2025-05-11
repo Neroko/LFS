@@ -48,6 +48,8 @@ root_check
 
 border='==================='
 
+TGTDEV='/dev/sdb'
+
 # == 2.3. Building LFS in Stages
 #   LFS is designed to be build in one session. That is, the instructions assume that the system will not be shut down
 #   during the process. This does not mean that the system has to build in one sitting. The issue is that certain
@@ -100,7 +102,9 @@ border='==================='
 #   native partition and a 'swap' partition, if needed. Please refer to 'cfdisk(8)' or 'fdisk(8)' if you do not yet
 #   know how to use the programs.
 
-TGTDEV='/dev/sdb'
+echo $border
+echo '-- Setup Partitions --'
+echo $border
 
 #fdisk /dev/sdb      # Menu Options for Partation
 #fdisk -l            # List all Partations
@@ -248,10 +252,10 @@ TGTDEV='/dev/sdb'
 #     issue the following command:
 
 #mkfs -v -t ext4 /dev/<xxx>
-mkfs			\
-	--verbose	\
- 	--type "ext4"	\
-  	"$TGTDEV"
+mkfs            \
+	--verbose     \
+ 	--type "ext4" \
+  "$TGTDEV"
 
 #     Replace <xxx> with the name of the LFS partition.
 #     If you are using an existing swap partition, there is no need to format it. If a new swap partition was created,
@@ -323,14 +327,14 @@ umask
 
 # Create the mount point and mount the LFS file system with these commands:
 #mkdir -pv $LFS
-mkdir			\
-	--verbose	\
+mkdir           \
+	--verbose     \
  	$LFS
 #mount -v -t ext4 /dev/<xxx> $LFS
-mount			\
-	--verbose	\
-	--types ext4	\
- 	$TGTDEV		\
+mount           \
+	--verbose     \
+	--types ext4  \
+ 	$TGTDEV       \
   	$LFS
 # Replace <xxx> with the name of the LFS partition.
 
@@ -345,14 +349,14 @@ mount			\
 #   system for the LFS system) to root and 755 in case the host distro has been configured to use a different default
 #   for mkfs:
 #chown root:root $LFS
-chowm			\
-	--verbose	\
-	root:root	\
+chowm       \
+	--verbose \
+	root:root \
  	$LFS
 #chmod 755 $LFS
-chmod			\
-	--verbose	\
-	755		\
+chmod       \
+	--verbose \
+	755       \
  	$LFS
 
 # Ensure that this new partition is not mounted with permissions that are too restrictive (such as the nosuid or nodev
