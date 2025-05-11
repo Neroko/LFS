@@ -60,6 +60,6 @@ download_file(){
 		"$1"
 }
 
-download_file	""$download_directory"01-version-check.sh"		"00-version-check.sh"
-download_file	""$download_directory"02-setup-system.sh"		"01-setup-system.sh"
-download_file	""$download_directory"03-sources-setup.sh"		"02-sources-setup.sh"
+download_file	""$download_directory"01-version-check.sh"		"01-version-check.sh"
+download_file	""$download_directory"02-setup-system.sh"		"02-setup-system.sh"
+download_file	""$download_directory"03-sources-setup.sh"		"03-sources-setup.sh"
