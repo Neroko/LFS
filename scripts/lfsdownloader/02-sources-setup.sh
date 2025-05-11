@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Linux From Scratch (LFS) Sources Directory Setup
+display_title="== Linux From Scratch (LFS) Sources Directory Setup =="
 #
 # VERSION (LFS):
-#   12.2
+current_version="12.3"
 #
 # VERSION (SCRIPT):
-#   1.0.0.1
+script_version="1.0.0.0"
 #
 # DATE LAST EDITED:
-#   03/04/2025
+#   05/11/2025
 #
 # DATE CREATED:
 #   03/03/2025

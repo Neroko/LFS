@@ -6,7 +6,7 @@ display_title="== Linux From Scratch (LFS) Setup System =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.0"
+script_version="1.0.0.1"
 #
 # DATE LAST EDITED:
 #   05/06/2025

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Linux From Scratch (LFS) Download Needed Files
+display_title="== Linux From Scratch (LFS) Download Needed Files =="
 #
 # VERSION (LFS):
-#   12.3
+current_version="12.3"
 #
 # VERSION (SCRIPT):
-#   1.0.0.0
+script_version="1.0.0.1"
 #
 # DATE LAST EDITED:
 #   05/11/2025
