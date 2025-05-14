@@ -50,7 +50,7 @@ border='==================='
 
 log_to_file=false
 verbose_mode=false
-output_file="lfs.log"
+output_file="lfs-version-check.log"
 
 clear
 
