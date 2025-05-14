@@ -1,4 +1,4 @@
-#!/bin/bash
+s#!/bin/bash
 
 display_title="== Linux From Scratch (LFS) Sources Directory Setup =="
 #
@@ -50,7 +50,6 @@ root_check
 
 border='==================='
 
-# Directorys
 LFS="/mnt/lfs"
 sources_directory=""$LFS"/sources"
 wget_list_link="https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list"
