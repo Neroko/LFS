@@ -45,18 +45,18 @@ if [ ! -d "$download_directory" ]; then
 fi
 
 download_file(){
-	rm						\
+	rm							\
  		--verbose				\
 		--force					\
 		--recursive				\
 		"$1"
 	wget						\
 		--verbose				\
-		--output-document="$1"			\
+		--output-document="$1"	\
 		""$download_site"$2"
 	chmod						\
 		--verbose				\
-		755					\
+		755						\
 		"$1"
 }
 
