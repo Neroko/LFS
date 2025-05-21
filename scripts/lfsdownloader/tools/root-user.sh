@@ -1,5 +1,11 @@
 #!/bin/bash
 
+###################################
+## -------- DO NOT EDIT -------- ##
+## -----------TRY TO ----------- ##
+## -- USE ONLINE VERSION ONLY -- ##
+###################################
+
 display_title="== Linux From Scratch (LFS) Root Check =="
 #
 # VERSION (LFS):
