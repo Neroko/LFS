@@ -24,8 +24,8 @@ script_version="1.0.0.0"
 #   Script to check if running as root user.
 
 if [[ "$EUID" -eq 0 ]]; then
-    echo "Script is running as root"
+    echo "Script is running as root";
 else
     echo "Script is not running as root";
-    exit 1
+    exit 1;
 fi
