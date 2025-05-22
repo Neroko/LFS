@@ -15,7 +15,7 @@ current_version="12.3"
 script_version="1.0.0.0"
 #
 # DATE LAST EDITED:
-#   05/21/2025
+#   05/22/2025
 #
 # DATE CREATED:
 #   05/21/2025
@@ -25,6 +25,8 @@ script_version="1.0.0.0"
 #
 # USAGE:
 #   root-check.sh
+# or in a script:
+#   source root-user.sh
 #
 # DESCRIPTION
 #   Script to check if running as root user.

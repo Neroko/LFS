@@ -35,16 +35,7 @@ script_version="1.0.0.1"
 # - Setup Logging System
 # =============================================
 
-root_check() {
-    if [[ "$EUID" -eq 0 ]]; then
-        echo "Script is running as root"
-    else
-        echo "Script is not running as root";
-        exit
-    fi
-}
-
-root_check
+source root-user.sh
 
 border='==================='
 
