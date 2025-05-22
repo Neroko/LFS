@@ -1,6 +1,6 @@
 s#!/bin/bash
 
-display_title="== Linux From Scratch (LFS) Sources Directory Setup =="
+display_title="== Linux From Scratch (LFS) - Sources Directory Setup =="
 #
 # VERSION (LFS):
 current_version="12.3"

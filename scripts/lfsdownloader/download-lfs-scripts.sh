@@ -1,6 +1,6 @@
 #!/bin/bash
 
-display_title="== Linux From Scratch (LFS) Download Needed Files =="
+display_title="== Linux From Scratch (LFS) - Download Needed Files =="
 #
 # VERSION (LFS):
 current_version="12.3"

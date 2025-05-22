@@ -6,7 +6,7 @@
 ## -- USE ONLINE VERSION ONLY -- ##
 ###################################
 
-display_title="== Linux From Scratch (LFS) Root Check =="
+display_title="== Linux From Scratch (LFS) - Root Check =="
 #
 # VERSION (LFS):
 current_version="12.3"

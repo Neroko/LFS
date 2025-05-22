@@ -1,6 +1,6 @@
 #!/bin/bash
 
-display_title="== Linux From Scratch (LFS) Setup System =="
+display_title="== Linux From Scratch (LFS) - Setup System =="
 #
 # VERSION (LFS):
 current_version="12.3"

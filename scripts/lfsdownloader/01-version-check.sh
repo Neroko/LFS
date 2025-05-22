@@ -1,6 +1,6 @@
 #!/bin/bash
 
-display_title="== Linux From Scratch (LFS) Versions Checks =="
+display_title="== Linux From Scratch (LFS) - Versions Checks =="
 #
 # VERSION (LFS):
 current_version="12.3"
