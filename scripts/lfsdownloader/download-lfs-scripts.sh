@@ -21,7 +21,6 @@ script_version="1.0.0.1"
 #   download-lfs-scripts.sh [options] ARG1
 #
 # OPTIONS:
-#   -o [file], --output=[file]      Set log file
 #   -h, --help                      Display this help
 #   -v, --version                   Display versions
 #

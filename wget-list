@@ -1,3 +1,4 @@
+<!-- LFS Builder -->
 https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/00-version-check.sh
 https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/01-setup-system.sh
 https://raw.githubusercontent.com/Neroko/LFS/refs/heads/master/scripts/lfsdownloader/02-sources-setup.sh
