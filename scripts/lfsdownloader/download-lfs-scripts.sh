@@ -62,4 +62,4 @@ download_file(){
 download_file	""$download_directory"01-version-check.sh"		"01-version-check.sh"
 download_file	""$download_directory"02-setup-system.sh"		"02-setup-system.sh"
 download_file	""$download_directory"03-sources-setup.sh"		"03-sources-setup.sh"
-download_file	""$download_directory"tools/root-user.sh"		"root-user.sh"
+download_file	""$download_directory"root-user.sh"				"root-user.sh"
