@@ -33,7 +33,9 @@ script_version="1.0.0.0"
 
 if [[ "$EUID" -eq 0 ]]; then
     echo "Script is running as root";
+    read -p "Press any key to continue..." -n1 -s;
 else
     echo "Script is not running as root";
+    read -p "Press any key to continue..." -n1 -s;
     exit 1;
 fi
