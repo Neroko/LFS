@@ -6,10 +6,10 @@
 ---
 
 TODO:
-- [ ] Install basic Debian system to make custom Debian build
+- [ ] Setup basic Debian system to make custom Debian build
 - [ ] Install needed packages and setup system (Network/Remote/HDD/etc..)
 
-## Auto Install:
+## Auto Install Test Machine:
   VM Stats:</br>
   - Processor CPUs = 8 Cores
   - Memory = 8 GB
