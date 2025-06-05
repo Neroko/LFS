@@ -1,5 +1,9 @@
 # Debian Auto Installer
+TODO:
+- Install Basic Debian System
+- 
 
+## After Auto Installer:
 - Needed Packages:
   ```
   sudo apt update
