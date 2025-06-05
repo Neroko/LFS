@@ -8,7 +8,7 @@ Something
 ---
 
 TODO:
-- [ ] Setup basic Debian system to make custom Debian build
+- [ ] Setup basic Debian system to make custom Debian build (ISO)
 - [ ] Install needed packages and setup system (Network/Remote/HDD/etc..)
 
 ## Auto Install Test Machine:
