@@ -10,7 +10,8 @@ TODO:
 - [ ] Install needed packages and setup system (Network/Remote/HDD/etc..)
 
 ## Auto Install:
-Testing in VM with stat:
+Testing in VM
+  Stat:</br>
   - Processor CPUs = 8 Cores
   - Memory = 8 GB
   - UEFI = Disabled
