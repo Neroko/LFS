@@ -11,9 +11,10 @@ TODO:
 
 ## Auto Install:
 Testing in VM with stat:
-  - Processor CPUs = 8
+  - Processor CPUs = 8 Cores
   - Memory = 8 GB
   - UEFI = Disabled
+  - Storage = 80 GB
 
 ## After Auto Installer:
 - Needed Packages:
