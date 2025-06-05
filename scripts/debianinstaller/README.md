@@ -1,7 +1,11 @@
 # Debian Auto Installer
+
+> [!WARNING]
+> Nothing have been tested yet.
+
 TODO:
-- Install Basic Debian System
-- 
+- Install basic Debian system to make custom build
+- Install needed packages and setup default system
 
 ## After Auto Installer:
 - Needed Packages:
