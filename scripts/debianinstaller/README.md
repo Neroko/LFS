@@ -31,7 +31,7 @@
       gateway 192.168.1.1
       dns-nameservers 192.168.1.1
     ```
-    - Set `enp0s3` to your network<br/>
+    - Set `enp0s3` to your network device<br/>
     - Set network `address/netmask/gateway/dns-nameservers` to your networks setttings
 
 - SSH Setup
