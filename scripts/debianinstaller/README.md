@@ -50,7 +50,7 @@ TODO:
     ```
     - Set `enp0s3` to your network device<br/>
     - Set network `address/netmask/gateway/dns-nameservers` to your networks setttings
-    - Restart system:
+    - Shutdown system:
     ```
     sudo shudown how -n
     ```
