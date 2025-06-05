@@ -4,7 +4,7 @@
   ```
   sudo apt update
   sudo apt upgrade
-  sudo apt install tmux htop
+  sudo apt install tmux htop ssh 
   ```
 
 - MOTD
@@ -25,8 +25,8 @@
     iface enp0s3 inet static
       address 192.168.1.105
       netmask 255.255.255.0
-      gateway 192.168.1.2
-      dns-nameservers 192.168.1.2
+      gateway 192.168.1.1
+      dns-nameservers 192.168.1.1
     ```
 
 - SSH Setup
