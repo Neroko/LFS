@@ -1,7 +1,7 @@
 # Debian Auto Installer
 
 <dl>
-  <dt>MOTD</dt>dt>
+  <dt>MOTD</dt>
   <dd>Edit file and delete all text in the file and save:</dd>
   <dd>`sudo nano /etc/motd`</dd>
   
