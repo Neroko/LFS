@@ -1,13 +1,13 @@
 # Debian Auto Installer
 
+---
 > [!WARNING]
 > Nothing have been tested yet.
-
 ---
 
 TODO:
 - [ ] Install basic Debian system to make custom Debian build
-- [ ] Install needed packages and setup system (Network/Remote/HHD/etc..)
+- [ ] Install needed packages and setup system (Network/Remote/HDD/etc..)
 
 ## Auto Install:
 Testing in VM with stat:
