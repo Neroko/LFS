@@ -8,7 +8,9 @@
   - Edit text in file and save:\
   `sudo nano /etc/network/interfaces`
     - Comment out:\
-    `allow-hotplug enp0s3`
-    `iface enp0s3 inet dhcp`
+    ```
+    allow-hotplug enp0s3
+    iface enp0s3 inet dhcp
+    ```
 
 - SSH Setup
