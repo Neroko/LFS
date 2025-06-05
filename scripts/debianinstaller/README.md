@@ -1,11 +1,12 @@
 # Debian Auto Installer
 
-- MOTD<br/>
-  Edit file and delete all text in the file and save:<br/>
-  `sudo nano /etc/motd`
-
-- Network Setup (Static IP)
+<dl>
+  <dt>MOTD</dt>dt>
+  <dd>Edit file and delete all text in the file and save:</dd>
+  <dd>`sudo nano /etc/motd`</dd>
   
-- SSH Setup
+  <dt>Network Setup (Static IP)</dt>
   
-- 
+  <dt>SSH Setup</dt>
+  
+</dl>
