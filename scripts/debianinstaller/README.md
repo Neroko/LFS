@@ -1,5 +1,12 @@
 # Debian Auto Installer
 
+- Needed Packages:
+  ```
+  sudo apt update
+  sudo apt upgrade
+  sudo apt install tmux htop
+  ```
+
 - MOTD
   - Edit file and delete all text in the file and save:\
   `sudo nano /etc/motd`
