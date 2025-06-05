@@ -7,12 +7,12 @@
 - Network Setup (Static IP)
   - Edit text in file and save:\
   `sudo nano /etc/network/interfaces`
-    - Comment out:\
+    - Comment out lines:\
     ```
-    allow-hotplug enp0s3
-    iface enp0s3 inet dhcp
+    #allow-hotplug enp0s3
+    #iface enp0s3 inet dhcp
     ```
-    - Add under commented out:
+    - Add under commented out lines:
     ```
     auto enp0s3
     iface enp0s3 inet static
