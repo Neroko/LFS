@@ -1,7 +1,7 @@
 # Debian Auto Installer
 
 ---
-> [!WARNING]
+> [!CAUTION]
 > Nothing have been tested yet.
 ---
 Something
