@@ -10,6 +10,10 @@ TODO:
 - [ ] Install needed packages and setup system (Network/Remote/HHD/etc..)
 
 ## Auto Install:
+Testing in VM with stat:
+  - Processor CPUs = 8
+  - Memory = 8 GB
+  - UEFI = Disabled
 
 ## After Auto Installer:
 - Needed Packages:
