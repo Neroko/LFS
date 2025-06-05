@@ -28,6 +28,9 @@ TODO:
     ssh 
   ```
 
+- GRUB
+  - Dont Show it
+
 - MOTD
   - Edit file and delete all text in the file and save:\
   `sudo nano /etc/motd`
