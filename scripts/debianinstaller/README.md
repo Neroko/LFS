@@ -15,6 +15,7 @@ TODO:
   - Memory = 8 GB
   - UEFI = Disabled
   - Storage = 80 GB
+  - Network = NAT
 
 ## After Auto Installer:
 - Needed Packages:
