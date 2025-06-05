@@ -29,7 +29,7 @@ TODO:
   ```
 
 - GRUB
-  - Dont Show it
+  - Dont show yet
 
 - MOTD
   - Edit file and delete all text in the file and save:\
