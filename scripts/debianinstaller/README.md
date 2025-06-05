@@ -2,7 +2,7 @@
 
 ---
 > [!CAUTION]
-> Nothing have been tested yet.
+> Nothing tested yet
 ---
 Something
 ---
