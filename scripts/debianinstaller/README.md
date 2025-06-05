@@ -6,8 +6,8 @@
 ---
 
 TODO:
-- [ ] Install basic Debian system to make custom build
-- [ ] Install needed packages and setup default system
+- [ ] Install basic Debian system to make custom Debian build
+- [ ] Install needed packages and setup system (Network/Remote/HHD/etc..)
 
 ## After Auto Installer:
 - Needed Packages:
