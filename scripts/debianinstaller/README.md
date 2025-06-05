@@ -55,5 +55,6 @@ TODO:
     ```
     sudo shudown how -n
     ```
+    - In VM settings, change network from "NAT" to "Bridged Adapter"
 
 - SSH Setup
