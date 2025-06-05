@@ -5,5 +5,7 @@
   `sudo nano /etc/motd`
 
 - Network Setup (Static IP)
+  - Edit text in file and save:\
+  `sudo nano /etc/network/interfaces`
 
 - SSH Setup
