@@ -10,7 +10,7 @@
   - Processor Feqz = 2.5 GB
   - Memory = 8 GB
   - UEFI = Disabled
-  - Storage (OS) = 80 GB
+  - Drives (OS) = 80 GB
   - Network = NAT
 
 ## Builder Machine:
