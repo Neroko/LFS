@@ -3,9 +3,6 @@
 ---
 > [!CAUTION]
 > Nothing tested yet
----
-Something
----
 
 ## Auto Install Test Machine:
   VM Stats:</br>
