@@ -1,0 +1,10 @@
+acl
+attr
+autoconf
+automake
+bash
+bc
+binutils
+bison
+check
+coreutils dejagnu diffutils e2fsprogs expat expect file findutils flex gawk gcc gettext glibc-source g++ gperf groff grep gzip intltool iproute2 kbd kmod less libffi8 libffi8 libpipeline1 libtool libxcrypt-source m4 make man-db manpages meson mpc ninja-build ncurses-base openssl patch perl pkgconf procps psmisc python3 readline-common sed sysvinit-utils udev tar tcl texinfo util-linux vim xz-utils zstd

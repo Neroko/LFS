@@ -1,0 +1,65 @@
+# Debian Auto Installer
+
+---
+> [!CAUTION]
+> Nothing tested yet
+---
+Something
+---
+
+TODO:
+- [ ] Setup basic Debian system to make custom Debian build (ISO)
+- [ ] Install needed packages and setup system (Network/Remote/HDD/etc..)
+
+## Auto Install Test Machine:
+  VM Stats:</br>
+  - Processor CPUs = 8 Cores
+  - Memory = 8 GB
+  - UEFI = Disabled
+  - Storage = 80 GB
+  - Network = NAT
+
+## After Auto Installer:
+- Needed Packages:
+  ```
+  sudo apt update
+  sudo apt upgrade
+  sudo apt install \
+    tmux \
+    htop \
+    ssh 
+  ```
+
+- GRUB
+  - Dont show yet
+
+- MOTD
+  - Edit file and delete all text in the file and save:\
+  `sudo nano /etc/motd`
+
+- Network Setup (Static IP)
+  - Edit text in file and save:\
+  `sudo nano /etc/network/interfaces`
+    - Comment out lines:\
+    ```
+    #allow-hotplug enp0s3
+    #iface enp0s3 inet dhcp
+    ```
+    - Add under commented out lines:
+    ```
+    auto enp0s3
+    iface enp0s3 inet static
+      address 192.168.1.200
+      netmask 255.255.255.0
+      gateway 192.168.1.1
+      dns-nameservers 192.168.1.1
+    ```
+    - Set `enp0s3` to your network device<br/>
+    - Set network `address/netmask/gateway/dns-nameservers` to your networks setttings
+    - Shutdown system:
+    ```
+    sudo shudown how -n
+    ```
+    - In VM settings, change network from "NAT" to "Bridged Adapter"
+
+- SSH Setup
