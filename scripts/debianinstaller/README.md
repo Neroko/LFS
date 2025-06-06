@@ -2,7 +2,7 @@
 
 ---
 > [!CAUTION]
-> Nothing tested yet
+> Not fully tested yet
 
 ## Auto Install Test Machine:
   VM Stats:</br>
