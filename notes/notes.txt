@@ -1,1 +1,0 @@
-Make a script to build a LFS Builder System ISO to make the bulder OS.
