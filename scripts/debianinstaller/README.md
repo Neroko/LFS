@@ -5,7 +5,8 @@
 > Not fully tested yet
 
 ## Auto Install Test Machine:
-  VM Stats:</br>
+  Machine Stats:</br>
+  - Type = VM
   - Processor Cores = 8
   - Processor Feqz = 2.5 GB
   - Memory = 8 GB
