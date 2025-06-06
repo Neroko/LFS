@@ -13,7 +13,7 @@
   - Storage = 80 GB
   - Network = NAT
 
-## Builder machince:
+## Builder Machine:
 
 ## After Auto Installer:
 - [ ] Needed Packages:
