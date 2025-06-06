@@ -29,7 +29,7 @@ TODO:
     htop \
     ssh 
   ```
-  - TMUX settings file:
+  - TMUX config file (.tmux.conf):
     ```
     # Reload config file (change file location to your tmux.conf file)
     bind r source-file ~/.tmux.conf \; display "Reloaded"
