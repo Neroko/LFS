@@ -20,7 +20,7 @@ TODO:
   - Network = NAT
 
 ## After Auto Installer:
-- Needed Packages:
+- [ ] Needed Packages:
   ```
   sudo apt update
   sudo apt upgrade
@@ -29,7 +29,7 @@ TODO:
     htop \
     ssh 
   ```
-  - TMUX config file (.tmux.conf):
+  - [ ] TMUX config file (.tmux.conf):
     ```
     # Reload config file (change file location to your tmux.conf file)
     bind r source-file ~/.tmux.conf \; display "Reloaded"
@@ -44,14 +44,14 @@ TODO:
     set -g status-right '#(TZ="America/New_York" date +"%m-%d-%Y %I:%M:%S%p ")'
     ```
 
-- GRUB
+- [ ] GRUB
   - Dont show yet
 
-- MOTD
+- [ ] MOTD
   - Edit file and delete all text in the file and save:\
   `sudo nano /etc/motd`
 
-- Network Setup (Static IP)
+- [ ] Network Setup (Static IP)
   - Edit text in file and save:\
   `sudo nano /etc/network/interfaces`
     - Comment out lines:\
@@ -76,4 +76,4 @@ TODO:
     ```
     - In VM settings, change network from "NAT" to "Bridged Adapter"
 
-- SSH Setup
+- [ ] SSH Setup
