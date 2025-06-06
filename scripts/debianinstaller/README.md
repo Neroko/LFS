@@ -20,6 +20,8 @@ TODO:
   - Storage = 80 GB
   - Network = NAT
 
+## Builder machince:
+
 ## After Auto Installer:
 - [ ] Needed Packages:
   ```
