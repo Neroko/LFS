@@ -13,7 +13,8 @@ TODO:
 
 ## Auto Install Test Machine:
   VM Stats:</br>
-  - Processor CPUs = 8 Cores
+  - Processor Cores = 8
+  - Processor Feqz = +/- 2.6 GB
   - Memory = 8 GB
   - UEFI = Disabled
   - Storage = 80 GB
