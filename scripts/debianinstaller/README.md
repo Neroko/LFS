@@ -29,6 +29,20 @@ TODO:
     htop \
     ssh 
   ```
+  - TMUX settings file:
+    ```
+    # Reload config file (change file location to your tmux.conf file)
+    bind r source-file ~/.tmux.conf \; display "Reloaded"
+
+    # Enable mouse control (clickable windows, panes, resizable panes)
+    set -g mouse on
+
+    # Set statas bar refrest rate
+    set -g status-interval 1
+
+    # Set time in status bar to 12H EST
+    set -g status-right '#(TZ="America/New_York" date +"%m-%d-%Y %I:%M:%S%p ")'
+    ```
 
 - GRUB
   - Dont show yet
