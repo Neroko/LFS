@@ -31,11 +31,28 @@ script_version="1.0.0.0"
 # DESCRIPTION
 #   Script to check if running as root user.
 
+display_help() {
+    # Display Help
+    echo "$display_title"
+    echo
+    echo "Syntax: $0 [OPTIONS]"
+    echo "Options:"
+    echo "  -h, --help                This Help Info"
+    echo "  -s, --script              Output ture or false for a scprit"
+    echo "  -V, --version             Script Version"
+}
+
+root_status="false"
+
 if [[ "$EUID" -eq 0 ]]; then
+    root_status="true"
     echo "Script is running as root";
     read -p "Press any key to continue..." -n1 -s;
+    echo;
 else
+    root_status="false"
     echo "Script is not running as root";
     read -p "Press any key to continue..." -n1 -s;
+    echo;
     exit 1;
 fi
