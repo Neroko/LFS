@@ -6,10 +6,10 @@ display_title="== Linux From Scratch (LFS) - Versions Checks =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.5"
+script_version="1.0.0.6"
 #
 # DATE LAST EDITED:
-#   05/06/2025
+#   06/09/2025
 #
 # DATE CREATED:
 #   03/03/2025
@@ -169,10 +169,15 @@ press_pause() {
 LC_ALL=C
 PATH=/usr/bin:bin
 
-bail() { echo "FATAL: $1"; exit 1; }
-grep --version > /dev/null 2> /dev/null || bail "grep does not work"
-sed '' /dev/null || bail "sed does not work"
-sort /dev/null || bail "sort does not work"
+# Needed packages to trim/cut/sort/etc displayed info
+needed_packages() {
+    bail() { echo "FATAL: $1"; exit 1; }
+    grep --version > /dev/null 2> /dev/null || bail "grep does not work"
+    sed '' /dev/null || bail "sed does not work"
+    sort /dev/null || bail "sort does not work"
+}
+
+needed_packages
 
 # System info, not used yet.
 os_check() {
