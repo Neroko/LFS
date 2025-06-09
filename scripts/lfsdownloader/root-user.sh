@@ -15,7 +15,7 @@ current_version="12.3"
 script_version="1.0.0.0"
 #
 # DATE LAST EDITED:
-#   05/22/2025
+#   06/09/2025
 #
 # DATE CREATED:
 #   05/21/2025
@@ -31,6 +31,25 @@ script_version="1.0.0.0"
 # DESCRIPTION
 #   Script to check if running as root user.
 
+root_status="false"
+
+check_root() {
+    if [[ "$EUID" -eq 0 ]]; then
+        root_status="true"
+        echo "Script is running as root"
+        echo "$root_status"
+        read -p "Press any key to continue..." -n1 -s
+        echo
+    else
+        root_status="false"
+        echo "Script is not running as root"
+        echo "$root_status"
+        read -p "Press any key to continue..." -n1 -s
+        echo
+        exit 1
+    fi
+}
+
 display_help() {
     # Display Help
     echo "$display_title"
@@ -42,17 +61,35 @@ display_help() {
     echo "  -V, --version             Script Version"
 }
 
-root_status="false"
+display_version() {
+    # Display Version
+    echo "$display_title"
+    echo "Version (LFS): "$current_version""
+    echo "Version (Script): "$script_version""
+}
 
-if [[ "$EUID" -eq 0 ]]; then
-    root_status="true"
-    echo "Script is running as root";
-    read -p "Press any key to continue..." -n1 -s;
-    echo;
-else
-    root_status="false"
-    echo "Script is not running as root";
-    read -p "Press any key to continue..." -n1 -s;
-    echo;
-    exit 1;
-fi
+handle_options() {
+    # Fuction to handle options and arguments
+    while [ $# -gt 0 ]; do
+        case $1 in
+            -h | --help)
+                display_help
+                exit 0
+                ;;
+            -V | --version)
+                display_version
+                exit 0
+                ;;
+            *)
+                echo "Invalid options: $1" >&2
+                display_help
+                exit 1
+                ;;
+        esac
+        shift
+    done
+}
+
+handle_options "$@"
+
+check_root
