@@ -37,7 +37,8 @@ script_format="false"
 check_root() {
     if [[ "$EUID" -eq 0 ]]; then
         root_status="true"
-        if [ ! "$script_format" = "true" ]; then
+        script_format="$1"
+        if [ ! "$script_format" == "true" ]; then
             echo "Script is running as root"
             echo "$root_status"
             read -p "Press any key to continue..." -n1 -s
@@ -45,7 +46,8 @@ check_root() {
         fi
     else
         root_status="false"
-        if [ ! "$script_format" = "true" ]; then
+        script_format="$1"
+        if [ ! "$script_format" == "true" ]; then
             echo "Script is not running as root"
             echo "$root_status"
             read -p "Press any key to continue..." -n1 -s
@@ -80,6 +82,9 @@ handle_options() {
             -h | --help)
                 display_help
                 exit 0
+                ;;
+            -s | --script)
+                check_root "true"
                 ;;
             -V | --version)
                 display_version
