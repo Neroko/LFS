@@ -12,7 +12,7 @@ display_title="== Linux From Scratch (LFS) - Root Check =="
 current_version="12.3"
 #
 # VERSION (SCRIPT):
-script_version="1.0.0.0"
+script_version="1.0.0.1"
 #
 # DATE LAST EDITED:
 #   06/09/2025
@@ -32,21 +32,26 @@ script_version="1.0.0.0"
 #   Script to check if running as root user.
 
 root_status="false"
+script_format="false"
 
 check_root() {
     if [[ "$EUID" -eq 0 ]]; then
         root_status="true"
-        echo "Script is running as root"
-        echo "$root_status"
-        read -p "Press any key to continue..." -n1 -s
-        echo
+        if [ ! "$script_format" = "true" ]; then
+            echo "Script is running as root"
+            echo "$root_status"
+            read -p "Press any key to continue..." -n1 -s
+            echo
+        fi
     else
         root_status="false"
-        echo "Script is not running as root"
-        echo "$root_status"
-        read -p "Press any key to continue..." -n1 -s
-        echo
-        exit 1
+        if [ ! "$script_format" = "true" ]; then
+            echo "Script is not running as root"
+            echo "$root_status"
+            read -p "Press any key to continue..." -n1 -s
+            echo
+            exit 1
+        fi
     fi
 }
 
