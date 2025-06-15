@@ -171,7 +171,10 @@ PATH=/usr/bin:bin
 
 # Needed packages to trim/cut/sort/etc displayed info
 needed_packages() {
-    bail() { echo "FATAL: $1"; exit 1; }
+    bail() {
+        echo "FATAL: $1";
+        exit 1;
+    }
     grep --version > /dev/null 2> /dev/null || bail "grep does not work"
     sed '' /dev/null || bail "sed does not work"
     sort /dev/null || bail "sort does not work"
