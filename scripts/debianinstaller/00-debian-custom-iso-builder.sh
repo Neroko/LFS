@@ -30,12 +30,12 @@ install_package() {
 }
 
 # Install needed packages:
-install_package "tmux"
-install_package "curl"
-install_package "wget"
-install_package "htop"
-install_package "atop"
-install_package "mc"
+install_package "tmux"              # Terminal Multiplexer
+install_package "curl"              # Transfer Data
+install_package "wget"              # Transfer Data
+install_package "htop"              # Process Viewer
+install_package "atop"              # Process Viewer
+install_package "mc"                # File Manager
 install_package "xorriso"
 install_package "rsync"
 install_package "squashfs-tools"
