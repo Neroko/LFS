@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# =============1====================================
+# =================================================
 # =================================================
 # ========   NOT FULLY TESTED   ===================
 # =================================================
@@ -13,7 +13,8 @@
 
 # - Get Debian ISO
 download_link="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/"
-download_link_version="debian-live-12.10.0-amd64-standard.iso"
+download_link_version="debian-live-12.11.0-amd64-standard.iso"
+download_link_current_version="debian-live-12.11.0-amd64-DVD-1.iso"
 # - Decompress the ISO file
 # - Decompress builtin filesystem and connect to it
 # - Make required changes
@@ -36,15 +37,15 @@ install_package "wget"              # Transfer Data
 install_package "htop"              # Process Viewer
 install_package "atop"              # Process Viewer
 install_package "mc"                # File Manager
-install_package "xorriso"
-install_package "rsync"
-install_package "squashfs-tools"
-#install_package "syslinux"
-#install_package "syslinux-efi"
-#install_package "isolinux"
-#install_package "fakeroot"
-#install_package "vim"
-#install_package "cloud-init"
+install_package "xorriso"           # ISO Manipulation
+install_package "rsync"             # File Synchronization
+install_package "squashfs-tools"    # Tools for SquashFS
+#install_package "syslinux"         # Bootloader for Linux
+#install_package "syslinux-efi"     # Bootloader for Linux (EFI)
+#install_package "isolinux"         # Bootloader for Linux (ISO)
+#install_package "fakeroot"         # Create Fake Root Environment
+#install_package "vim"              # Text Editor
+#install_package "cloud-init"       # Cloud Initialization
 
 # Download ISO and installing initial tools for decompressing the file, which by the way is another of
 # compression format for archiving our data. Standard used for CD/DVD's is usually ISO 9660 which you
