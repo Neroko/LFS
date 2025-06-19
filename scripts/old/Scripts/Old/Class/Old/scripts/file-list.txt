@@ -1,0 +1,2 @@
+http://67.242.159.158/projects/lfs/scripts/lfs.sh
+http://67.242.159.158/projects/lfs/scripts/settings.cfg

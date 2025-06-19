@@ -1,0 +1,113 @@
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking target system type... i686-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for gawk... gawk
+checking for libitm support... yes
+checking for libsanitizer support... yes
+checking for libhsail-rt support... yes
+checking for libphobos support... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for gnatbind... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada... no
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking whether g++ supports C++11 features by default... yes
+checking for objdir... .libs
+checking for isl 0.15 or later... no
+required isl version is 0.15 or later
+checking for default BUILD_CONFIG... 
+checking for --enable-vtable-verify... no
+checking for bison... bison -y
+checking for bison... bison
+checking for gm4... no
+checking for gnum4... no
+checking for m4... m4
+checking for flex... no
+checking for lex... no
+checking for flex... no
+checking for makeinfo... makeinfo
+checking for expect... no
+checking for runtest... no
+checking for ar... ar
+checking for as... as
+checking for dlltool... no
+checking for ld... ld
+checking for lipo... no
+checking for nm... nm
+checking for ranlib... ranlib
+checking for strip... strip
+checking for windres... no
+checking for windmc... no
+checking for objcopy... objcopy
+checking for objdump... objdump
+checking for otool... no
+checking for readelf... readelf
+checking for i686-lfs-linux-gnu-cc... no
+checking for i686-lfs-linux-gnu-gcc... no
+checking for i686-lfs-linux-gnu-c++... no
+checking for i686-lfs-linux-gnu-g++... no
+checking for i686-lfs-linux-gnu-cxx... no
+checking for i686-lfs-linux-gnu-gxx... no
+checking for i686-lfs-linux-gnu-gcc... no
+checking for i686-lfs-linux-gnu-gfortran... no
+checking for i686-lfs-linux-gnu-gccgo... no
+checking for i686-lfs-linux-gnu-gdc... no
+checking for ar... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ar
+checking for as... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/as
+checking for dlltool... no
+checking for i686-lfs-linux-gnu-dlltool... no
+checking for ld... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ld
+checking for lipo... no
+checking for i686-lfs-linux-gnu-lipo... no
+checking for nm... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/nm
+checking for objcopy... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/objcopy
+checking for objdump... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/objdump
+checking for otool... no
+checking for i686-lfs-linux-gnu-otool... no
+checking for ranlib... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ranlib
+checking for readelf... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/readelf
+checking for strip... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/strip
+checking for windres... no
+checking for i686-lfs-linux-gnu-windres... no
+checking for windmc... no
+checking for i686-lfs-linux-gnu-windmc... no
+checking where to find the target ar... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target as... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target cc... just compiled
+checking where to find the target c++... just compiled
+checking where to find the target c++ for libstdc++... just compiled
+checking where to find the target dlltool... pre-installed
+checking where to find the target gcc... just compiled
+checking where to find the target gfortran... pre-installed
+checking where to find the target gccgo... pre-installed
+checking where to find the target gdc... pre-installed
+checking where to find the target ld... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target lipo... pre-installed
+checking where to find the target nm... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target objcopy... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target objdump... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target otool... pre-installed
+checking where to find the target ranlib... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target readelf... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target strip... pre-installed in /mnt/lfs/tools/i686-lfs-linux-gnu/bin
+checking where to find the target windres... pre-installed
+checking where to find the target windmc... pre-installed
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile

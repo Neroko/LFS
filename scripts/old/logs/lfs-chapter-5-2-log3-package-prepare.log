@@ -1,0 +1,102 @@
+-------------------------------------------------------
+<=> Prepare Package for compilation <=>
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking target system type... i686-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for gawk... gawk
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gcc option to accept ISO C99... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for gnatbind... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada... no
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking for objdir... .libs
+checking for isl 0.15 or later... no
+required isl version is 0.15 or later
+checking for default BUILD_CONFIG... 
+checking for --enable-vtable-verify... no
+checking for bison... bison -y
+checking for bison... bison
+checking for gm4... no
+checking for gnum4... no
+checking for m4... m4
+checking for flex... no
+checking for lex... no
+checking for flex... no
+checking for makeinfo... makeinfo
+checking for expect... no
+checking for runtest... no
+checking for ar... ar
+checking for as... as
+checking for dlltool... no
+checking for ld... ld
+checking for lipo... no
+checking for nm... nm
+checking for ranlib... ranlib
+checking for strip... strip
+checking for windres... no
+checking for windmc... no
+checking for objcopy... objcopy
+checking for objdump... objdump
+checking for readelf... readelf
+checking for -plugin option... --plugin /usr/lib/gcc/i686-linux-gnu/10/liblto_plugin.so
+checking for i686-lfs-linux-gnu-cc... no
+checking for i686-lfs-linux-gnu-gcc... no
+checking for i686-lfs-linux-gnu-c++... no
+checking for i686-lfs-linux-gnu-g++... no
+checking for i686-lfs-linux-gnu-cxx... no
+checking for i686-lfs-linux-gnu-gxx... no
+checking for i686-lfs-linux-gnu-gcc... no
+checking for i686-lfs-linux-gnu-gfortran... no
+checking for i686-lfs-linux-gnu-gccgo... no
+checking for i686-lfs-linux-gnu-ar... no
+checking for i686-lfs-linux-gnu-as... no
+checking for i686-lfs-linux-gnu-dlltool... no
+checking for i686-lfs-linux-gnu-ld... no
+checking for i686-lfs-linux-gnu-lipo... no
+checking for i686-lfs-linux-gnu-nm... no
+checking for i686-lfs-linux-gnu-objcopy... no
+checking for i686-lfs-linux-gnu-objdump... no
+checking for i686-lfs-linux-gnu-ranlib... no
+checking for i686-lfs-linux-gnu-readelf... no
+checking for i686-lfs-linux-gnu-strip... no
+checking for i686-lfs-linux-gnu-windres... no
+checking for i686-lfs-linux-gnu-windmc... no
+checking where to find the target ar... just compiled
+checking where to find the target as... just compiled
+checking where to find the target cc... pre-installed
+checking where to find the target c++... pre-installed
+checking where to find the target c++ for libstdc++... pre-installed
+checking where to find the target dlltool... just compiled
+checking where to find the target gcc... pre-installed
+checking where to find the target gfortran... pre-installed
+checking where to find the target gccgo... pre-installed
+checking where to find the target ld... just compiled
+checking where to find the target lipo... pre-installed
+checking where to find the target nm... just compiled
+checking where to find the target objcopy... just compiled
+checking where to find the target objdump... just compiled
+checking where to find the target ranlib... just compiled
+checking where to find the target readelf... just compiled
+checking where to find the target strip... just compiled
+checking where to find the target windres... just compiled
+checking where to find the target windmc... just compiled
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile

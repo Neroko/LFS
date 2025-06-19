@@ -1,0 +1,107 @@
+-------------------------------------------------------
+<=> Prepare Package for compilation <=>
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-lfs-linux-gnu
+checking for i686-lfs-linux-gnu-gcc... i686-lfs-linux-gnu-gcc
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether i686-lfs-linux-gnu-gcc accepts -g... yes
+checking for gcc... gcc
+checking for i686-lfs-linux-gnu-readelf... i686-lfs-linux-gnu-readelf
+checking for i686-lfs-linux-gnu-g++... i686-lfs-linux-gnu-g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether i686-lfs-linux-gnu-g++ accepts -g... yes
+checking whether i686-lfs-linux-gnu-g++ can link programs... no
+checking for sysdeps preconfigure fragments... aarch64 alpha arc arm csky hppa i386 m68k microblaze checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+mips nios2 powerpc riscv s390 sh checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/grep -E
+sparc x86_64 
+checking for use of fpu sysdeps directories... yes
+checking for -fstack-protector... yes
+checking for -fstack-protector-strong... yes
+checking for -fstack-protector-all... yes
+checking for assembler and linker STT_GNU_IFUNC support... yes
+checking for gcc attribute ifunc support... yes
+checking whether the linker supports textrels along with ifunc... yes
+checking for GNU attribute retain support... yes
+checking if compiler warns about alias for function with incompatible types... yes
+checking sysdep dirs... sysdeps/unix/sysv/linux/i386/i686 sysdeps/i386/i686/nptl sysdeps/unix/sysv/linux/i386 sysdeps/unix/sysv/linux/x86 sysdeps/x86/nptl sysdeps/i386/nptl sysdeps/unix/sysv/linux sysdeps/nptl sysdeps/pthread sysdeps/gnu sysdeps/unix/inet sysdeps/unix/sysv sysdeps/unix/i386 sysdeps/unix sysdeps/posix sysdeps/i386/i686/fpu/multiarch sysdeps/i386/i686/fpu sysdeps/i386/i686/multiarch sysdeps/i386/i686 sysdeps/i386/fpu sysdeps/x86/fpu sysdeps/i386 sysdeps/x86 sysdeps/wordsize-32 sysdeps/ieee754/float128 sysdeps/ieee754/ldbl-96 sysdeps/ieee754/dbl-64 sysdeps/ieee754/flt-32 sysdeps/ieee754 sysdeps/generic
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking whether /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/as is GNU as... yes
+checking whether /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/ld is GNU ld... yes
+checking for /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/as... /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/as
+checking version of /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/as... 2.37, ok
+checking for /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/ld... /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/ld
+checking version of /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/../../../../i686-lfs-linux-gnu/bin/ld... 2.37, ok
+checking for gnumake... no
+checking for gmake... gmake
+checking version of gmake... 4.3, ok
+checking for gnumsgfmt... no
+checking for gmsgfmt... no
+checking for msgfmt... no
+checking for makeinfo... makeinfo
+checking version of makeinfo... 6.7, ok
+checking for sed... sed
+checking version of sed... 4.7, ok
+checking for gawk... gawk
+checking version of gawk... 5.1.0, ok
+checking for bison... bison
+checking version of bison... 3.7.5, ok
+checking if i686-lfs-linux-gnu-gcc is sufficient to build libc... yes
+checking for i686-lfs-linux-gnu-nm... i686-lfs-linux-gnu-nm
+checking for python3... python3
+checking version of python3... 3.9.2, ok
+checking LD_LIBRARY_PATH variable... ok
+checking for bash... /usr/bin/bash
+checking for perl... /usr/bin/perl
+checking for install-info... /usr/bin/install-info
+checking for .set assembler directive... yes
+checking linker support for protected data symbol... yes
+checking linker support for INSERT in linker script... no
+checking for broken __attribute__((alias()))... no
+checking whether to put _rtld_local into .sdata section... no
+checking for libunwind-support in compiler... no
+checking whether --noexecstack is desirable for .S files... yes
+checking for -z combreloc... yes
+checking for linker that supports -z execstack... yes
+checking for linker that supports -z start-stop-gc... yes
+checking for linker that supports --no-dynamic-linker... yes
+checking for -static-pie... yes
+checking for -fpie... yes
+checking for --hash-style option... yes
+checking for sufficient default -shared layout... no
+checking for GLOB_DAT reloc... yes
+checking for -fno-toplevel-reorder -fno-section-anchors... yes
+checking for -mtls-dialect=gnu2... yes
+checking whether cc puts quotes around section names... no
+checking for __builtin_memset... yes
+checking for redirection of built-in functions... yes
+checking for compiler option to disable generation of FMA instructions... -ffp-contract=off
+checking if i686-lfs-linux-gnu-gcc accepts -fno-tree-loop-distribute-patterns with __attribute__ ((__optimize__))... yes
+checking for libgd... no
+checking for is_selinux_enabled in -lselinux... no
+checking for _FORTIFY_SOURCE predefine... no
+checking whether the linker provides working __ehdr_start... yes
+checking whether the assembler requires one version per symbol... no
+checking for __builtin_trap with no external dependencies... yes
+checking whether the C++ compiler supports thread_local... no
+running configure fragment for sysdeps/unix/sysv/linux/i386
+checking if compiler flags allows ebp in inline assembly... yes
+running configure fragment for sysdeps/unix/sysv/linux
+checking installed Linux kernel header files... 3.2.0 or later
+checking for kernel header at least 3.2... ok
+running configure fragment for sysdeps/gnu
+running configure fragment for sysdeps/i386
+checking for compiler support of inlined builtin function __sync_val_compare_and_swap... yes
+checking for Intel MPX support... yes
+running configure fragment for sysdeps/x86
+checking for linker x86 ISA level support... yes
+checking whether -fPIC is default... no
+checking whether -fPIE is default... no
+configure: creating ./config.status
+config.status: creating config.make
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing default commands
