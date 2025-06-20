@@ -1,0 +1,19 @@
+-------------------------------------------------------
+<=> Enter package directory <=>
+-------------------------------------------------------
+<=> 32 Bit Check <=>
+'/mnt/lfs/lib/ld-lsb.so.3' -> 'ld-linux.so.2'
+-------------------------------------------------------
+<=> Apply Patch <=>
+patching file Makeconfig
+Hunk #1 succeeded at 245 (offset -5 lines).
+patching file nscd/nscd.h
+Hunk #1 succeeded at 161 (offset 49 lines).
+patching file nss/db-Makefile
+patching file sysdeps/generic/paths.h
+patching file sysdeps/unix/sysv/linux/paths.h
+-------------------------------------------------------
+<=> Create and enter build directory <=>
+mkdir: created directory '/mnt/lfs/sources/glibc-2.34/build/'
+-------------------------------------------------------
+<=> Ensure that the ldconfig and sln utilites are installed into /usr/sbin <=>

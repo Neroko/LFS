@@ -1,0 +1,939 @@
+make[1]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build'
+/bin/sh ../mkinstalldirs /mnt/lfs/tools /mnt/lfs/tools
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/fixincludes'
+rm -rf /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools
+/bin/sh ../../fixincludes/../mkinstalldirs /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools
+mkdir -p -- /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools
+/bin/sh ../../fixincludes/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include
+/usr/bin/install -c -m 644 ../../fixincludes/README-fixinc \
+  /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include/README
+/usr/bin/install -c fixinc.sh /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/fixinc.sh
+/usr/bin/install -c fixincl /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/fixincl
+/usr/bin/install -c mkheaders /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/mkheaders
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/fixincludes'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/lto-plugin'
+make[3]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/lto-plugin'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0'
+ /bin/sh ./libtool --tag=disable-static  --mode=install /usr/bin/install -c   liblto_plugin.la '/mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0'
+libtool: install: /usr/bin/install -c .libs/liblto_plugin.so /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/liblto_plugin.so
+libtool: install: /usr/bin/install -c .libs/liblto_plugin.lai /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/liblto_plugin.la
+libtool: finish: PATH="/mnt/lfs/tools/bin:/usr/bin:/sbin" ldconfig -n /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/lto-plugin'
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/lto-plugin'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/gcc'
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/bin
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/include
+mkdir -p -- /mnt/lfs/tools/include
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/share/info
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/share/man/man1
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/share/man/man7
+mkdir -p -- /mnt/lfs/tools/share/man/man7
+if test "" != "yes" ; then \
+  rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-g++; \
+  /usr/bin/install -c xg++ /mnt/lfs/tools/bin/i686-lfs-linux-gnu-g++; \
+  chmod a+x /mnt/lfs/tools/bin/i686-lfs-linux-gnu-g++; \
+  rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-c++; \
+  ( cd /mnt/lfs/tools/bin && \
+    ln i686-lfs-linux-gnu-g++ i686-lfs-linux-gnu-c++ ); \
+  if [ -f cc1plus ] ; then \
+    if [ ! -f g++-cross ] ; then \
+      rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-i686-lfs-linux-gnu-g++; \
+      ( cd /mnt/lfs/tools/bin && \
+	ln i686-lfs-linux-gnu-g++ i686-lfs-linux-gnu-i686-lfs-linux-gnu-g++ ); \
+      rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-i686-lfs-linux-gnu-c++; \
+      ( cd /mnt/lfs/tools/bin && \
+	ln i686-lfs-linux-gnu-c++ i686-lfs-linux-gnu-i686-lfs-linux-gnu-c++ ); \
+    fi ; \
+  fi; \
+fi
+/usr/bin/install -c lto-dump \
+/mnt/lfs/tools/bin/i686-lfs-linux-gnu-lto-dump
+for file in gnat1 brig1 cc1 cc1plus d21 f951 go1  lto1 cc1obj cc1objplus; do \
+  if [ -f $file ] ; then \
+    rm -f /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/$file; \
+    /usr/bin/install -c $file /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/$file; \
+  else true; \
+  fi; \
+done
+for file in  collect2 ..; do \
+  if [ x"$file" != x.. ]; then \
+    rm -f /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/$file; \
+    /usr/bin/install -c $file /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/$file; \
+  else true; fi; \
+done
+rm -f /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/specs
+if test "" != "yes" ; then \
+  if [ -f gcov ]; \
+  then \
+    rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov; \
+    /usr/bin/install -c gcov /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov; \
+  fi; \
+fi
+if test "" != "yes" ; then \
+  if [ -f gcov-tool ]; \
+  then \
+    rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov-tool; \
+    /usr/bin/install -c \
+    gcov-tool /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov-tool; \
+  fi; \
+fi
+if test "" != "yes" ; then \
+  if [ -f gcov-dump ]; \
+  then \
+    rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov-dump; \
+    /usr/bin/install -c \
+    gcov-dump /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcov-dump; \
+  fi; \
+fi
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+rm -rf /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed
+mkdir /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed
+chmod a+rx /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed
+(cd `${PWDCMD-pwd}`/include ; \
+ tar -cf - .; exit 0) | (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include; tar xpf - )
+(cd `${PWDCMD-pwd}`/include-fixed ; \
+ tar -cf - .; exit 0) | (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed; tar xpf - )
+files=`cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed; find . -type l -print 2>/dev/null`; \
+if [ $? -eq 0 ]; then \
+  dir=`cd include-fixed; ${PWDCMD-pwd}`; \
+  for i in $files; do \
+    dest=`ls -ld /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed/$i | sed -n 's/.*-> //p'`; \
+    if expr "$dest" : "$dir.*" > /dev/null; then \
+      rm -f /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed/$i; \
+      ln -s `echo $i | sed "s|/[^/]*|/..|g" | sed 's|/..$||'``echo "$dest" | sed "s|$dir||"` /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include-fixed/$i; \
+    fi; \
+  done; \
+fi
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools
+/usr/bin/install -c -m 644 ../../gcc/gsyslimits.h \
+  /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/gsyslimits.h
+/usr/bin/install -c -m 644 macro_list /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/macro_list
+/usr/bin/install -c -m 644 fixinc_list /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/fixinc_list
+set -e; for ml in `cat fixinc_list`; do \
+  multi_dir=`echo ${ml} | sed -e 's/^[^;]*;//'`; \
+  /bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include${multi_dir}; \
+  /usr/bin/install -c -m 644 include-fixed${multi_dir}/limits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/include${multi_dir}/limits.h; \
+done
+/usr/bin/install -c ../../gcc/../mkinstalldirs \
+	/mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/mkinstalldirs ; \
+sysroot_headers_suffix='${sysroot_headers_suffix}'; \
+	echo 'SYSTEM_HEADER_DIR="'"`echo /mnt/lfs${sysroot_headers_suffix}/usr/include | sed -e :a -e 's,[^/]*/\.\.\/,,' -e ta`"'"' \
+	> /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/mkheaders.conf
+echo 'OTHER_FIXINCLUDES_DIRS=""' \
+	>> /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/mkheaders.conf
+echo 'STMP_FIXINC="stmp-fixinc"' \
+	>> /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/install-tools/mkheaders.conf
+if test "" != "yes" ; then \
+  rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-cpp; \
+  /usr/bin/install -c -m 755 cpp /mnt/lfs/tools/bin/i686-lfs-linux-gnu-cpp; \
+  if [ x != x ]; then \
+    rm -f /mnt/lfs/tools//i686-lfs-linux-gnu-cpp; \
+    /usr/bin/install -c -m 755 cpp /mnt/lfs/tools//i686-lfs-linux-gnu-cpp; \
+  else true; fi; \
+fi
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-g++.1
+/usr/bin/install -c -m 644 doc/g++.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-g++.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-g++.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcc.1
+/usr/bin/install -c -m 644 doc/gcc.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcc.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcc.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-cpp.1
+/usr/bin/install -c -m 644 ../../gcc/doc/cpp.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-cpp.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-cpp.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov.1
+/usr/bin/install -c -m 644 ../../gcc/doc/gcov.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-tool.1
+/usr/bin/install -c -m 644 ../../gcc/doc/gcov-tool.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-tool.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-tool.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-dump.1
+/usr/bin/install -c -m 644 ../../gcc/doc/gcov-dump.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-dump.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-gcov-dump.1
+rm -f /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-lto-dump.1
+/usr/bin/install -c -m 644 ../../gcc/doc/lto-dump.1 /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-lto-dump.1
+chmod a-x /mnt/lfs/tools/share/man/man1/i686-lfs-linux-gnu-lto-dump.1
+rm -f /mnt/lfs/tools/share/man/man7/fsf-funding.7
+/usr/bin/install -c -m 644 ../../gcc/doc/fsf-funding.7 /mnt/lfs/tools/share/man/man7/fsf-funding.7
+chmod a-x /mnt/lfs/tools/share/man/man7/fsf-funding.7
+rm -f /mnt/lfs/tools/share/man/man7/gfdl.7
+/usr/bin/install -c -m 644 ../../gcc/doc/gfdl.7 /mnt/lfs/tools/share/man/man7/gfdl.7
+chmod a-x /mnt/lfs/tools/share/man/man7/gfdl.7
+rm -f /mnt/lfs/tools/share/man/man7/gpl.7
+/usr/bin/install -c -m 644 ../../gcc/doc/gpl.7 /mnt/lfs/tools/share/man/man7/gpl.7
+chmod a-x /mnt/lfs/tools/share/man/man7/gpl.7
+rm -f /mnt/lfs/tools/share/info/cpp.info
+if [ -f doc/cpp.info ]; then \
+  for f in doc/cpp.info*; do \
+    realfile=`echo $f | sed -e 's|.*/\([^/]*\)$|\1|'`; \
+    /usr/bin/install -c -m 644 $f /mnt/lfs/tools/share/info/$realfile; \
+    chmod a-x /mnt/lfs/tools/share/info/$realfile; \
+  done; \
+else true; fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+  if [ -f /mnt/lfs/tools/share/info/cpp.info ]; then \
+    install-info --dir-file=/mnt/lfs/tools/share/info/dir /mnt/lfs/tools/share/info/cpp.info; \
+  else true; fi; \
+else true; fi;
+rm -f /mnt/lfs/tools/share/info/gcc.info
+if [ -f doc/gcc.info ]; then \
+  for f in doc/gcc.info*; do \
+    realfile=`echo $f | sed -e 's|.*/\([^/]*\)$|\1|'`; \
+    /usr/bin/install -c -m 644 $f /mnt/lfs/tools/share/info/$realfile; \
+    chmod a-x /mnt/lfs/tools/share/info/$realfile; \
+  done; \
+else true; fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+  if [ -f /mnt/lfs/tools/share/info/gcc.info ]; then \
+    install-info --dir-file=/mnt/lfs/tools/share/info/dir /mnt/lfs/tools/share/info/gcc.info; \
+  else true; fi; \
+else true; fi;
+rm -f /mnt/lfs/tools/share/info/cppinternals.info
+if [ -f doc/cppinternals.info ]; then \
+  for f in doc/cppinternals.info*; do \
+    realfile=`echo $f | sed -e 's|.*/\([^/]*\)$|\1|'`; \
+    /usr/bin/install -c -m 644 $f /mnt/lfs/tools/share/info/$realfile; \
+    chmod a-x /mnt/lfs/tools/share/info/$realfile; \
+  done; \
+else true; fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+  if [ -f /mnt/lfs/tools/share/info/cppinternals.info ]; then \
+    install-info --dir-file=/mnt/lfs/tools/share/info/dir /mnt/lfs/tools/share/info/cppinternals.info; \
+  else true; fi; \
+else true; fi;
+rm -f /mnt/lfs/tools/share/info/gccinstall.info
+if [ -f doc/gccinstall.info ]; then \
+  for f in doc/gccinstall.info*; do \
+    realfile=`echo $f | sed -e 's|.*/\([^/]*\)$|\1|'`; \
+    /usr/bin/install -c -m 644 $f /mnt/lfs/tools/share/info/$realfile; \
+    chmod a-x /mnt/lfs/tools/share/info/$realfile; \
+  done; \
+else true; fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+  if [ -f /mnt/lfs/tools/share/info/gccinstall.info ]; then \
+    install-info --dir-file=/mnt/lfs/tools/share/info/dir /mnt/lfs/tools/share/info/gccinstall.info; \
+  else true; fi; \
+else true; fi;
+rm -f /mnt/lfs/tools/share/info/gccint.info
+if [ -f doc/gccint.info ]; then \
+  for f in doc/gccint.info*; do \
+    realfile=`echo $f | sed -e 's|.*/\([^/]*\)$|\1|'`; \
+    /usr/bin/install -c -m 644 $f /mnt/lfs/tools/share/info/$realfile; \
+    chmod a-x /mnt/lfs/tools/share/info/$realfile; \
+  done; \
+else true; fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+  if [ -f /mnt/lfs/tools/share/info/gccint.info ]; then \
+    install-info --dir-file=/mnt/lfs/tools/share/info/dir /mnt/lfs/tools/share/info/gccint.info; \
+  else true; fi; \
+else true; fi;
+rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcc
+/usr/bin/install -c xgcc /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcc
+if test "" != "yes" ; then \
+  if [ "i686-lfs-linux-gnu-gcc" != "i686-lfs-linux-gnu-gcc-11.2.0" ]; then \
+    rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcc-11.2.0; \
+    ( cd /mnt/lfs/tools/bin && \
+      ln i686-lfs-linux-gnu-gcc i686-lfs-linux-gnu-gcc-11.2.0 ); \
+  fi; \
+  if [ ! -f gcc-cross ] \
+      && [ "i686-lfs-linux-gnu-gcc" != "i686-lfs-linux-gnu-i686-lfs-linux-gnu-gcc" ]; then \
+    rm -f /mnt/lfs/tools/bin/i686-lfs-linux-gnu-gcc-tmp; \
+    ( cd /mnt/lfs/tools/bin && \
+      ln i686-lfs-linux-gnu-gcc i686-lfs-linux-gnu-gcc-tmp && \
+      mv -f i686-lfs-linux-gnu-gcc-tmp i686-lfs-linux-gnu-i686-lfs-linux-gnu-gcc ); \
+  fi; \
+fi
+/usr/bin/install -c lto-wrapper /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/lto-wrapper
+if test "" != "yes" ; then \
+  for i in gcc-ar gcc-nm gcc-ranlib; do \
+    install_name=`echo $i|sed 's&^&i686-lfs-linux-gnu-&'` ;\
+    target_install_name=i686-lfs-linux-gnu-`echo $i|sed 's&^&i686-lfs-linux-gnu-&'` ; \
+    rm -f /mnt/lfs/tools/bin/$install_name ; \
+    /usr/bin/install -c $i /mnt/lfs/tools/bin/$install_name ;\
+    if test -f gcc-cross; then \
+      :; \
+    else \
+      rm -f /mnt/lfs/tools/bin/$target_install_name; \
+      ( cd /mnt/lfs/tools/bin && \
+	ln $install_name $target_install_name ) ; \
+    fi ; \
+  done; \
+fi
+headers="cp-tree.h cxx-pretty-print.h name-lookup.h type-utils.h operators.def"; \
+for file in $headers; do \
+  path=../../gcc/cp/$file; \
+  dest=/mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/$file; \
+  echo /usr/bin/install -c -m 644 $path $dest; \
+  dir=`dirname $dest`; \
+  /bin/sh ../../gcc/../mkinstalldirs $dir; \
+  /usr/bin/install -c -m 644 $path $dest; \
+done
+/usr/bin/install -c -m 644 ../../gcc/cp/cp-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/cp-tree.h
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp
+/usr/bin/install -c -m 644 ../../gcc/cp/cxx-pretty-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/cxx-pretty-print.h
+/usr/bin/install -c -m 644 ../../gcc/cp/name-lookup.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/name-lookup.h
+/usr/bin/install -c -m 644 ../../gcc/cp/type-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/type-utils.h
+/usr/bin/install -c -m 644 ../../gcc/cp/operators.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/operators.def
+rm -f tmp-header-vars
+echo USER_H=float.h iso646.h stdarg.h stdbool.h stddef.h varargs.h stdfix.h stdnoreturn.h stdalign.h stdatomic.h config/i386/cpuid.h mmintrin.h mm3dnow.h xmmintrin.h emmintrin.h pmmintrin.h tmmintrin.h ammintrin.h smmintrin.h nmmintrin.h bmmintrin.h fma4intrin.h wmmintrin.h immintrin.h x86intrin.h avxintrin.h xopintrin.h ia32intrin.h cross-stdarg.h lwpintrin.h popcntintrin.h lzcntintrin.h bmiintrin.h bmi2intrin.h tbmintrin.h avx2intrin.h avx512fintrin.h fmaintrin.h f16cintrin.h rtmintrin.h xtestintrin.h rdseedintrin.h prfchwintrin.h adxintrin.h fxsrintrin.h xsaveintrin.h xsaveoptintrin.h avx512cdintrin.h avx512erintrin.h avx512pfintrin.h shaintrin.h clflushoptintrin.h xsavecintrin.h xsavesintrin.h avx512dqintrin.h avx512bwintrin.h avx512vlintrin.h avx512vlbwintrin.h avx512vldqintrin.h avx512ifmaintrin.h avx512ifmavlintrin.h avx512vbmiintrin.h avx512vbmivlintrin.h avx5124fmapsintrin.h avx5124vnniwintrin.h avx512vpopcntdqintrin.h clwbintrin.h mwaitxintrin.h clzerointrin.h pkuintrin.h sgxintrin.h cetintrin.h gfniintrin.h cet.h avx512vbmi2intrin.h avx512vbmi2vlintrin.h avx512vnniintrin.h avx512vnnivlintrin.h vaesintrin.h vpclmulqdqintrin.h avx512vpopcntdqvlintrin.h avx512bitalgintrin.h pconfigintrin.h wbnoinvdintrin.h movdirintrin.h waitpkgintrin.h cldemoteintrin.h avx512bf16vlintrin.h avx512bf16intrin.h enqcmdintrin.h serializeintrin.h avx512vp2intersectintrin.h avx512vp2intersectvlintrin.h tsxldtrkintrin.h amxtileintrin.h amxint8intrin.h amxbf16intrin.h x86gprintrin.h uintrintrin.h hresetintrin.h keylockerintrin.h avxvnniintrin.h mm_malloc.h >> tmp-header-vars; echo T_GLIMITS_H=glimits.h >> tmp-header-vars; echo HASHTAB_H=hashtab.h >> tmp-header-vars; echo OBSTACK_H=obstack.h >> tmp-header-vars; echo SPLAY_TREE_H=splay-tree.h >> tmp-header-vars; echo MD5_H=md5.h >> tmp-header-vars; echo XREGEX_H=xregex.h >> tmp-header-vars; echo FNMATCH_H=fnmatch.h >> tmp-header-vars; echo LINKER_PLUGIN_API_H=plugin-api.h >> tmp-header-vars; echo BCONFIG_H=bconfig.h auto-host.h ansidecl.h >> tmp-header-vars; echo CONFIG_H=config.h auto-host.h ansidecl.h >> tmp-header-vars; echo TCONFIG_H=tconfig.h auto-host.h ansidecl.h >> tmp-header-vars; echo TM_P_H=tm_p.h config/i386/i386-protos.h linux-protos.h tm-preds.h >> tmp-header-vars; echo TM_D_H=tm_d.h config/i386/i386.h i386-protos.h defaults.h >> tmp-header-vars; echo GTM_H=tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h >> tmp-header-vars; echo TM_H=tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h >> tmp-header-vars; echo DUMPFILE_H=line-map.h dumpfile.h >> tmp-header-vars; echo VEC_H=vec.h statistics.h ggc.h gtype-desc.h statistics.h >> tmp-header-vars; echo HASH_TABLE_H=hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h >> tmp-header-vars; echo EXCEPT_H=except.h hashtab.h >> tmp-header-vars; echo TARGET_H=tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h target.h target.def target-hooks-macros.h target-insns.def insn-modes.h insn-codes.h >> tmp-header-vars; echo C_TARGET_H=c-family/c-target.h c-family/c-target.def target-hooks-macros.h >> tmp-header-vars; echo COMMON_TARGET_H=common/common-target.h line-map.h input.h common/common-target.def target-hooks-macros.h >> tmp-header-vars; echo D_TARGET_H=d/d-target.h d/d-target.def target-hooks-macros.h >> tmp-header-vars; echo MACHMODE_H=machmode.h mode-classes.def >> tmp-header-vars; echo HOOKS_H=hooks.h >> tmp-header-vars; echo HOSTHOOKS_DEF_H=hosthooks-def.h hooks.h >> tmp-header-vars; echo LANGHOOKS_DEF_H=langhooks-def.h hooks.h >> tmp-header-vars; echo TARGET_DEF_H=target-def.h target-hooks-def.h hooks.h targhooks.h >> tmp-header-vars; echo C_TARGET_DEF_H=c-family/c-target-def.h c-family/c-target-hooks-def.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h splay-tree.h line-map.h cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def hooks.h common/common-targhooks.h >> tmp-header-vars; echo CORETYPES_H=coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h >> tmp-header-vars; echo RTL_BASE_H=coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h rtl.h rtl.def reg-notes.def insn-notes.def line-map.h input.h real.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h fixed-value.h alias.h hashtab.h >> tmp-header-vars; echo FIXED_VALUE_H=fixed-value.h >> tmp-header-vars; echo RTL_H=coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h rtl.h rtl.def reg-notes.def insn-notes.def line-map.h input.h real.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h fixed-value.h alias.h hashtab.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def genrtl.h >> tmp-header-vars; echo READ_MD_H=obstack.h hashtab.h read-md.h >> tmp-header-vars; echo INTERNAL_FN_H=internal-fn.h internal-fn.def >> tmp-header-vars; echo TREE_CORE_H=tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h >> tmp-header-vars; echo TREE_H=tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h >> tmp-header-vars; echo REGSET_H=regset.h bitmap.h hashtab.h statistics.h hard-reg-set.h >> tmp-header-vars; echo BASIC_BLOCK_H=basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h >> tmp-header-vars; echo GIMPLE_H=gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h >> tmp-header-vars; echo GCOV_IO_H=gcov-io.h gcov-iov.h auto-host.h gcov-counter.def >> tmp-header-vars; echo RECOG_H=recog.h >> tmp-header-vars; echo EMIT_RTL_H=emit-rtl.h >> tmp-header-vars; echo FLAGS_H=flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def >> tmp-header-vars; echo OPTIONS_H=options.h flag-types.h config/i386/i386-opts.h stringop.def >> tmp-header-vars; echo FUNCTION_H=function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h >> tmp-header-vars; echo EXPR_H=expr.h insn-config.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h rtl.h rtl.def reg-notes.def insn-notes.def line-map.h input.h real.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h fixed-value.h alias.h hashtab.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def genrtl.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h emit-rtl.h >> tmp-header-vars; echo OPTABS_H=optabs.h insn-codes.h insn-opinit.h >> tmp-header-vars; echo REGS_H=regs.h hard-reg-set.h >> tmp-header-vars; echo CFGLOOP_H=cfgloop.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h bitmap.h hashtab.h statistics.h sbitmap.h >> tmp-header-vars; echo IPA_UTILS_H=ipa-utils.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cif-code.def ipa-ref.h plugin-api.h is-a.h >> tmp-header-vars; echo IPA_REFERENCE_H=ipa-reference.h bitmap.h hashtab.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h >> tmp-header-vars; echo CGRAPH_H=cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cif-code.def ipa-ref.h plugin-api.h is-a.h >> tmp-header-vars; echo DF_H=df.h bitmap.h hashtab.h statistics.h regset.h bitmap.h hashtab.h statistics.h hard-reg-set.h sbitmap.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h alloc-pool.h timevar.h timevar.def >> tmp-header-vars; echo RESOURCE_H=resource.h hard-reg-set.h df.h bitmap.h hashtab.h statistics.h regset.h bitmap.h hashtab.h statistics.h hard-reg-set.h sbitmap.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h alloc-pool.h timevar.h timevar.def >> tmp-header-vars; echo GCC_H=gcc.h version.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def >> tmp-header-vars; echo GGC_H=ggc.h gtype-desc.h statistics.h >> tmp-header-vars; echo TIMEVAR_H=timevar.h timevar.def >> tmp-header-vars; echo INSN_ATTR_H=insn-attr.h insn-attr-common.h insn-addr.h >> tmp-header-vars; echo INSN_ADDR_H=insn-addr.h >> tmp-header-vars; echo C_COMMON_H=c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h splay-tree.h line-map.h cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def >> tmp-header-vars; echo C_PRAGMA_H=c-family/c-pragma.h line-map.h cpplib.h >> tmp-header-vars; echo C_TREE_H=c/c-tree.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h splay-tree.h line-map.h cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def diagnostic.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def pretty-print.h line-map.h input.h obstack.h wide-int-print.h >> tmp-header-vars; echo SYSTEM_H=system.h hwint.h libiberty.h safe-ctype.h filenames.h >> tmp-header-vars; echo PREDICT_H=predict.h predict.def >> tmp-header-vars; echo CPPLIB_H=line-map.h cpplib.h >> tmp-header-vars; echo CODYLIB_H=cody.hh >> tmp-header-vars; echo INPUT_H=line-map.h input.h >> tmp-header-vars; echo OPTS_H=line-map.h input.h vec.h statistics.h ggc.h gtype-desc.h statistics.h opts.h obstack.h >> tmp-header-vars; echo SYMTAB_H=symtab.h obstack.h >> tmp-header-vars; echo CPP_INTERNAL_H=internal.h >> tmp-header-vars; echo TREE_DUMP_H=tree-dump.h splay-tree.h line-map.h dumpfile.h >> tmp-header-vars; echo TREE_PASS_H=tree-pass.h timevar.h timevar.def line-map.h dumpfile.h >> tmp-header-vars; echo TREE_SSA_H=tree-ssa.h tree-ssa-operands.h bitmap.h hashtab.h statistics.h sbitmap.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h hashtab.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cif-code.def ipa-ref.h plugin-api.h is-a.h ipa-reference.h bitmap.h hashtab.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h tree-ssa-alias.h >> tmp-header-vars; echo PRETTY_PRINT_H=pretty-print.h line-map.h input.h obstack.h wide-int-print.h >> tmp-header-vars; echo TREE_PRETTY_PRINT_H=tree-pretty-print.h pretty-print.h line-map.h input.h obstack.h wide-int-print.h >> tmp-header-vars; echo GIMPLE_PRETTY_PRINT_H=gimple-pretty-print.h tree-pretty-print.h pretty-print.h line-map.h input.h obstack.h wide-int-print.h >> tmp-header-vars; echo DIAGNOSTIC_CORE_H=diagnostic-core.h line-map.h input.h bversion.h diagnostic.def >> tmp-header-vars; echo DIAGNOSTIC_H=diagnostic.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def pretty-print.h line-map.h input.h obstack.h wide-int-print.h >> tmp-header-vars; echo C_PRETTY_PRINT_H=c-family/c-pretty-print.h pretty-print.h line-map.h input.h obstack.h wide-int-print.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h splay-tree.h line-map.h cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h >> tmp-header-vars; echo TREE_INLINE_H=tree-inline.h >> tmp-header-vars; echo REAL_H=real.h >> tmp-header-vars; echo LTO_STREAMER_H=lto-streamer.h plugin-api.h tm.h options.h config/vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h target.h target.def target-hooks-macros.h target-insns.def insn-modes.h insn-codes.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cif-code.def ipa-ref.h plugin-api.h is-a.h vec.h statistics.h ggc.h gtype-desc.h statistics.h hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h gcov-io.h gcov-iov.h auto-host.h gcov-counter.def diagnostic.h diagnostic-core.h line-map.h input.h bversion.h diagnostic.def pretty-print.h line-map.h input.h obstack.h wide-int-print.h alloc-pool.h >> tmp-header-vars; echo IPA_PROP_H=ipa-prop.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h config/i386/i386-opts.h stringop.def real.h fixed-value.h tree-check.h vec.h statistics.h ggc.h gtype-desc.h statistics.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cif-code.def ipa-ref.h plugin-api.h is-a.h gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h hashtab.h tm.h options.h vxworks-dummy.h i386.h unix.h att.h dbxelf.h elfos.h gnu-user.h glibc-stdint.h linux.h linux-android.h gnu-user-common.h gnu-user.h linux-common.h linux.h initfini-array.h defaults.h insn-constants.h insn-flags.h options.h flag-types.h i386-opts.h stringop.def x86-tune.def i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ada-tree.def cp-tree.def d-tree.def objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def hashtab.h alias.h symtab.h obstack.h flags.h flag-types.h options.h flag-types.h i386-opts.h stringop.def real.h fixed-value.h tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h alloc-pool.h >> tmp-header-vars; echo BITMAP_H=bitmap.h hashtab.h statistics.h >> tmp-header-vars; echo GCC_PLUGIN_H=gcc-plugin.h highlev-plugin-common.h plugin.def config.h auto-host.h ansidecl.h system.h hwint.h libiberty.h safe-ctype.h filenames.h hashtab.h >> tmp-header-vars; echo PLUGIN_H=plugin.h gcc-plugin.h highlev-plugin-common.h plugin.def config.h auto-host.h ansidecl.h system.h hwint.h libiberty.h safe-ctype.h filenames.h hashtab.h >> tmp-header-vars; echo PLUGIN_VERSION_H=plugin-version.h configargs.h >> tmp-header-vars; echo CONTEXT_H=context.h >> tmp-header-vars; echo GENSUPPORT_H=gensupport.h read-md.h optabs.def >> tmp-header-vars; echo RTL_SSA_H=pretty-print.h line-map.h input.h obstack.h wide-int-print.h insn-config.h splay-tree-utils.h recog.h regs.h hard-reg-set.h function-abi.h obstack-utils.h mux-utils.h rtlanal.h memmodel.h emit-rtl.h rtl-ssa/accesses.h rtl-ssa/insns.h rtl-ssa/blocks.h rtl-ssa/changes.h rtl-ssa/functions.h rtl-ssa/is-a.inl rtl-ssa/access-utils.h rtl-ssa/insn-utils.h rtl-ssa/movement.h rtl-ssa/change-utils.h rtl-ssa/member-fns.inl >> tmp-header-vars; echo GTFILES_H=gt-coverage.h gt-caller-save.h gt-symtab.h gt-alias.h gt-bitmap.h gt-cselib.h gt-cgraph.h gt-ipa-prop.h gt-ipa-cp.h gt-ipa-sra.h gt-dbxout.h gt-ipa-modref.h gt-dwarf2asm.h gt-dwarf2cfi.h gt-dwarf2out.h gt-tree-vect-generic.h gt-dojump.h gt-emit-rtl.h gt-explow.h gt-expr.h gt-function.h gt-except.h gt-ggc-tests.h gt-gcse.h gt-godump.h gt-lists.h gt-optabs-libfuncs.h gt-profile.h gt-mcf.h gt-reg-stack.h gt-cfgrtl.h gt-stor-layout.h gt-stringpool.h gt-tree.h gt-varasm.h gt-tree-ssanames.h gt-tree-eh.h gt-tree-ssa-address.h gt-tree-cfg.h gt-tree-ssa-loop-ivopts.h gt-tree-dfa.h gt-tree-iterator.h gt-gimple-expr.h gt-tree-scalar-evolution.h gt-tree-profile.h gt-tree-nested.h gt-omp-offload.h gt-omp-general.h gt-omp-low.h gt-targhooks.h gt-i386.h gt-passes.h gt-cgraphclones.h gt-tree-phinodes.h gt-trans-mem.h gt-vtable-verify.h gt-asan.h gt-ubsan.h gt-tsan.h gt-sanopt.h gt-sancov.h gt-ipa-devirt.h gt-calls.h gt-i386-builtins.h gt-i386-expand.h gt-i386-options.h gt-ada-decl.h gt-ada-trans.h gt-ada-utils.h gt-ada-misc.h gt-brig-brig-lang.h gt-c-c-lang.h gt-c-c-decl.h gt-c-family-c-common.h gt-c-family-c-cppbuiltin.h gt-c-family-c-pragma.h gt-c-family-c-format.h gt-c-c-objc-common.h gt-c-c-parser.h gt-c-family-c-common.h gt-c-family-c-format.h gt-c-family-c-cppbuiltin.h gt-c-family-c-pragma.h gt-cp-call.h gt-cp-class.h gt-cp-constexpr.h gt-cp-cp-gimplify.h gt-cp-cp-lang.h gt-cp-cp-objcp-common.h gt-cp-decl.h gt-cp-decl2.h gt-cp-except.h gt-cp-friend.h gt-cp-init.h gt-cp-lambda.h gt-cp-lex.h gt-cp-mangle.h gt-cp-method.h gt-cp-name-lookup.h gt-cp-parser.h gt-cp-pt.h gt-cp-rtti.h gt-cp-semantics.h gt-cp-tree.h gt-cp-typeck2.h gt-cp-vtable-class-hierarchy.h gt-fortran-f95-lang.h gt-fortran-trans-decl.h gt-fortran-trans-intrinsic.h gt-fortran-trans-io.h gt-fortran-trans-stmt.h gt-fortran-trans-types.h gt-go-go-lang.h gt-jit-dummy-frontend.h gt-lto-lto-lang.h gt-lto-lto.h gt-lto-lto-common.h gt-lto-lto-dump.h gt-objc-objc-act.h gt-objc-objc-runtime-shared-support.h gt-objc-objc-gnu-runtime-abi-01.h gt-objc-objc-next-runtime-abi-01.h gt-objc-objc-next-runtime-abi-02.h gt-c-c-parser.h gt-c-c-decl.h gt-c-c-objc-common.h gt-c-family-c-common.h gt-c-family-c-cppbuiltin.h gt-c-family-c-pragma.h gt-c-family-c-format.h gt-c-family-c-common.h gt-c-family-c-format.h gt-c-family-c-cppbuiltin.h gt-c-family-c-pragma.h gt-cp-call.h gt-cp-class.h gt-cp-constexpr.h gt-cp-cp-gimplify.h gt-objcp-objcp-lang.h gt-cp-cp-objcp-common.h gt-cp-decl.h gt-cp-decl2.h gt-cp-except.h gt-cp-friend.h gt-cp-init.h gt-cp-lambda.h gt-cp-lex.h gt-cp-mangle.h gt-cp-method.h gt-cp-name-lookup.h gt-cp-parser.h gt-cp-pt.h gt-cp-rtti.h gt-cp-semantics.h gt-cp-tree.h gt-cp-typeck2.h gt-cp-vtable-class-hierarchy.h gt-objc-objc-act.h gt-objc-objc-gnu-runtime-abi-01.h gt-objc-objc-next-runtime-abi-01.h gt-objc-objc-next-runtime-abi-02.h gt-objc-objc-runtime-shared-support.h >> tmp-header-vars; echo GTFILES_LANG_H=gtype-ada.h gtype-brig.h gtype-c.h gtype-cp.h gtype-d.h gtype-fortran.h gtype-go.h gtype-jit.h gtype-lto.h gtype-objc.h gtype-objcp.h >> tmp-header-vars;
+/bin/sh ../../gcc/../move-if-change tmp-header-vars b-header-vars
+echo timestamp > s-header-vars
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin
+/usr/bin/install -c -m 644 gtype.state /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/gtype.state
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/plugin
+mkdir -p -- /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/plugin
+/usr/bin/install -c gengtype /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0/plugin/gengtype
+/bin/sh ../../gcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include
+headers=`echo tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h config.h  auto-host.h ../../gcc/../include/ansidecl.h system.h hwint.h ../../gcc/../include/libiberty.h ../../gcc/../include/safe-ctype.h ../../gcc/../include/filenames.h coretypes.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h toplev.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h ../../gcc/../include/hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h tree-ssa-alias.h internal-fn.h internal-fn.def gimple-fold.h tree-eh.h gimple-expr.h gimple.h is-a.h memmodel.h tree-pass.h timevar.h timevar.def ../../gcc/../libcpp/include/line-map.h dumpfile.h gcc-plugin.h highlev-plugin-common.h plugin.def config.h  auto-host.h ../../gcc/../include/ansidecl.h system.h hwint.h ../../gcc/../include/libiberty.h ../../gcc/../include/safe-ctype.h ../../gcc/../include/filenames.h ../../gcc/../include/hashtab.h ggc.h gtype-desc.h statistics.h tree-dump.h ../../gcc/../include/splay-tree.h ../../gcc/../libcpp/include/line-map.h dumpfile.h pretty-print.h ../../gcc/../libcpp/include/line-map.h input.h ../../gcc/../include/obstack.h wide-int-print.h ../../gcc/../libcpp/include/line-map.h input.h vec.h statistics.h ggc.h gtype-desc.h statistics.h opts.h ../../gcc/../include/obstack.h  options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h options.h insn-constants.h config/vxworks-dummy.h config/i386/i386.h config/i386/unix.h config/i386/att.h config/dbxelf.h config/elfos.h config/gnu-user.h config/glibc-stdint.h config/linux.h config/linux-android.h config/i386/gnu-user-common.h config/i386/gnu-user.h config/i386/linux-common.h config/i386/linux.h config/initfini-array.h defaults.h ../../gcc/config/i386/i386-protos.h ../../gcc/config/linux-protos.h tm-preds.h config/i386/i386-protos.h config/linux-protos.h tm-preds.h auto-host.h ../../gcc/../include/ansidecl.h auto-host.h ansidecl.h auto-host.h ansidecl.h intl.h plugin-version.h configargs.h diagnostic.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def pretty-print.h ../../gcc/../libcpp/include/line-map.h input.h ../../gcc/../include/obstack.h wide-int-print.h c/c-tree.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h ../../gcc/../include/splay-tree.h ../../gcc/../libcpp/include/line-map.h ../../gcc/../libcpp/include/cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def diagnostic.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def pretty-print.h ../../gcc/../libcpp/include/line-map.h input.h ../../gcc/../include/obstack.h wide-int-print.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h ../../gcc/../include/splay-tree.h ../../gcc/../libcpp/include/line-map.h ../../gcc/../libcpp/include/cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def c-family/c-objc.h c-family/c-pretty-print.h pretty-print.h ../../gcc/../libcpp/include/line-map.h input.h ../../gcc/../include/obstack.h wide-int-print.h c-family/c-common.h c-family/c-common.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h ../../gcc/../include/splay-tree.h ../../gcc/../libcpp/include/line-map.h ../../gcc/../libcpp/include/cpplib.h ggc.h gtype-desc.h statistics.h diagnostic-core.h ../../gcc/../libcpp/include/line-map.h input.h bversion.h diagnostic.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h tree-iterator.h plugin.h gcc-plugin.h highlev-plugin-common.h plugin.def config.h  auto-host.h ../../gcc/../include/ansidecl.h system.h hwint.h ../../gcc/../include/libiberty.h ../../gcc/../include/safe-ctype.h ../../gcc/../include/filenames.h ../../gcc/../include/hashtab.h tree-ssa.h tree-ssa-operands.h bitmap.h ../../gcc/../include/hashtab.h statistics.h sbitmap.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def ../../gcc/../include/hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h ../../gcc/../include/hashtab.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cif-code.def ipa-ref.h ../../gcc/../include/plugin-api.h is-a.h ipa-reference.h bitmap.h ../../gcc/../include/hashtab.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h tree-ssa-alias.h langhooks.h incpath.h debug.h except.h ../../gcc/../include/hashtab.h tree-ssa-sccvn.h real.h output.h ipa-utils.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cif-code.def ipa-ref.h ../../gcc/../include/plugin-api.h is-a.h ipa-param-manipulation.h c-family/c-pragma.h ../../gcc/../libcpp/include/line-map.h ../../gcc/../libcpp/include/cpplib.h  ../../gcc/../libcpp/include/line-map.h ../../gcc/../libcpp/include/cpplib.h  function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cppdefault.h flags.h ../../gcc/../include/md5.h params.def params.h params-enum.h prefix.h tree-inline.h gimple-pretty-print.h tree-pretty-print.h pretty-print.h ../../gcc/../libcpp/include/line-map.h input.h ../../gcc/../include/obstack.h wide-int-print.h realmpfr.h ipa-prop.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h vec.h statistics.h ggc.h gtype-desc.h statistics.h cgraph.h vec.h statistics.h ggc.h gtype-desc.h statistics.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cif-code.def ipa-ref.h ../../gcc/../include/plugin-api.h is-a.h gimple.h gimple.def gsstruct.def vec.h statistics.h ggc.h gtype-desc.h statistics.h ggc.h gtype-desc.h statistics.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h tree-ssa-operands.h tree-ssa-alias.h internal-fn.h internal-fn.def ../../gcc/../include/hashtab.h hash-table.h ggc.h gtype-desc.h statistics.h is-a.h alloc-pool.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h target.h target.def target-hooks-macros.h target-insns.def insn-modes.h insn-codes.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h rtl.h rtl.def reg-notes.def insn-notes.def ../../gcc/../libcpp/include/line-map.h input.h real.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h fixed-value.h alias.h ../../gcc/../include/hashtab.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def genrtl.h tm_p.h    ../../gcc/config/i386/i386-protos.h ../../gcc/config/linux-protos.h tm-preds.h cfgloop.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h bitmap.h ../../gcc/../include/hashtab.h statistics.h sbitmap.h emit-rtl.h version.h stringpool.h gimplify.h gimple-iterator.h gimple-ssa.h fold-const.h fold-const-call.h tree-cfg.h tree-into-ssa.h tree-ssanames.h print-tree.h varasm.h context.h tree-phinodes.h stor-layout.h ssa-iterators.h resource.h hard-reg-set.h df.h bitmap.h ../../gcc/../include/hashtab.h statistics.h regset.h bitmap.h ../../gcc/../include/hashtab.h statistics.h hard-reg-set.h sbitmap.h basic-block.h predict.h predict.def vec.h statistics.h ggc.h gtype-desc.h statistics.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h cfg-flags.def cfghooks.h profile-count.h alloc-pool.h timevar.h timevar.def tree-cfgcleanup.h attribs.h calls.h cfgexpand.h diagnostic-color.h gcc-symtab.h gimple-builder.h gimple-low.h gimple-walk.h gimplify-me.h pass_manager.h print-rtl.h stmt.h tree-dfa.h tree-hasher.h tree-nested.h tree-object-size.h tree-outof-ssa.h tree-parloops.h tree-ssa-address.h tree-ssa-coalesce.h tree-ssa-dom.h tree-ssa-loop.h tree-ssa-loop-ivopts.h tree-ssa-loop-manip.h tree-ssa-loop-niter.h tree-ssa-ter.h tree-ssa-threadedge.h tree-ssa-threadupdate.h inchash.h wide-int.h signop.h hash-map.h hash-set.h dominance.h cfg.h cfgrtl.h cfganal.h cfgbuild.h cfgcleanup.h lcm.h cfgloopmanip.h file-prefix-map.h builtins.def insn-attr.h insn-attr-common.h ../../gcc/insn-addr.h pass-instances.def params.list ../../gcc/../include/gomp-constants.h expr.h insn-config.h function.h ../../gcc/../include/hashtab.h tm.h      options.h ../../gcc/config/vxworks-dummy.h ../../gcc/config/i386/i386.h ../../gcc/config/i386/unix.h ../../gcc/config/i386/att.h ../../gcc/config/dbxelf.h ../../gcc/config/elfos.h ../../gcc/config/gnu-user.h ../../gcc/config/glibc-stdint.h ../../gcc/config/linux.h ../../gcc/config/linux-android.h ../../gcc/config/i386/gnu-user-common.h ../../gcc/config/i386/gnu-user.h ../../gcc/config/i386/linux-common.h ../../gcc/config/i386/linux.h ../../gcc/config/initfini-array.h ../../gcc/defaults.h insn-constants.h insn-flags.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def ../../gcc/config/i386/x86-tune.def ../../gcc/common/config/i386/i386-cpuinfo.h hard-reg-set.h vec.h statistics.h ggc.h gtype-desc.h statistics.h ../../gcc/../libcpp/include/line-map.h input.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h rtl.h rtl.def reg-notes.def insn-notes.def ../../gcc/../libcpp/include/line-map.h input.h real.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h fixed-value.h alias.h ../../gcc/../include/hashtab.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def genrtl.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def tree.h tree-core.h coretypes.h insn-modes.h signop.h wide-int.h wide-int-print.h insn-modes-inline.h machmode.h mode-classes.def double-int.h all-tree.def tree.def c-family/c-common.def ../../gcc/ada/gcc-interface/ada-tree.def ../../gcc/cp/cp-tree.def ../../gcc/d/d-tree.def ../../gcc/objc/objc-tree.def builtins.def sync-builtins.def omp-builtins.def gtm-builtins.def sanitizer.def ../../gcc/../libcpp/include/line-map.h input.h statistics.h vec.h statistics.h ggc.h gtype-desc.h statistics.h treestruct.def ../../gcc/../include/hashtab.h alias.h ../../gcc/../libcpp/include/symtab.h ../../gcc/../include/obstack.h flags.h flag-types.h options.h flag-types.h ../../gcc/config/i386/i386-opts.h ../../gcc/config/i386/stringop.def real.h fixed-value.h  tree-check.h emit-rtl.h $(cd ../../gcc; echo *.h *.def) | tr ' ' '\012' | sort -u`; \
+srcdirstrip=`echo "../../gcc" | sed 's/[].[^$\\*|]/\\\\&/g'`; \
+for file in $headers; do \
+  if [ -f $file ] ; then \
+    path=$file; \
+  elif [ -f ../../gcc/$file ]; then \
+    path=../../gcc/$file; \
+  else continue; \
+  fi; \
+  case $path in \
+  "../../gcc"/config/* | "../../gcc"/common/config/* \
+  | "../../gcc"/c-family/* | "../../gcc"/*.def ) \
+    base=`echo "$path" | sed -e "s|$srcdirstrip/||"`;; \
+  *) base=`basename $path` ;; \
+  esac; \
+  dest=/mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/$base; \
+  echo /usr/bin/install -c -m 644 $path $dest; \
+  dir=`dirname $dest`; \
+  /bin/sh ../../gcc/../mkinstalldirs $dir; \
+  /usr/bin/install -c -m 644 $path $dest; \
+done
+/usr/bin/install -c -m 644 ../../gcc/../include/ansidecl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ansidecl.h
+/usr/bin/install -c -m 644 ../../gcc/../include/filenames.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/filenames.h
+/usr/bin/install -c -m 644 ../../gcc/../include/gomp-constants.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gomp-constants.h
+/usr/bin/install -c -m 644 ../../gcc/../include/hashtab.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hashtab.h
+/usr/bin/install -c -m 644 ../../gcc/../include/libiberty.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/libiberty.h
+/usr/bin/install -c -m 644 ../../gcc/../include/md5.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/md5.h
+/usr/bin/install -c -m 644 ../../gcc/../include/obstack.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/obstack.h
+/usr/bin/install -c -m 644 ../../gcc/../include/plugin-api.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/plugin-api.h
+/usr/bin/install -c -m 644 ../../gcc/../include/safe-ctype.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/safe-ctype.h
+/usr/bin/install -c -m 644 ../../gcc/../include/splay-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/splay-tree.h
+/usr/bin/install -c -m 644 ../../gcc/../libcpp/include/cpplib.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cpplib.h
+/usr/bin/install -c -m 644 ../../gcc/../libcpp/include/line-map.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/line-map.h
+/usr/bin/install -c -m 644 ../../gcc/../libcpp/include/symtab.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/symtab.h
+/usr/bin/install -c -m 644 ../../gcc/ada/gcc-interface/ada-tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ada/gcc-interface/ada-tree.def
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ada/gcc-interface
+/usr/bin/install -c -m 644 ../../gcc/common/config/i386/i386-cpuinfo.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/common/config/i386/i386-cpuinfo.h
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/common/config/i386
+/usr/bin/install -c -m 644 ../../gcc/config/dbxelf.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/dbxelf.h
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config
+/usr/bin/install -c -m 644 ../../gcc/config/elfos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/elfos.h
+/usr/bin/install -c -m 644 ../../gcc/config/glibc-stdint.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/glibc-stdint.h
+/usr/bin/install -c -m 644 ../../gcc/config/gnu-user.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/gnu-user.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/att.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/att.h
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386
+/usr/bin/install -c -m 644 ../../gcc/config/i386/gnu-user-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/gnu-user-common.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/gnu-user.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/gnu-user.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/i386-opts.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/i386-opts.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/i386-protos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/i386-protos.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/i386.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/i386.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/linux-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/linux-common.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/linux.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/linux.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/stringop.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/stringop.def
+/usr/bin/install -c -m 644 ../../gcc/config/i386/unix.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/unix.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/x86-tune.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/x86-tune.def
+/usr/bin/install -c -m 644 ../../gcc/config/initfini-array.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/initfini-array.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux-android.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux-android.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux-protos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux-protos.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux.h
+/usr/bin/install -c -m 644 ../../gcc/config/vxworks-dummy.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/vxworks-dummy.h
+/usr/bin/install -c -m 644 ../../gcc/cp/cp-tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cp/cp-tree.def
+/usr/bin/install -c -m 644 ../../gcc/d/d-tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/d/d-tree.def
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/d
+/usr/bin/install -c -m 644 ../../gcc/defaults.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/defaults.h
+/usr/bin/install -c -m 644 ../../gcc/insn-addr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-addr.h
+/usr/bin/install -c -m 644 ../../gcc/objc/objc-tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/objc/objc-tree.def
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/objc
+/usr/bin/install -c -m 644 ../../gcc/addresses.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/addresses.h
+/usr/bin/install -c -m 644 ../../gcc/alias.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/alias.h
+/usr/bin/install -c -m 644 ../../gcc/align.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/align.h
+/usr/bin/install -c -m 644 all-tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/all-tree.def
+/usr/bin/install -c -m 644 ../../gcc/alloc-pool.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/alloc-pool.h
+/usr/bin/install -c -m 644 ../../gcc/array-traits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/array-traits.h
+/usr/bin/install -c -m 644 ../../gcc/asan.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/asan.h
+/usr/bin/install -c -m 644 ../../gcc/attr-fnspec.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/attr-fnspec.h
+/usr/bin/install -c -m 644 ../../gcc/attribs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/attribs.h
+/usr/bin/install -c -m 644 auto-host.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/auto-host.h
+/usr/bin/install -c -m 644 ../../gcc/auto-profile.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/auto-profile.h
+/usr/bin/install -c -m 644 ../../gcc/backend.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/backend.h
+/usr/bin/install -c -m 644 ../../gcc/basic-block.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/basic-block.h
+/usr/bin/install -c -m 644 ../../gcc/bb-reorder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/bb-reorder.h
+/usr/bin/install -c -m 644 ../../gcc/bitmap.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/bitmap.h
+/usr/bin/install -c -m 644 ../../gcc/brig-builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/brig-builtins.def
+/usr/bin/install -c -m 644 ../../gcc/builtin-attrs.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/builtin-attrs.def
+/usr/bin/install -c -m 644 ../../gcc/builtin-types.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/builtin-types.def
+/usr/bin/install -c -m 644 ../../gcc/builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/builtins.def
+/usr/bin/install -c -m 644 ../../gcc/builtins.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/builtins.h
+/usr/bin/install -c -m 644 bversion.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/bversion.h
+/usr/bin/install -c -m 644 ../../gcc/c-family/c-common.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family/c-common.def
+mkdir -p -- /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family
+/usr/bin/install -c -m 644 ../../gcc/c-family/c-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family/c-common.h
+/usr/bin/install -c -m 644 ../../gcc/c-family/c-objc.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family/c-objc.h
+/usr/bin/install -c -m 644 ../../gcc/c-family/c-pragma.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family/c-pragma.h
+/usr/bin/install -c -m 644 ../../gcc/c-family/c-pretty-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-family/c-pretty-print.h
+/usr/bin/install -c -m 644 ../../gcc/c/c-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/c-tree.h
+/usr/bin/install -c -m 644 ../../gcc/calls.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/calls.h
+/usr/bin/install -c -m 644 ../../gcc/ccmp.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ccmp.h
+/usr/bin/install -c -m 644 ../../gcc/cfg-flags.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfg-flags.def
+/usr/bin/install -c -m 644 ../../gcc/cfg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfg.h
+/usr/bin/install -c -m 644 ../../gcc/cfganal.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfganal.h
+/usr/bin/install -c -m 644 ../../gcc/cfgbuild.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgbuild.h
+/usr/bin/install -c -m 644 ../../gcc/cfgcleanup.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgcleanup.h
+/usr/bin/install -c -m 644 ../../gcc/cfgexpand.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgexpand.h
+/usr/bin/install -c -m 644 ../../gcc/cfghooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfghooks.h
+/usr/bin/install -c -m 644 ../../gcc/cfgloop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgloop.h
+/usr/bin/install -c -m 644 ../../gcc/cfgloopmanip.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgloopmanip.h
+/usr/bin/install -c -m 644 ../../gcc/cfgrtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cfgrtl.h
+/usr/bin/install -c -m 644 ../../gcc/cgraph.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cgraph.h
+/usr/bin/install -c -m 644 ../../gcc/cif-code.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cif-code.def
+/usr/bin/install -c -m 644 ../../gcc/collect-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/collect-utils.h
+/usr/bin/install -c -m 644 ../../gcc/collect2-aix.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/collect2-aix.h
+/usr/bin/install -c -m 644 ../../gcc/collect2.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/collect2.h
+/usr/bin/install -c -m 644 ../../gcc/color-macros.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/color-macros.h
+/usr/bin/install -c -m 644 ../../gcc/conditions.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/conditions.h
+/usr/bin/install -c -m 644 config.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config.h
+/usr/bin/install -c -m 644 ../../gcc/config/dbxelf.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/dbxelf.h
+/usr/bin/install -c -m 644 ../../gcc/config/elfos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/elfos.h
+/usr/bin/install -c -m 644 ../../gcc/config/glibc-stdint.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/glibc-stdint.h
+/usr/bin/install -c -m 644 ../../gcc/config/gnu-user.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/gnu-user.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/att.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/att.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/gnu-user-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/gnu-user-common.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/gnu-user.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/gnu-user.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/i386-protos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/i386-protos.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/i386.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/i386.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/linux-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/linux-common.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/linux.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/linux.h
+/usr/bin/install -c -m 644 ../../gcc/config/i386/unix.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/i386/unix.h
+/usr/bin/install -c -m 644 ../../gcc/config/initfini-array.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/initfini-array.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux-android.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux-android.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux-protos.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux-protos.h
+/usr/bin/install -c -m 644 ../../gcc/config/linux.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/linux.h
+/usr/bin/install -c -m 644 ../../gcc/config/vxworks-dummy.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/config/vxworks-dummy.h
+/usr/bin/install -c -m 644 configargs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/configargs.h
+/usr/bin/install -c -m 644 ../../gcc/context.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/context.h
+/usr/bin/install -c -m 644 ../../gcc/convert.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/convert.h
+/usr/bin/install -c -m 644 ../../gcc/coretypes.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/coretypes.h
+/usr/bin/install -c -m 644 ../../gcc/coroutine-builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/coroutine-builtins.def
+/usr/bin/install -c -m 644 ../../gcc/coverage.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/coverage.h
+/usr/bin/install -c -m 644 ../../gcc/cppbuiltin.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cppbuiltin.h
+/usr/bin/install -c -m 644 ../../gcc/cppdefault.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cppdefault.h
+/usr/bin/install -c -m 644 ../../gcc/cselib.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/cselib.h
+/usr/bin/install -c -m 644 ../../gcc/data-streamer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/data-streamer.h
+/usr/bin/install -c -m 644 ../../gcc/dbgcnt.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dbgcnt.def
+/usr/bin/install -c -m 644 ../../gcc/dbgcnt.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dbgcnt.h
+/usr/bin/install -c -m 644 ../../gcc/dbxout.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dbxout.h
+/usr/bin/install -c -m 644 ../../gcc/dce.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dce.h
+/usr/bin/install -c -m 644 ../../gcc/ddg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ddg.h
+/usr/bin/install -c -m 644 ../../gcc/debug.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/debug.h
+/usr/bin/install -c -m 644 ../../gcc/defaults.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/defaults.h
+/usr/bin/install -c -m 644 ../../gcc/df.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/df.h
+/usr/bin/install -c -m 644 ../../gcc/dfp.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dfp.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-color.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-color.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-core.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-core.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-event-id.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-event-id.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-metadata.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-metadata.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-path.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-path.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic-url.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic-url.h
+/usr/bin/install -c -m 644 ../../gcc/diagnostic.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic.def
+/usr/bin/install -c -m 644 ../../gcc/diagnostic.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/diagnostic.h
+/usr/bin/install -c -m 644 ../../gcc/digraph.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/digraph.h
+/usr/bin/install -c -m 644 ../../gcc/dojump.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dojump.h
+/usr/bin/install -c -m 644 ../../gcc/dominance.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dominance.h
+/usr/bin/install -c -m 644 ../../gcc/domwalk.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/domwalk.h
+/usr/bin/install -c -m 644 ../../gcc/double-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/double-int.h
+/usr/bin/install -c -m 644 ../../gcc/dump-context.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dump-context.h
+/usr/bin/install -c -m 644 ../../gcc/dumpfile.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dumpfile.h
+/usr/bin/install -c -m 644 ../../gcc/dwarf2asm.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dwarf2asm.h
+/usr/bin/install -c -m 644 ../../gcc/dwarf2out.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/dwarf2out.h
+/usr/bin/install -c -m 644 ../../gcc/edit-context.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/edit-context.h
+/usr/bin/install -c -m 644 ../../gcc/emit-rtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/emit-rtl.h
+/usr/bin/install -c -m 644 ../../gcc/errors.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/errors.h
+/usr/bin/install -c -m 644 ../../gcc/escaped_string.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/escaped_string.h
+/usr/bin/install -c -m 644 ../../gcc/et-forest.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/et-forest.h
+/usr/bin/install -c -m 644 ../../gcc/except.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/except.h
+/usr/bin/install -c -m 644 ../../gcc/explow.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/explow.h
+/usr/bin/install -c -m 644 ../../gcc/expmed.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/expmed.h
+/usr/bin/install -c -m 644 ../../gcc/expr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/expr.h
+/usr/bin/install -c -m 644 ../../gcc/fibonacci_heap.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/fibonacci_heap.h
+/usr/bin/install -c -m 644 ../../gcc/file-find.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/file-find.h
+/usr/bin/install -c -m 644 ../../gcc/file-prefix-map.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/file-prefix-map.h
+/usr/bin/install -c -m 644 ../../gcc/fixed-value.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/fixed-value.h
+/usr/bin/install -c -m 644 ../../gcc/flag-types.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/flag-types.h
+/usr/bin/install -c -m 644 ../../gcc/flags.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/flags.h
+/usr/bin/install -c -m 644 ../../gcc/fold-const-call.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/fold-const-call.h
+/usr/bin/install -c -m 644 ../../gcc/fold-const.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/fold-const.h
+/usr/bin/install -c -m 644 ../../gcc/function-abi.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/function-abi.h
+/usr/bin/install -c -m 644 ../../gcc/function.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/function.h
+/usr/bin/install -c -m 644 ../../gcc/gcc-plugin.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcc-plugin.h
+/usr/bin/install -c -m 644 ../../gcc/gcc-rich-location.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcc-rich-location.h
+/usr/bin/install -c -m 644 ../../gcc/gcc-symtab.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcc-symtab.h
+/usr/bin/install -c -m 644 ../../gcc/gcc.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcc.h
+/usr/bin/install -c -m 644 ../../gcc/gcov-counter.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcov-counter.def
+/usr/bin/install -c -m 644 ../../gcc/gcov-io.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcov-io.h
+/usr/bin/install -c -m 644 ../../gcc/gcse-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcse-common.h
+/usr/bin/install -c -m 644 ../../gcc/gcse.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gcse.h
+/usr/bin/install -c -m 644 ../../gcc/generic-match.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/generic-match.h
+/usr/bin/install -c -m 644 ../../gcc/gengtype.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gengtype.h
+/usr/bin/install -c -m 644 genrtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/genrtl.h
+/usr/bin/install -c -m 644 ../../gcc/gensupport.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gensupport.h
+/usr/bin/install -c -m 644 ../../gcc/ggc-internal.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ggc-internal.h
+/usr/bin/install -c -m 644 ../../gcc/ggc.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ggc.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-array-bounds.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-array-bounds.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-builder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-builder.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-expr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-expr.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-fold.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-fold.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-iterator.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-iterator.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-low.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-low.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-match.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-match.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-predict.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-predict.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-pretty-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-pretty-print.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-range-cache.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-range-cache.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-range-edge.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-range-edge.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-range-gori.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-range-gori.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-range.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-range.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-ssa-evrp-analyze.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-ssa-evrp-analyze.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-ssa-warn-restrict.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-ssa-warn-restrict.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-ssa.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-streamer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-streamer.h
+/usr/bin/install -c -m 644 ../../gcc/gimple-walk.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple-walk.h
+/usr/bin/install -c -m 644 ../../gcc/gimple.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple.def
+/usr/bin/install -c -m 644 ../../gcc/gimple.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimple.h
+/usr/bin/install -c -m 644 ../../gcc/gimplify-me.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimplify-me.h
+/usr/bin/install -c -m 644 ../../gcc/gimplify.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gimplify.h
+/usr/bin/install -c -m 644 ../../gcc/glimits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/glimits.h
+/usr/bin/install -c -m 644 ../../gcc/graph.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/graph.h
+/usr/bin/install -c -m 644 ../../gcc/graphds.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/graphds.h
+/usr/bin/install -c -m 644 ../../gcc/graphite.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/graphite.h
+/usr/bin/install -c -m 644 ../../gcc/graphviz.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/graphviz.h
+/usr/bin/install -c -m 644 ../../gcc/gsstruct.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gsstruct.def
+/usr/bin/install -c -m 644 ../../gcc/gstab.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gstab.h
+/usr/bin/install -c -m 644 ../../gcc/gsyms.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gsyms.h
+/usr/bin/install -c -m 644 ../../gcc/gsyslimits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gsyslimits.h
+/usr/bin/install -c -m 644 ../../gcc/gtm-builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gtm-builtins.def
+/usr/bin/install -c -m 644 gtype-desc.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/gtype-desc.h
+/usr/bin/install -c -m 644 ../../gcc/hard-reg-set.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hard-reg-set.h
+/usr/bin/install -c -m 644 ../../gcc/hash-map-traits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hash-map-traits.h
+/usr/bin/install -c -m 644 ../../gcc/hash-map.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hash-map.h
+/usr/bin/install -c -m 644 ../../gcc/hash-set.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hash-set.h
+/usr/bin/install -c -m 644 ../../gcc/hash-table.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hash-table.h
+/usr/bin/install -c -m 644 ../../gcc/hash-traits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hash-traits.h
+/usr/bin/install -c -m 644 ../../gcc/highlev-plugin-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/highlev-plugin-common.h
+/usr/bin/install -c -m 644 ../../gcc/hooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hooks.h
+/usr/bin/install -c -m 644 ../../gcc/hosthooks-def.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hosthooks-def.h
+/usr/bin/install -c -m 644 ../../gcc/hosthooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hosthooks.h
+/usr/bin/install -c -m 644 ../../gcc/hw-doloop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hw-doloop.h
+/usr/bin/install -c -m 644 ../../gcc/hwint.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/hwint.h
+/usr/bin/install -c -m 644 ../../gcc/ifcvt.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ifcvt.h
+/usr/bin/install -c -m 644 ../../gcc/inchash.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/inchash.h
+/usr/bin/install -c -m 644 ../../gcc/incpath.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/incpath.h
+/usr/bin/install -c -m 644 ../../gcc/input.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/input.h
+/usr/bin/install -c -m 644 ../../gcc/insn-addr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-addr.h
+/usr/bin/install -c -m 644 insn-attr-common.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-attr-common.h
+/usr/bin/install -c -m 644 insn-attr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-attr.h
+/usr/bin/install -c -m 644 insn-codes.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-codes.h
+/usr/bin/install -c -m 644 insn-config.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-config.h
+/usr/bin/install -c -m 644 insn-constants.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-constants.h
+/usr/bin/install -c -m 644 insn-flags.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-flags.h
+/usr/bin/install -c -m 644 insn-modes-inline.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-modes-inline.h
+/usr/bin/install -c -m 644 insn-modes.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-modes.h
+/usr/bin/install -c -m 644 ../../gcc/insn-notes.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/insn-notes.def
+/usr/bin/install -c -m 644 ../../gcc/int-vector-builder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/int-vector-builder.h
+/usr/bin/install -c -m 644 ../../gcc/internal-fn.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/internal-fn.def
+/usr/bin/install -c -m 644 ../../gcc/internal-fn.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/internal-fn.h
+/usr/bin/install -c -m 644 ../../gcc/intl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/intl.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-fnsummary.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-fnsummary.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-icf-gimple.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-icf-gimple.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-icf.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-icf.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-inline.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-inline.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-modref-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-modref-tree.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-modref.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-modref.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-param-manipulation.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-param-manipulation.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-predicate.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-predicate.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-prop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-prop.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-ref.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-ref.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-reference.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-reference.h
+/usr/bin/install -c -m 644 ../../gcc/ipa-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ipa-utils.h
+/usr/bin/install -c -m 644 ../../gcc/ira-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ira-int.h
+/usr/bin/install -c -m 644 ../../gcc/ira.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ira.h
+/usr/bin/install -c -m 644 ../../gcc/is-a.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/is-a.h
+/usr/bin/install -c -m 644 ../../gcc/iterator-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/iterator-utils.h
+/usr/bin/install -c -m 644 ../../gcc/json.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/json.h
+/usr/bin/install -c -m 644 ../../gcc/langhooks-def.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/langhooks-def.h
+/usr/bin/install -c -m 644 ../../gcc/langhooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/langhooks.h
+/usr/bin/install -c -m 644 ../../gcc/lcm.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lcm.h
+/usr/bin/install -c -m 644 ../../gcc/libfuncs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/libfuncs.h
+/usr/bin/install -c -m 644 ../../gcc/limitx.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/limitx.h
+/usr/bin/install -c -m 644 ../../gcc/limity.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/limity.h
+/usr/bin/install -c -m 644 ../../gcc/loop-unroll.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/loop-unroll.h
+/usr/bin/install -c -m 644 ../../gcc/lower-subreg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lower-subreg.h
+/usr/bin/install -c -m 644 ../../gcc/lra-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lra-int.h
+/usr/bin/install -c -m 644 ../../gcc/lra.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lra.h
+/usr/bin/install -c -m 644 ../../gcc/lto-compress.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lto-compress.h
+/usr/bin/install -c -m 644 ../../gcc/lto-section-names.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lto-section-names.h
+/usr/bin/install -c -m 644 ../../gcc/lto-streamer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/lto-streamer.h
+/usr/bin/install -c -m 644 ../../gcc/machmode.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/machmode.def
+/usr/bin/install -c -m 644 ../../gcc/machmode.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/machmode.h
+/usr/bin/install -c -m 644 ../../gcc/mem-stats-traits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/mem-stats-traits.h
+/usr/bin/install -c -m 644 ../../gcc/mem-stats.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/mem-stats.h
+/usr/bin/install -c -m 644 ../../gcc/memmodel.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/memmodel.h
+/usr/bin/install -c -m 644 ../../gcc/memory-block.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/memory-block.h
+/usr/bin/install -c -m 644 ../../gcc/mode-classes.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/mode-classes.def
+/usr/bin/install -c -m 644 ../../gcc/mux-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/mux-utils.h
+/usr/bin/install -c -m 644 ../../gcc/obstack-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/obstack-utils.h
+/usr/bin/install -c -m 644 ../../gcc/omp-builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-builtins.def
+/usr/bin/install -c -m 644 ../../gcc/omp-expand.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-expand.h
+/usr/bin/install -c -m 644 ../../gcc/omp-general.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-general.h
+/usr/bin/install -c -m 644 ../../gcc/omp-low.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-low.h
+/usr/bin/install -c -m 644 ../../gcc/omp-offload.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-offload.h
+/usr/bin/install -c -m 644 ../../gcc/omp-simd-clone.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/omp-simd-clone.h
+/usr/bin/install -c -m 644 ../../gcc/opt-problem.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/opt-problem.h
+/usr/bin/install -c -m 644 ../../gcc/opt-suggestions.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/opt-suggestions.h
+/usr/bin/install -c -m 644 ../../gcc/optabs-libfuncs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optabs-libfuncs.h
+/usr/bin/install -c -m 644 ../../gcc/optabs-query.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optabs-query.h
+/usr/bin/install -c -m 644 ../../gcc/optabs-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optabs-tree.h
+/usr/bin/install -c -m 644 ../../gcc/optabs.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optabs.def
+/usr/bin/install -c -m 644 ../../gcc/optabs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optabs.h
+/usr/bin/install -c -m 644 ../../gcc/optinfo-emit-json.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optinfo-emit-json.h
+/usr/bin/install -c -m 644 ../../gcc/optinfo.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/optinfo.h
+/usr/bin/install -c -m 644 options.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/options.h
+/usr/bin/install -c -m 644 ../../gcc/opts-diagnostic.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/opts-diagnostic.h
+/usr/bin/install -c -m 644 ../../gcc/opts.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/opts.h
+/usr/bin/install -c -m 644 ../../gcc/ordered-hash-map.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ordered-hash-map.h
+/usr/bin/install -c -m 644 ../../gcc/output.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/output.h
+/usr/bin/install -c -m 644 pass-instances.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/pass-instances.def
+/usr/bin/install -c -m 644 ../../gcc/pass_manager.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/pass_manager.h
+/usr/bin/install -c -m 644 ../../gcc/passes.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/passes.def
+/usr/bin/install -c -m 644 plugin-version.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/plugin-version.h
+/usr/bin/install -c -m 644 ../../gcc/plugin.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/plugin.def
+/usr/bin/install -c -m 644 ../../gcc/plugin.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/plugin.h
+/usr/bin/install -c -m 644 ../../gcc/poly-int-types.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/poly-int-types.h
+/usr/bin/install -c -m 644 ../../gcc/poly-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/poly-int.h
+/usr/bin/install -c -m 644 ../../gcc/predict.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/predict.def
+/usr/bin/install -c -m 644 ../../gcc/predict.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/predict.h
+/usr/bin/install -c -m 644 ../../gcc/prefix.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/prefix.h
+/usr/bin/install -c -m 644 ../../gcc/pretty-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/pretty-print.h
+/usr/bin/install -c -m 644 ../../gcc/print-rtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/print-rtl.h
+/usr/bin/install -c -m 644 ../../gcc/print-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/print-tree.h
+/usr/bin/install -c -m 644 ../../gcc/profile-count.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/profile-count.h
+/usr/bin/install -c -m 644 ../../gcc/profile.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/profile.h
+/usr/bin/install -c -m 644 ../../gcc/range-op.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/range-op.h
+/usr/bin/install -c -m 644 ../../gcc/range.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/range.h
+/usr/bin/install -c -m 644 ../../gcc/read-md.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/read-md.h
+/usr/bin/install -c -m 644 ../../gcc/read-rtl-function.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/read-rtl-function.h
+/usr/bin/install -c -m 644 ../../gcc/real.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/real.h
+/usr/bin/install -c -m 644 ../../gcc/realmpfr.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/realmpfr.h
+/usr/bin/install -c -m 644 ../../gcc/recog.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/recog.h
+/usr/bin/install -c -m 644 ../../gcc/reg-notes.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/reg-notes.def
+/usr/bin/install -c -m 644 ../../gcc/regcprop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/regcprop.h
+/usr/bin/install -c -m 644 ../../gcc/regrename.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/regrename.h
+/usr/bin/install -c -m 644 ../../gcc/regs.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/regs.h
+/usr/bin/install -c -m 644 ../../gcc/regset.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/regset.h
+/usr/bin/install -c -m 644 ../../gcc/reload.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/reload.h
+/usr/bin/install -c -m 644 ../../gcc/resource.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/resource.h
+/usr/bin/install -c -m 644 ../../gcc/rtl-error.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtl-error.h
+/usr/bin/install -c -m 644 ../../gcc/rtl-iter.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtl-iter.h
+/usr/bin/install -c -m 644 ../../gcc/rtl-ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtl-ssa.h
+/usr/bin/install -c -m 644 ../../gcc/rtl.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtl.def
+/usr/bin/install -c -m 644 ../../gcc/rtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtl.h
+/usr/bin/install -c -m 644 ../../gcc/rtlanal.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtlanal.h
+/usr/bin/install -c -m 644 ../../gcc/rtlhash.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtlhash.h
+/usr/bin/install -c -m 644 ../../gcc/rtlhooks-def.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtlhooks-def.h
+/usr/bin/install -c -m 644 ../../gcc/rtx-vector-builder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/rtx-vector-builder.h
+/usr/bin/install -c -m 644 ../../gcc/run-rtl-passes.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/run-rtl-passes.h
+/usr/bin/install -c -m 644 ../../gcc/sanitizer.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sanitizer.def
+/usr/bin/install -c -m 644 ../../gcc/sbitmap.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sbitmap.h
+/usr/bin/install -c -m 644 ../../gcc/sched-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sched-int.h
+/usr/bin/install -c -m 644 ../../gcc/sel-sched-dump.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sel-sched-dump.h
+/usr/bin/install -c -m 644 ../../gcc/sel-sched-ir.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sel-sched-ir.h
+/usr/bin/install -c -m 644 ../../gcc/sel-sched.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sel-sched.h
+/usr/bin/install -c -m 644 ../../gcc/selftest-diagnostic.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/selftest-diagnostic.h
+/usr/bin/install -c -m 644 ../../gcc/selftest-rtl.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/selftest-rtl.h
+/usr/bin/install -c -m 644 ../../gcc/selftest.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/selftest.h
+/usr/bin/install -c -m 644 ../../gcc/sese.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sese.h
+/usr/bin/install -c -m 644 ../../gcc/shortest-paths.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/shortest-paths.h
+/usr/bin/install -c -m 644 ../../gcc/shrink-wrap.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/shrink-wrap.h
+/usr/bin/install -c -m 644 ../../gcc/signop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/signop.h
+/usr/bin/install -c -m 644 ../../gcc/sparseset.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sparseset.h
+/usr/bin/install -c -m 644 ../../gcc/spellcheck-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/spellcheck-tree.h
+/usr/bin/install -c -m 644 ../../gcc/spellcheck.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/spellcheck.h
+/usr/bin/install -c -m 644 ../../gcc/splay-tree-utils.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/splay-tree-utils.h
+/usr/bin/install -c -m 644 ../../gcc/sreal.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sreal.h
+/usr/bin/install -c -m 644 ../../gcc/ssa-iterators.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ssa-iterators.h
+/usr/bin/install -c -m 644 ../../gcc/ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ssa.h
+/usr/bin/install -c -m 644 ../../gcc/stab.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/stab.def
+/usr/bin/install -c -m 644 ../../gcc/statistics.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/statistics.h
+/usr/bin/install -c -m 644 ../../gcc/stmt.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/stmt.h
+/usr/bin/install -c -m 644 ../../gcc/stor-layout.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/stor-layout.h
+/usr/bin/install -c -m 644 ../../gcc/streamer-hooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/streamer-hooks.h
+/usr/bin/install -c -m 644 ../../gcc/stringpool.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/stringpool.h
+/usr/bin/install -c -m 644 ../../gcc/substring-locations.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/substring-locations.h
+/usr/bin/install -c -m 644 ../../gcc/symbol-summary.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/symbol-summary.h
+/usr/bin/install -c -m 644 ../../gcc/symtab-clones.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/symtab-clones.h
+/usr/bin/install -c -m 644 ../../gcc/symtab-thunks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/symtab-thunks.h
+/usr/bin/install -c -m 644 ../../gcc/sync-builtins.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/sync-builtins.def
+/usr/bin/install -c -m 644 ../../gcc/system.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/system.h
+/usr/bin/install -c -m 644 ../../gcc/target-def.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target-def.h
+/usr/bin/install -c -m 644 ../../gcc/target-globals.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target-globals.h
+/usr/bin/install -c -m 644 ../../gcc/target-hooks-macros.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target-hooks-macros.h
+/usr/bin/install -c -m 644 ../../gcc/target-insns.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target-insns.def
+/usr/bin/install -c -m 644 ../../gcc/target.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target.def
+/usr/bin/install -c -m 644 ../../gcc/target.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/target.h
+/usr/bin/install -c -m 644 ../../gcc/targhooks.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/targhooks.h
+/usr/bin/install -c -m 644 ../../gcc/timevar.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/timevar.def
+/usr/bin/install -c -m 644 ../../gcc/timevar.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/timevar.h
+/usr/bin/install -c -m 644 tm-preds.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tm-preds.h
+/usr/bin/install -c -m 644 tm.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tm.h
+/usr/bin/install -c -m 644 tm_p.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tm_p.h
+/usr/bin/install -c -m 644 ../../gcc/toplev.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/toplev.h
+/usr/bin/install -c -m 644 ../../gcc/tracer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tracer.h
+/usr/bin/install -c -m 644 ../../gcc/trans-mem.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/trans-mem.h
+/usr/bin/install -c -m 644 ../../gcc/tree-affine.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-affine.h
+/usr/bin/install -c -m 644 ../../gcc/tree-cfg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-cfg.h
+/usr/bin/install -c -m 644 ../../gcc/tree-cfgcleanup.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-cfgcleanup.h
+/usr/bin/install -c -m 644 tree-check.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-check.h
+/usr/bin/install -c -m 644 ../../gcc/tree-chrec.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-chrec.h
+/usr/bin/install -c -m 644 ../../gcc/tree-core.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-core.h
+/usr/bin/install -c -m 644 ../../gcc/tree-data-ref.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-data-ref.h
+/usr/bin/install -c -m 644 ../../gcc/tree-dfa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-dfa.h
+/usr/bin/install -c -m 644 ../../gcc/tree-diagnostic.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-diagnostic.h
+/usr/bin/install -c -m 644 ../../gcc/tree-dump.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-dump.h
+/usr/bin/install -c -m 644 ../../gcc/tree-eh.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-eh.h
+/usr/bin/install -c -m 644 ../../gcc/tree-hash-traits.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-hash-traits.h
+/usr/bin/install -c -m 644 ../../gcc/tree-hasher.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-hasher.h
+/usr/bin/install -c -m 644 ../../gcc/tree-if-conv.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-if-conv.h
+/usr/bin/install -c -m 644 ../../gcc/tree-inline.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-inline.h
+/usr/bin/install -c -m 644 ../../gcc/tree-into-ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-into-ssa.h
+/usr/bin/install -c -m 644 ../../gcc/tree-iterator.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-iterator.h
+/usr/bin/install -c -m 644 ../../gcc/tree-nested.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-nested.h
+/usr/bin/install -c -m 644 ../../gcc/tree-object-size.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-object-size.h
+/usr/bin/install -c -m 644 ../../gcc/tree-outof-ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-outof-ssa.h
+/usr/bin/install -c -m 644 ../../gcc/tree-parloops.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-parloops.h
+/usr/bin/install -c -m 644 ../../gcc/tree-pass.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-pass.h
+/usr/bin/install -c -m 644 ../../gcc/tree-phinodes.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-phinodes.h
+/usr/bin/install -c -m 644 ../../gcc/tree-pretty-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-pretty-print.h
+/usr/bin/install -c -m 644 ../../gcc/tree-scalar-evolution.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-scalar-evolution.h
+/usr/bin/install -c -m 644 ../../gcc/tree-sra.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-sra.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-address.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-address.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-alias-compare.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-alias-compare.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-alias.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-alias.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-ccp.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-ccp.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-coalesce.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-coalesce.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-dce.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-dce.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-dom.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-dom.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-dse.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-dse.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-live.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-live.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-loop-ivopts.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-loop-ivopts.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-loop-manip.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-loop-manip.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-loop-niter.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-loop-niter.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-loop.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-loop.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-math-opts.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-math-opts.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-operands.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-operands.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-propagate.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-propagate.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-reassoc.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-reassoc.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-sccvn.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-sccvn.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-scopedtables.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-scopedtables.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-strlen.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-strlen.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-ter.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-ter.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-threadedge.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-threadedge.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa-threadupdate.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa-threadupdate.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssa.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssa.h
+/usr/bin/install -c -m 644 ../../gcc/tree-ssanames.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-ssanames.h
+/usr/bin/install -c -m 644 ../../gcc/tree-stdarg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-stdarg.h
+/usr/bin/install -c -m 644 ../../gcc/tree-streamer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-streamer.h
+/usr/bin/install -c -m 644 ../../gcc/tree-switch-conversion.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-switch-conversion.h
+/usr/bin/install -c -m 644 ../../gcc/tree-vector-builder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-vector-builder.h
+/usr/bin/install -c -m 644 ../../gcc/tree-vectorizer.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-vectorizer.h
+/usr/bin/install -c -m 644 ../../gcc/tree-vrp.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree-vrp.h
+/usr/bin/install -c -m 644 ../../gcc/tree.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree.def
+/usr/bin/install -c -m 644 ../../gcc/tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tree.h
+/usr/bin/install -c -m 644 ../../gcc/treestruct.def /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/treestruct.def
+/usr/bin/install -c -m 644 ../../gcc/tristate.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tristate.h
+/usr/bin/install -c -m 644 ../../gcc/tsan.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tsan.h
+/usr/bin/install -c -m 644 ../../gcc/tsystem.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/tsystem.h
+/usr/bin/install -c -m 644 ../../gcc/typeclass.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/typeclass.h
+/usr/bin/install -c -m 644 ../../gcc/typed-splay-tree.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/typed-splay-tree.h
+/usr/bin/install -c -m 644 ../../gcc/ubsan.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/ubsan.h
+/usr/bin/install -c -m 644 ../../gcc/valtrack.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/valtrack.h
+/usr/bin/install -c -m 644 ../../gcc/value-prof.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/value-prof.h
+/usr/bin/install -c -m 644 ../../gcc/value-query.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/value-query.h
+/usr/bin/install -c -m 644 ../../gcc/value-range-equiv.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/value-range-equiv.h
+/usr/bin/install -c -m 644 ../../gcc/value-range.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/value-range.h
+/usr/bin/install -c -m 644 ../../gcc/varasm.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/varasm.h
+/usr/bin/install -c -m 644 ../../gcc/vec-perm-indices.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vec-perm-indices.h
+/usr/bin/install -c -m 644 ../../gcc/vec.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vec.h
+/usr/bin/install -c -m 644 ../../gcc/vector-builder.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vector-builder.h
+/usr/bin/install -c -m 644 ../../gcc/version.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/version.h
+/usr/bin/install -c -m 644 ../../gcc/vmsdbg.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vmsdbg.h
+/usr/bin/install -c -m 644 ../../gcc/vr-values.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vr-values.h
+/usr/bin/install -c -m 644 ../../gcc/vtable-verify.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/vtable-verify.h
+/usr/bin/install -c -m 644 ../../gcc/wide-int-bitmask.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/wide-int-bitmask.h
+/usr/bin/install -c -m 644 ../../gcc/wide-int-print.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/wide-int-print.h
+/usr/bin/install -c -m 644 ../../gcc/wide-int.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/wide-int.h
+/usr/bin/install -c -m 644 ../../gcc/xcoff.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/xcoff.h
+/usr/bin/install -c -m 644 ../../gcc/xcoffout.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/xcoffout.h
+/usr/bin/install -c -m 644 b-header-vars /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/include/b-header-vars
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/gcc'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/intl'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/intl'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libbacktrace'
+true  DO=all multi-do # make
+make[3]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libbacktrace'
+true  DO=install multi-do # make
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libbacktrace'
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libbacktrace'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libcpp'
+test -f config.h || (rm -f stamp-h1 && make stamp-h1)
+cats=""; for cat in $cats; do \
+  lang=`basename $cat | sed 's/\.gmo$//'`; \
+  if [ -f $cat ]; then :; \
+  elif [ -f ../../libcpp/$cat ]; then cat=../../libcpp/$cat; \
+  else continue; \
+  fi; \
+  dir=/mnt/lfs/tools/share/locale/$lang/LC_MESSAGES; \
+  echo /usr/bin/install -c -m 644 $cat $dir/cpplib.mo; \
+  /usr/bin/install -c -m 644 $cat $dir/cpplib.mo; \
+done
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libcpp'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libdecnumber'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libdecnumber'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty'
+make[3]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty/testsuite'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty/testsuite'
+if test -n ""; then \
+	/bin/sh ../../libiberty/../mkinstalldirs /mnt/lfs/tools/lib/`gcc -g -O2 -print-multi-os-directory`; \
+	/usr/bin/install -c -m 644 ./libiberty.a /mnt/lfs/tools/lib/`gcc -g -O2 -print-multi-os-directory`/./libiberty.an; \
+	( cd /mnt/lfs/tools/lib/`gcc -g -O2 -print-multi-os-directory` ; chmod 644 ./libiberty.an ;ranlib ./libiberty.an ); \
+	mv -f /mnt/lfs/tools/lib/`gcc -g -O2 -print-multi-os-directory`/./libiberty.an /mnt/lfs/tools/lib/`gcc -g -O2 -print-multi-os-directory`/./libiberty.a; \
+	case "" in \
+	  /*)    thd=;; \
+	  *)     thd=/mnt/lfs/tools/include/;; \
+	esac; \
+	/bin/sh ../../libiberty/../mkinstalldirs ${thd}; \
+	for h in ../../libiberty/../include/ansidecl.h ../../libiberty/../include/demangle.h ../../libiberty/../include/dyn-string.h ../../libiberty/../include/fibheap.h ../../libiberty/../include/floatformat.h ../../libiberty/../include/hashtab.h ../../libiberty/../include/libiberty.h ../../libiberty/../include/objalloc.h ../../libiberty/../include/partition.h ../../libiberty/../include/safe-ctype.h ../../libiberty/../include/sort.h ../../libiberty/../include/splay-tree.h ../../libiberty/../include/timeval-utils.h; do \
+	  /usr/bin/install -c -m 644 $h ${thd}; \
+	done; \
+fi
+make[3]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty/testsuite'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty/testsuite'
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libiberty'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/c++tools'
+/bin/sh ../../c++tools/../mkinstalldirs /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0
+/usr/bin/install -c g++-mapper-server /mnt/lfs/tools/libexec/gcc/i686-lfs-linux-gnu/11.2.0
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/c++tools'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libcc1'
+make[3]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/libcc1'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/mnt/lfs/tools/lib/../lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libcc1.la '/mnt/lfs/tools/lib/../lib'
+libtool: install: /usr/bin/install -c .libs/libcc1.so.0.0.0 /mnt/lfs/tools/lib/../lib/libcc1.so.0.0.0
+libtool: install: (cd /mnt/lfs/tools/lib/../lib && { ln -s -f libcc1.so.0.0.0 libcc1.so.0 || { rm -f libcc1.so.0 && ln -s libcc1.so.0.0.0 libcc1.so.0; }; })
+libtool: install: (cd /mnt/lfs/tools/lib/../lib && { ln -s -f libcc1.so.0.0.0 libcc1.so || { rm -f libcc1.so && ln -s libcc1.so.0.0.0 libcc1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcc1.lai /mnt/lfs/tools/lib/../lib/libcc1.la
+libtool: finish: PATH="/mnt/lfs/tools/bin:/usr/bin:/sbin" ldconfig -n /mnt/lfs/tools/lib/../lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /mnt/lfs/tools/lib/../lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libcc1plugin.la libcp1plugin.la '/mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin'
+libtool: install: /usr/bin/install -c .libs/libcc1plugin.so.0.0.0 /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/libcc1plugin.so.0.0.0
+libtool: install: (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin && { ln -s -f libcc1plugin.so.0.0.0 libcc1plugin.so.0 || { rm -f libcc1plugin.so.0 && ln -s libcc1plugin.so.0.0.0 libcc1plugin.so.0; }; })
+libtool: install: (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin && { ln -s -f libcc1plugin.so.0.0.0 libcc1plugin.so || { rm -f libcc1plugin.so && ln -s libcc1plugin.so.0.0.0 libcc1plugin.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcc1plugin.lai /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/libcc1plugin.la
+libtool: install: /usr/bin/install -c .libs/libcp1plugin.so.0.0.0 /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/libcp1plugin.so.0.0.0
+libtool: install: (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin && { ln -s -f libcp1plugin.so.0.0.0 libcp1plugin.so.0 || { rm -f libcp1plugin.so.0 && ln -s libcp1plugin.so.0.0.0 libcp1plugin.so.0; }; })
+libtool: install: (cd /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin && { ln -s -f libcp1plugin.so.0.0.0 libcp1plugin.so || { rm -f libcp1plugin.so && ln -s libcp1plugin.so.0.0.0 libcp1plugin.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcp1plugin.lai /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin/libcp1plugin.la
+libtool: finish: PATH="/mnt/lfs/tools/bin:/usr/bin:/sbin" ldconfig -n /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/plugin
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libcc1'
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/libcc1'
+make[2]: Entering directory '/mnt/lfs/sources/gcc-11.2.0/build/i686-lfs-linux-gnu/libgcc'
+/bin/sh ../../../libgcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0
+/usr/bin/install -c -m 644 libgcc.a /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/
+chmod 644 /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/libgcc.a
+/mnt/lfs/tools/i686-lfs-linux-gnu/bin/ranlib /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/libgcc.a
+/usr/bin/install -c -m 644 libgcov.a /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/
+chmod 644 /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/libgcov.a
+/mnt/lfs/tools/i686-lfs-linux-gnu/bin/ranlib /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/libgcov.a
+parts="crtbegin.o crtbeginS.o crtbeginT.o crtend.o crtendS.o crtprec32.o crtprec64.o crtprec80.o crtfastmath.o";				\
+for file in $parts; do					\
+  rm -f /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/$file;		\
+  /usr/bin/install -c -m 644 $file /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/;	\
+  case $file in 					\
+    *.a)						\
+      /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ranlib ../.././gcc/$file ;;	\
+  esac;							\
+done
+/bin/sh ../../../libgcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+/usr/bin/install -c -m 644 unwind.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+/bin/sh ../../../libgcc/../mkinstalldirs /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+/usr/bin/install -c -m 644 ../../../libgcc/gcov.h /mnt/lfs/tools/lib/gcc/i686-lfs-linux-gnu/11.2.0/include
+make[2]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build/i686-lfs-linux-gnu/libgcc'
+make[1]: Leaving directory '/mnt/lfs/sources/gcc-11.2.0/build'

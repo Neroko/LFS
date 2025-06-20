@@ -1,0 +1,17 @@
+[Thu Jul  6 23:18:48 EDT 2017]  [INFO]  Starting...
+[Thu Jul  6 23:18:48 EDT 2017]  [INFO]  System: x86_64
+[Thu Jul  6 23:18:48 EDT 2017]  [INFO]  Cleaning out old files...
+------------------------------: command not found
+[Thu Jul  6 23:18:48 EDT 2017]  [INFO]  Complete
+
+real	0m0.300s
+user	0m0.108s
+sys	0m0.080s
+[Thu Jul  6 23:18:48 EDT 2017]  [INFO]  Binutils-2.27 - Pass 1
+------------------------------: command not found
+[Thu Jul  6 23:19:01 EDT 2017]  [INFO]  Complete
+
+real	0m12.621s
+user	0m4.996s
+sys	0m9.080s
+[Thu Jul  6 23:19:01 EDT 2017]  [INFO]  Done
